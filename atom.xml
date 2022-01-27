@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-26T15:46:37.516Z</updated>
+  <updated>2022-01-27T05:55:13.547Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/01/26/csapp-chapter2/"/>
     <id>http://example.com/2022/01/26/csapp-chapter2/</id>
     <published>2022-01-26T11:45:15.000Z</published>
-    <updated>2022-01-26T15:46:37.516Z</updated>
+    <updated>2022-01-27T05:55:13.547Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CSAPP第一章"><a href="#CSAPP第一章" class="headerlink" title="CSAPP第一章"></a>CSAPP第一章</h1><h2 id="本章的目的"><a href="#本章的目的" class="headerlink" title="本章的目的"></a>本章的目的</h2><p>本书的目的是让我们程序员能够写出更好的程序，而为了能够写出更好的程序，我们程序员需要做到以下几点：</p><h3 id="了解C语言的存储方式以及C语言的生命周期"><a href="#了解C语言的存储方式以及C语言的生命周期" class="headerlink" title="了解C语言的存储方式以及C语言的生命周期"></a>了解C语言的存储方式以及C语言的生命周期</h3><p>编写好的C程序是以文本格式放在硬盘里的，而了解C语言生命周期，就是去了解为C程序准备的编译系统，原因有三点：</p><ol><li>为了优化程序性能；去了解C语言从被创建，到被编译为可执行文件的过程，这需要深入C语言的汇编层面实现等等，这些可以帮助我们选择更好的方式进行功能的实现，以及了解C语言的各种抽象表示是如何实现的，比如指针、数组；</li><li>处理链接方面的错误；gcc把 .c文件编译成为可执行文件的最后一个步骤就是链接，是将print.o和被编译为可重定向的二进制目标文件依靠某种方式相结合的过程，最后编译完成的文件拥有了能够把结果输出在命令行中的能力；链接方面的错误包括在同一工程下定义两个同名的全局变量等等；</li><li>避免安全漏洞；比如缓冲区溢出等问题；</li></ol><h3 id="了解计算机的底层"><a href="#了解计算机的底层" class="headerlink" title="了解计算机的底层"></a>了解计算机的底层</h3><p>其实就是去了解C程序在被编译完成到显示在命令行里的过程，这其间免不了接触计算机的硬件和他们的抽象，因为这要涉及把文件从哪读到哪，和在哪加载的过程；</p><h2 id="具体内容"><a href="#具体内容" class="headerlink" title="具体内容"></a>具体内容</h2><h3 id="C程序的编译过程"><a href="#C程序的编译过程" class="headerlink" title="C程序的编译过程"></a>C程序的编译过程</h3><img src="https://s2.loli.net/2022/01/26/IUtad2vEWqBkDKe.png" alt="image-20220126210026331.png" style="zoom: 70%;" /><h3 id="系统硬件部分"><a href="#系统硬件部分" class="headerlink" title="系统硬件部分"></a>系统硬件部分</h3><h4 id="硬件组成"><a href="#硬件组成" class="headerlink" title="硬件组成"></a>硬件组成</h4><ol><li><p>总线</p><p>总线负责在硬件之间传递各种比特流，一次可以传送的字节为系统的字长，比如32位系统的字长是32bit，也就是4字节；</p><table><thead><tr><th>在并发编程时，为了保证线程之间对共享资源的有序访问，通常需要给线程加锁，比如Java中的关键字synchronized；如果发生多个线程对共享资源的重度竞争，synchronized会膨胀为重量级锁，而重量级锁需要向操作系统申请内核空间的锁资源，该锁资源追溯到HotSpot里，其中一种实现方式便是锁总线</th></tr></thead></table></li><li><p>I/O设备</p><p>输入输出设备，比如键盘、鼠标、显示器和磁盘，他们和总线之间靠控制器和适配器连接起来；</p></li><li><p>主存</p><p>类似一个巨大的一维数组，每个存储单元都由他的地址和存储的数据这两部分组成，将C语言反编译为汇编即可发现汇编的许多东西都是在不同的地址和存储数据之间反复横跳；</p></li><li><p>处理器</p><p>由程序计数器PC、逻辑运算单元ALU和寄存器文件组成，他们的工作很简单，PC指向下一条指令地址，读取该地址的值，ALU进行逻辑运算，寄存器负责存储信息；</p></li></ol><h4 id="运行Hello程序"><a href="#运行Hello程序" class="headerlink" title="运行Hello程序"></a>运行Hello程序</h4><ol><li> Hello程序编译完成之后，在shell程序中输入./a.out，这个过程中，shell程序会把按下的值存到寄存器里，再读到主存当中，按下回车后系统会将命令通过IO总线送入CPU内部，进行解析；</li><li>这时，Shell发送命令，要从磁盘中找出Hello程序并加载到主存里，其实Hello程序会从磁盘加载到CPU，再从CPU加载到主存里，但DMA技术可以直接省略到CPU兜一圈的那一步；</li><li>加载到主存之后，CPU便开始执行Hello程序的main程序中的机器语言指令，也就是01字符串，最后通过IO总线将哈喽沃德传到显示器并显示在屏幕上，整个流程结束；</li></ol>]]></content>
     
@@ -32,6 +32,8 @@
       
     
     
+    
+    <category term="CSAPP" scheme="http://example.com/categories/CSAPP/"/>
     
     
   </entry>
