@@ -2,9 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/03/12/spring/springioc-rong-qi-de-xml-pei-zhi-shi-yong/</loc>
+    
+    <lastmod>2022-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/03/12/queueingtheory/preface/</loc>
+    
+    <lastmod>2022-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/03/12/queueingtheory/chapter1/</loc>
+    
+    <lastmod>2022-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/03/12/readyou/</loc>
+    
+    <lastmod>2022-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/03/08/csapp/csapp-chapter3/</loc>
+    
+    <lastmod>2022-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/02/07/csapp/csapp-chapter2/</loc>
     
-    <lastmod>2022-03-07</lastmod>
+    <lastmod>2022-03-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -41,15 +86,6 @@
     <loc>http://example.com/2022/02/11/tong-xin-yuan-li/tong-xin-yuan-li-di-yi-zhang-xu-lun/</loc>
     
     <lastmod>2022-02-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/02/08/spring-kuang-jia-jie-shao-yu-da-jian/</loc>
-    
-    <lastmod>2022-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +148,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2022-03-07</lastmod>
+    <lastmod>2022-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -122,35 +158,49 @@
   
   <url>
     <loc>http://example.com/categories/CSAPP/</loc>
-    <lastmod>2022-03-07</lastmod>
+    <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88/</loc>
-    <lastmod>2022-03-07</lastmod>
+    <loc>http://example.com/categories/Queueing/</loc>
+    <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E9%A2%98%E7%9B%AE/</loc>
-    <lastmod>2022-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2022-03-07</lastmod>
+    <loc>http://example.com/categories/Spring/</loc>
+    <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/%E7%AE%97%E6%B3%95%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2022-03-07</lastmod>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E9%A2%98%E7%9B%AE/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2022-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88/</loc>
+    <lastmod>2022-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
