@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>算法体系结构030_Morris遍历 | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Morris遍历1. 经典树遍历的缺点二叉树的经典遍历方法非常的简单:    1234567891011public static void traversal(TreeNode head)&amp;#123;    if (head &#x3D;&#x3D; null) &amp;#123;        return;    &amp;#125;        &#x2F;&#x2F;在这里操作值, 为先序    traversal(head.left);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法体系结构030_Morris遍历">
+<meta property="og:url" content="http://example.com/2022/09/27/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-030-morris-bian-li/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="Morris遍历1. 经典树遍历的缺点二叉树的经典遍历方法非常的简单:    1234567891011public static void traversal(TreeNode head)&amp;#123;    if (head &#x3D;&#x3D; null) &amp;#123;        return;    &amp;#125;        &#x2F;&#x2F;在这里操作值, 为先序    traversal(head.left);">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-09-27T13:20:48.000Z">
+<meta property="article:modified_time" content="2022-10-09T14:14:36.422Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/09/27/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-030-morris-bian-li/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法体系结构030_Morris遍历',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-09 22:14:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">算法体系结构030_Morris遍历</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-09-27T13:20:48.000Z" title=" 2022-09-27 21:20:48">2022-09-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-10-09T14:14:36.422Z" title=" 2022-10-09 22:14:36">2022-10-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法体系结构030_Morris遍历"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Morris遍历"><a href="#Morris遍历" class="headerlink" title="Morris遍历"></a>Morris遍历</h1><h2 id="1-经典树遍历的缺点"><a href="#1-经典树遍历的缺点" class="headerlink" title="1. 经典树遍历的缺点"></a>1. 经典树遍历的缺点</h2><p>二叉树的经典遍历方法非常的简单:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">traversal</span><span class="params">(TreeNode head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//在这里操作值, 为先序</span></span><br><span class="line">    traversal(head.left);</span><br><span class="line">    <span class="comment">//在这里操作值, 为中序</span></span><br><span class="line">    traversal(head.right);</span><br><span class="line">    <span class="comment">//在这里操作值, 为后序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这种简单的遍历方法的额外空间复杂度为logN,   即树的高度,   N为树的节点数;   因为该函数为递归调用,   为了实现该递归,   系统自动开辟堆栈空间,   而栈最多存放的节点数为从根节点往下一顺溜,   也就是树的高度;   </p>
+<p>而Morris遍历可以在时间复杂度为O(N)的前提下,   把二叉树的遍历的额外空间复杂度优化到O(1),   其原因是该方法利用了二叉树叶子节点的右节点为空时的空指针资源;   </p>
+<h2 id="2-Morris遍历"><a href="#2-Morris遍历" class="headerlink" title="2. Morris遍历"></a>2. Morris遍历</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>cur指针指向当前节点,   开始时,   cur来到头节点位置,   </p>
+<ol>
+<li><p>如果cur没有左孩子,   cur向右移动(cur = cur.right);   </p>
+</li>
+<li><p>如果cur有左孩子,   找到左子树的最右节点mostRight,   </p>
+<p>a. 如果mostRight的右指针为空,   则让mostRight指向cur,   然后cur向左移动(cur = cur.left);   </p>
+<p>b. 如果mostRight的右指针指向cur,   则让mostRight的右指针指向空,   然后cur向右移动(cur = cur.right)</p>
+</li>
+<li><p>cur为空时停止遍历;   </p>
+</li>
+</ol>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>这里说的cur的左孩子的最右节点其实是指原树的cur的左孩子的最右节点,   也就`是说,   一开始找到了cur的左孩子的最右节点mostRight,   然后让mostRight.right=cur,   这样就形成了一个局部的环;   下次再遍历到cur时,   又会找到cur的左孩子的最右节点,   但在这时,   mostRight.right=cur,   这样cur的左孩子的最右节点就不是mostRight了,   也就不可以让mostRight指向空了,   所以这里说的mostRight指的是原树的cur的左孩子的mostRight;   </p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><img src="D:/Program%20Files/Typora/img/image-20220928212132688.png" alt="image-20220928212132688" style="zoom:67%;" />
+
+<p>对于上面这棵树,   Morris遍历的序为abdbeacfcg,   也就是说,   有左孩子的节点一定会遍历到两次,   没有左孩子的节点一定只遍历到一次,   并且对于有左孩子的节点,   一定是遍历完该节点的左子树,   然后第二次遍历该节点,   再遍历该节点的右子树;   </p>
+<p>Morris序可以转为先序中序后序,   先序只需要取到每个节点的第一次遍历,   中序只需要取到每个节点的后一次遍历即可;   </p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>整体大框架为,   当cur == null时停止:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (cur != <span class="keyword">null</span>)  &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<p>当cur有左孩子时,   找到左孩子的最右节点,   由于前文提到,   Morris遍历会修改树,   以右孩子遍历形成环,   所以此时停止寻找最右节点的条件一定有两个,   一是右孩子指向空,   二是右孩子指向cur,   也就是被修改过后的情况:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (cur.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">    mostRight = cur.left;</span><br><span class="line">    <span class="keyword">while</span> (mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur) &#123;</span><br><span class="line">        mostRight = mostRight.right;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后就进行判断,   如果最右节点的右指针指向空,   则代表没有修改,   那么直接指向cur节点,   并让cur向左孩子移动,   并且使用continue停止这次循环;   如果最右节点的右指针指向cur,   则表明被修改过了,   那么只需要让其指回空即可;   由于没有左孩子时也是cur移动到它的右孩子,   修改回来过后也要让cur移动到它的右孩子,   为了简化代码可以像下面这样写,   可以省掉一句cur=cur.right和一句continue:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (mostRight.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mostRight.right = cur;</span><br><span class="line">            cur = cur.left;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            mostRight.right = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cur = cur.right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Morris转先序和中序"><a href="#Morris转先序和中序" class="headerlink" title="Morris转先序和中序"></a>Morris转先序和中序</h3><p>Morris序改先序和中序其实很简单,   先序为Morris序的首次打印结果,   中序为Morris序的第二次打印结果,   只需要在相应的地方加上打印语句即可;   但是要注意的是,   总体来讲,   打印的地方有三处,   当cur.left不为空时,   有两处打印的地方,   当cur.left为空时,   也有一处打印的地方,   对应着有右孩子的节点在Morris遍历中会打印两次,   没有右孩子的节点打印一次;   为了使有右孩子的节点只打印一次除了原有的束缚以外,   还应该使用else语句限制走完cur.left不为空时对节点的打印的if语句;   </p>
+<h3 id="Morris序转后序"><a href="#Morris序转后序" class="headerlink" title="Morris序转后序"></a>Morris序转后序</h3><p>Morris序转后序相比于转先序和中序来说,   要复杂一点;   具体的流程为:   对于每一个有左孩子的节点,   当第二次遍历到它们的时候,   逆序打印它的左孩子的右树枝,   整个Morris算法完成之后,   逆序打印整棵树的右树枝;   </p>
+<p>实现:   </p>
+<p>首先将要逆序遍历的右树枝翻转并拿到该右树枝的叶子节点,   由于改指针这一操作是从右树枝的根部开始到枝端,   所以最后拿到翻转之前的叶子节点是很容易的:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Node tail = reverseEdge(head);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后就开始进行遍历,   打印节点信息:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Node cur = tail;</span><br><span class="line"><span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">    System.out.print(cur.value + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    cur = cur.right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后将该右树枝还原即可:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverseEdge(tail);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>而翻转指针的操作也较为简单;   </p>
+<p>首先准备两个指针pre和next,   一个指向正在进行翻转的节点的上一个节点,   一个指向下一个节点,   当然还有传过来的指向当前正在操作的节点的指针from:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Node pre = <span class="keyword">null</span>;</span><br><span class="line">Node next = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后的操作是,   先将next指向from的右孩子,   再将from的右指针指向pre,   然后让pre移向from,   最后让from移向下一个要操作的节点next;   最后from一定指向空,   也就是最后一个节点的在没有修改节点之前的next指针,   一定为空,   而这时pre刚好为最后一个节点,   所以返回pre即可;   </p>
+<blockquote>
+<p>这里不可以先让from指向next,   再让pre指向from,   要注意顺序;   </p>
+</blockquote>
+<h2 id="3-isBST"><a href="#3-isBST" class="headerlink" title="3. isBST"></a>3. isBST</h2><p>判断一棵树是否是搜索二叉树,   只需要将搜索二叉树进行中序遍历的同时搜集节点的数值,   形成数组,   然后看看这个结果数组是不是从小到大进行排列的即可;   </p>
+<p>而如果用Morris遍历,   只需要在Morris算法的基础之上,   再加一个变量pre,   用于记住前一个节点的数值,   这个变量是Integer还是Node类型都无所谓,   只要能进行判空并且能够比较大小即可;   </p>
+<blockquote>
+<p>要注意的是,   这个方法还是使用的中序遍历,   所以只需要在那两个地方进行操作即可,   千万不要在第一次遍历的时候进行任何形式的改动;   </p>
+</blockquote>
+<h2 id="4-树的最小深度"><a href="#4-树的最小深度" class="headerlink" title="4. 树的最小深度"></a>4. 树的最小深度</h2><p>题目:   给定一棵树,   返回以这棵树的最小深度(最短枝桠的长度);   </p>
+<p>解法1:   利用二叉树递归遍历的套路,   收取到左子树的信息,   收取到右子树的信息,   将这俩取较小值,   返回即可;   </p>
+<p>解法2:   利用Morris遍历,   但是需要解决两个问题,   一是当cur指针来到某一个节点时,   要能够正确地得到该节点的层数,   二是能够正确地猜到某个节点为叶子节点,   当猜到的时候,   只需要拿到当前节点的层数,   即可得到返回值;   </p>
+<ul>
+<li><p><input disabled="" type="checkbox">  如何正确更新出cur指针对应的层数捏? </p>
+</li>
+<li><p>这里需要分一下类,   如果上一个遍历到的节点为X节点,   知道X节点的层数为a,   当前遍历到Y节点,   想知道Y节点的层数,   有两种情况,   第一,   Y节点为X节点的左孩子,   那么Y节点的层数一定为a+1;   第二,   Y节点为X节点的右孩子,   那么就有两种情况,   要么就是X节点为Y节点的左子树的最右节点,   并且X节点通过修改指针,   让X节点的右指针指向Y节点,   如下图:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221009193437414.png" alt="image-20221009193437414" style="zoom:67%;" />
+
+<p>如果是这种情况,   那么只需要将X节点的层数减去Y节点的左子树的最右枝桠上的节点数,   即可得到Y节点的层数;   </p>
+<p>要么就是普通情况,   即,   Y节点为X节点的自然右孩子,   如下图:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221009194034893.png" alt="image-20221009194034893" style="zoom:67%;" />
+
+<p>如果是这种情况,   则直接将X节点的层数加一,   即可得到Y节点的层数;   </p>
+<p>这样就解决了第一个问题,   使得cur遍历到的每一个节点都能够得到正确的层数;   </p>
+</li>
+<li><p><input disabled="" type="checkbox">  第二个问题,   怎样知道某个节点为叶子节点捏?</p>
+<p>解决办法为,   遍历到每个节点时,   都对该节点作判断,   如果该节点的左子树的最右节点的右指针指向了cur,   则说明该节点为叶子节点;    </p>
+</li>
+</ul>
+<p>代码实现:   </p>
+<p>首先准备好变量:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Node cur = head;</span><br><span class="line">Node mostRight = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">int</span> curLevel = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> minHeight = Integer.MAX_VALUE;</span><br></pre></td></tr></table></figure>
+
+<p>cur和mostRight就不说了;<br>curLevel虽然看上去是指的cur指针所指向的变量,   但是在while循环中,   要么使用curLevel,   要么改变curLevel,   使用curLevel的情况,   是指找到了叶子节点,   所以这时curLevel指的就是叶子节点所在的层数;   改变curLevel的情况,   在while循环中的很多地方都要改变啦,   而且改变之后紧接着就进行下一次whiel循环了,   所以curLevel不是被固定指向当前cur指针指向的节点的层数的;<br>minHeight为最小层数,   在找到叶子节点的时候拿这个值和curLevel进行比较;   </p>
+<p>然后就是while循环和几个老东西了:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">    mostRight = cur.left;</span><br><span class="line">    <span class="keyword">if</span> (mostRight != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> rightBoardSize = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (mostRight.right != <span class="keyword">null</span> &amp;&amp; mostRight.right != cur) &#123;</span><br><span class="line">            rightBoardSize++;</span><br><span class="line">            mostRight = mostRight.right;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>整体上看还是Morris遍历,   只不过因为要让cur指针从叶子节点通过修改的指针滑到某一个高层的节点时,   使得curLevel还能够正确恢复它的层数,   所以增加了一个rightBoardSize变量,   用于记录当前节点左子树的最右枝桠的长度;   </p>
+<p>然后的代码还是在Morris遍历的基础之上进行的改进,   如果是第一次到达cur节点,   则直接让curLevel自增,   然后去遍历它的左子树;   如果是第二次遍历到当前节点,   则先判断这个最右节点的左孩子是否为空,   如果为空,   则找到了一个叶子节点,   那么就直接拿到curLevel与minHeight做对比取较小值,   然后通过rightBoardSize将curLevel还原为高层节点的层数;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (mostRight.right == <span class="keyword">null</span>) &#123; <span class="comment">// 第一次到达</span></span><br><span class="line">    curLevel++;</span><br><span class="line">    mostRight.right = cur;</span><br><span class="line">    cur = cur.left;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123; 					   <span class="comment">// 第二次到达</span></span><br><span class="line">    <span class="keyword">if</span> (mostRight.left == <span class="keyword">null</span>) &#123;</span><br><span class="line">        minHeight = Math.min(minHeight, curLevel);</span><br><span class="line">    &#125;</span><br><span class="line">    curLevel -= rightBoardSize;</span><br><span class="line">    mostRight.right = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果左子树为空,   则cur指针跳到右孩子处,   而右孩子的层数一定比头节点要大1:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// 只有一次到达</span></span><br><span class="line">    curLevel++;</span><br><span class="line">&#125;</span><br><span class="line">cur = cur.right;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后判断一下整棵树的最右枝桠的最右节点是否为叶子节点,   如果是,   则也要收集它的信息,   当然代码不是这样写的;   代码是先不管最右节点是否为叶子节点,   先收集,   当遍历到它的时候,   再进行判断,   如果是叶子节点,   则与minHeight作比较即可:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> finalRight = <span class="number">1</span>;</span><br><span class="line">cur = head;</span><br><span class="line"><span class="keyword">while</span> (cur.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">    finalRight++;</span><br><span class="line">    cur = cur.right;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (cur.left == <span class="keyword">null</span> &amp;&amp; cur.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">    minHeight = Math.min(minHeight, finalRight);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> minHeight;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/09/28/excalidraw/shu-ju-ku/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/09/26/shu-ju-ku/05-shi-tu-yong-hu-guan-li-xu-lie/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">04_视图、用户管理、序列...</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Morris%E9%81%8D%E5%8E%86"><span class="toc-text">Morris遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%8F%E5%85%B8%E6%A0%91%E9%81%8D%E5%8E%86%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">1. 经典树遍历的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Morris%E9%81%8D%E5%8E%86"><span class="toc-text">2. Morris遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-text">细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Morris%E8%BD%AC%E5%85%88%E5%BA%8F%E5%92%8C%E4%B8%AD%E5%BA%8F"><span class="toc-text">Morris转先序和中序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Morris%E5%BA%8F%E8%BD%AC%E5%90%8E%E5%BA%8F"><span class="toc-text">Morris序转后序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-isBST"><span class="toc-text">3. isBST</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6"><span class="toc-text">4. 树的最小深度</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

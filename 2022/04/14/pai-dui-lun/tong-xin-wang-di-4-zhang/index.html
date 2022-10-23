@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>通信网第4章_通信网结构 | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 问题引入1.1 一笔画问题从图的一点出发,   一笔遍历图中所有的边,   每个边都只被遍历一次,   问有哪些图可以被一笔画;    1.2 概念引入 奇点,   有奇数条边与之相连的点;    偶点,   有偶数条边与之相连的点;     如下图,   奇点为A,   B,   偶点为C;     分析:   奇点只能作为起点或者终点,   因为起点必有一条边可以看成是从该点往外输出的起">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通信网第4章_通信网结构">
+<meta property="og:url" content="http://example.com/2022/04/14/pai-dui-lun/tong-xin-wang-di-4-zhang/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="1. 问题引入1.1 一笔画问题从图的一点出发,   一笔遍历图中所有的边,   每个边都只被遍历一次,   问有哪些图可以被一笔画;    1.2 概念引入 奇点,   有奇数条边与之相连的点;    偶点,   有偶数条边与之相连的点;     如下图,   奇点为A,   B,   偶点为C;     分析:   奇点只能作为起点或者终点,   因为起点必有一条边可以看成是从该点往外输出的起">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-04-14T00:32:54.000Z">
+<meta property="article:modified_time" content="2022-06-23T08:00:15.063Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/04/14/pai-dui-lun/tong-xin-wang-di-4-zhang/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '通信网第4章_通信网结构',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-23 16:00:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">通信网第4章_通信网结构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-04-14T00:32:54.000Z" title=" 2022-04-14 08:32:54">2022-04-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-06-23T08:00:15.063Z" title=" 2022-06-23 16:00:15">2022-06-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8E%92%E9%98%9F%E8%AE%BA/">排队论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="通信网第4章_通信网结构"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-问题引入"><a href="#1-问题引入" class="headerlink" title="1. 问题引入"></a>1. 问题引入</h1><h2 id="1-1-一笔画问题"><a href="#1-1-一笔画问题" class="headerlink" title="1.1 一笔画问题"></a>1.1 一笔画问题</h2><p>从图的一点出发,   一笔遍历图中所有的边,   每个边都只被遍历一次,   问有哪些图可以被一笔画;   </p>
+<h2 id="1-2-概念引入"><a href="#1-2-概念引入" class="headerlink" title="1.2 概念引入"></a>1.2 概念引入</h2><ol>
+<li>奇点,   有奇数条边与之相连的点;   </li>
+<li>偶点,   有偶数条边与之相连的点;   </li>
+</ol>
+<p>如下图,   奇点为A,   B,   偶点为C;   </p>
+<p><img src="https://s2.loli.net/2022/04/14/4tokpfEABwDOGlY.png" width="200"></img></p>
+<p>分析:   奇点只能作为起点或者终点,   因为起点必有一条边可以看成是从该点往外输出的起始输出边,   对应的终点也需要有一条边被看成是终止输入边;   而奇点的边数为奇数,   如果作为起点,   则可以任意选择一条边作为起始输出边,   而剩下的边数则为偶数,   那自然可以不关心,   因为当从某个点画到该点并从该点往外画时,   必是使用了这个点两条边,   而奇点作为起点则终点也必为奇点,   可以把起点的起始输出边和终点的终止输出边看成是一条,   比如上图的A和B节点的最上面那条公共边,   可以想象在这条公共边上有很多很多的点被屏蔽了;   奇点作为终点时也一样;   偶点则可以做起点终点和中间点;   所以最终得出结论,   一个图中奇点的个数必须为0,   或者2;   </p>
+<p>而最终的一笔画问题得出的结论为:   </p>
+<p>(1) 一个图全由偶点组成,   则该图一定可以一笔画出,   并且以某个点x作为起点,   该点也一定是终点;   </p>
+<p>(2) 如果一个图有两个奇点,   则必以这两个奇点为起点和终点才可以一笔画完;   </p>
+<p>(3) 剩下的图都不可以一笔画完;   </p>
+<h1 id="2-图"><a href="#2-图" class="headerlink" title="2. 图"></a>2. 图</h1><h2 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h2><p>一个边集里的任意一边都有点集里的一个点对与之对应,   这样的点集和点对共同组成图;   </p>
+<h2 id="2-2-相关概念"><a href="#2-2-相关概念" class="headerlink" title="2.2 相关概念"></a>2.2 相关概念</h2><ol>
+<li><p>点与边关联关系</p>
+<p>如果某一条边e<sub>y</sub>和点对(v<sub>i</sub>,   v<sub>j</sub>)相对应,   则v<sub>i</sub>和v<sub>j</sub>为e<sub>y</sub>的端点,   且v<sub>i</sub>,   v<sub>j</sub>与e<sub>y</sub>相关联;   </p>
+</li>
+<li><p>相邻点</p>
+<p>与该点相连的边所对应的另外一端的端点;   </p>
+</li>
+<li><p>相邻边</p>
+<p>与同一点相连的两条边;   </p>
+</li>
+<li><p>度数</p>
+<p>与某一个点相连的边数;   </p>
+</li>
+<li><p>非平面图</p>
+<p>在平面中画出时,   有交叉边的图;   平面图为无交叉的图;   </p>
+</li>
+<li><p>有权图</p>
+<p>点和边都可以有权,   在通信网中,   边的权值可以具体值信道造价,   容量,   长度;   </p>
+</li>
+</ol>
+<h2 id="2-3-图的运算"><a href="#2-3-图的运算" class="headerlink" title="2.3 图的运算"></a>2.3 图的运算</h2><ol>
+<li><p>子图</p>
+<p>一个图A的点子集和边子集包含于另一个图B的点子集和边子集,   则图A包含于图B;   而如果图A != 图B,   则图A真包含于(⫋)图B;   </p>
+</li>
+<li><p>并图</p>
+<p><img src="https://s2.loli.net/2022/04/14/GaVrETuzOSdnIj9.png" width="400"></img></p>
+<p>点集与点集合并,   边集与边集合并;   他俩合并后为</p>
+<p><img src="https://s2.loli.net/2022/04/14/DECNxRdqrtwu4mv.png" width="300"></img></p>
+</li>
+<li><p>交图</p>
+<p>点集与点集相交,   边集与边集相交;   </p>
+</li>
+<li><p>差图<br>$$<br>G_c = G_a \backsim G_b<br>$$<br>有两种计算方法,   一是<br>$$<br>G_c = G_a ∪ G_b - G_b<br>$$<br>另一种是<br>$$<br>G_c = G_a - G_a ∩ G_b<br>$$<br><strong>注意是先对其边进行运算,   然后保留这些边关联的点;</strong>   </p>
+</li>
+<li><p>环和图<br>$$<br>G_c = G_a \oplus G_b<br>$$<br>计算规则是<br>$$<br>G_c = G_a \cup G_b - G_a \cap G_b<br>$$</p>
+</li>
+</ol>
+<h2 id="2-4-图的连结性"><a href="#2-4-图的连结性" class="headerlink" title="2.4 图的连结性"></a>2.4 图的连结性</h2><ol>
+<li><p>点的度数</p>
+<p>一个点所连接的边的数目;   度数有两个性质:   </p>
+<p>(1) 对于有n个点,   m条边的无向图,   满足<br>$$<br>\sum_{i = 1}^nd(v_i) = 2m<br>$$<br>也就是度数等于边的数目的两倍,   这很好理解,   每一条边连接着两个点,   所以每一条边对应两个度数;   而有向图的入度等于出度;   </p>
+<p>(2) 度数为奇数的点的数目必为偶数;   度数为奇数的点必须成对存在,   因为如果一张图中只有一个点的度数为奇数,   则代表有奇数条边从该点伸出去,   但因为只有一个点的度数为奇数,   代表该点必然有一条边找不到另外一个端点,   因为一条边对应两个端点;   </p>
+<p><img src="https://s2.loli.net/2022/04/16/PwQT7V2KYvOkfbx.png" width="400"></img></p>
+</li>
+<li><p>链,   环和径</p>
+<p>(1) 边序列:   有限条边的一种串序排列方式,   边和点都可以重复;   </p>
+<p>(2) 链:   有限条边的串序排列方式,   点可以重复,   遍不可以重复,   同时为了与环区分,   规定链的起点和终点不能为同一个点;   </p>
+<p>(3) 环:   闭链,   起点和终点为同一个点的链,   点可以重复;   </p>
+<p>(4) 径:   无重复点又无重复边的边序列;   </p>
+</li>
+<li><p>连通图</p>
+<p>图中任意两个点都至少有一条径连接起来的图称为连通图;   非连通图可以分为几个最大连通子图,   最大联通子图的判断为,   如果某一个被认为是最大连通子图的图加上了原图中任意一个不属于该子图元素后,   仍然是连通图的话,   则该子图不是最大连通子图;   </p>
+</li>
+<li><p>全连通图</p>
+<p>任何两个点都有边的无向图为全连通图;   任取一个点对(两个点)都有边与之对应,   所以全连通图的边数为<br>$$<br>m = C_n^2 = \frac{n(n - 1)}{2}<br>$$<br>由于每个点都和其他所有点都有边,   所以每个点的度数都为n - 1;   </p>
+</li>
+<li><p>两部图</p>
+<p>一个图中的点可以被分到两个集合,   每一条边的两个端点分别在这两个不同的集合中;   完全两部图一共有m * n条边,   这是显而易见的;   </p>
+</li>
+<li><p>正则图</p>
+<p>所有端点的度数都相等的图;   无重边和自环的全连通图是正则图;   </p>
+</li>
+<li><p>欧拉图</p>
+<p>每一个点的度数都为偶数的图为连通图;   这意味着欧拉图不一定是连通的;   在连通的欧拉图中,   必可以找到一个包含所有边的环,   因为连通图意味着可以一笔画出,   也就是说;<br>$$<br>一个图中可以找到一个包含所有边的环\Leftrightarrow连通欧拉图<br>$$<br>二欧拉图的环和也为欧拉图<br>$$<br>\bigtriangledown\space\oplus\space\bigtriangleup=欧拉图<br>$$</p>
+</li>
+<li><p>M图</p>
+<p>如果图中只有两个点的度数为奇数,   则此图为M图;   如果M图为非连通图,   则只有一个部分为M图,   其他都是欧拉图,   因为奇数的点必在一个部分里,   所以其他的部分的点只有偶数的度数;   </p>
+</li>
+<li><p>汉密尔顿图</p>
+<p>存在一个含有所有点的环为汉密尔图;   </p>
+</li>
+</ol>
+<h1 id="3-树"><a href="#3-树" class="headerlink" title="3. 树"></a>3. 树</h1><h2 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h2><p>任何两点间有且只有一条径的图,   也就是说任意两点间有且只有一条通路;   如果一棵树有n个点,   则这棵树的边数为n - 1,   因为两个相邻的点只有一条边;   </p>
+<h2 id="3-2-相关概念"><a href="#3-2-相关概念" class="headerlink" title="3.2 相关概念"></a>3.2 相关概念</h2><ol>
+<li><p>主树</p>
+<p>含有一张图所有点的树;   只有连通图才有主树,   有主树的图也必为连通图;<br>$$<br>含有主树的图\Leftrightarrow 连通图<br>$$<br>而一张连通图的主树可能不唯一,   主树可以被分为根树,   星树和线树,   但是其实大多数的树都为根树,   因为星树和线树很容易变成根树;   </p>
+<p><img src="https://s2.loli.net/2022/04/24/W39hAnmNiul5IPJ.png" width="800"></img></p>
+</li>
+<li><p>树枝与连枝</p>
+<p>主树的边称为树枝,   非树枝称为连枝;   </p>
+</li>
+<li><p>阶与空度</p>
+<p>连通图的主树的树枝树称为该连通图的阶;   一张连通图有n个点的话,   该图的阶为n - 1;   空度为该连通图的连枝数;   如果连通图的边数为m,   则空度为m - n + 1;   空度可以衡量图的连接程度,   空度越大,   连接程度越好,   空度为0表示该连通图为最小连结图;   </p>
+</li>
+</ol>
+<h1 id="4-割与环"><a href="#4-割与环" class="headerlink" title="4. 割与环"></a>4. 割与环</h1><h2 id="4-1-定义"><a href="#4-1-定义" class="headerlink" title="4.1 定义"></a>4.1 定义</h2><p>去掉某图的一些子集使得该图的部分数增加,   就可以把这些子集称为割;   讨论图的连结性时常用树的概念,   而讨论图的破坏性时,   也就是图的承受破坏点数(使用Hp的概念),   常使用割的概念;   </p>
+<h2 id="4-2-相关概念"><a href="#4-2-相关概念" class="headerlink" title="4.2 相关概念"></a>4.2 相关概念</h2></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/04/18/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-022-dong-tai-gui-hua-5/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">算法体系结构022-动态规划5</div></div></a></div><div class="next-post pull-right"><a href="/2022/04/12/lan-qiu/tou-lan/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">投篮</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%E5%BC%95%E5%85%A5"><span class="toc-text">1. 问题引入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E4%B8%80%E7%AC%94%E7%94%BB%E9%97%AE%E9%A2%98"><span class="toc-text">1.1 一笔画问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%A6%82%E5%BF%B5%E5%BC%95%E5%85%A5"><span class="toc-text">1.2 概念引入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%9B%BE"><span class="toc-text">2. 图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%AE%9A%E4%B9%89"><span class="toc-text">2.1 定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">2.2 相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%9B%BE%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">2.3 图的运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%9B%BE%E7%9A%84%E8%BF%9E%E7%BB%93%E6%80%A7"><span class="toc-text">2.4 图的连结性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%A0%91"><span class="toc-text">3. 树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%AE%9A%E4%B9%89"><span class="toc-text">3.1 定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">3.2 相关概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%89%B2%E4%B8%8E%E7%8E%AF"><span class="toc-text">4. 割与环</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%AE%9A%E4%B9%89"><span class="toc-text">4.1 定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">4.2 相关概念</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

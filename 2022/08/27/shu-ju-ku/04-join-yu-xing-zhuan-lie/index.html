@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>oracle_join与行转列 | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 99语法由于92语法中的连接部分较为晦涩,   99语法定义了一些表述更加明确的连接关键字;    1.1 cross joina cross join b表示对a和b两张表进行笛卡尔积,   相当于92语法中,   在没有过滤条件的情况之下使用where语句;    1.2 自然连接natural join,   表示自动找寻两张表的相同的列,   然后连接显示,   如果没有找到,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle_join与行转列">
+<meta property="og:url" content="http://example.com/2022/08/27/shu-ju-ku/04-join-yu-xing-zhuan-lie/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="1. 99语法由于92语法中的连接部分较为晦涩,   99语法定义了一些表述更加明确的连接关键字;    1.1 cross joina cross join b表示对a和b两张表进行笛卡尔积,   相当于92语法中,   在没有过滤条件的情况之下使用where语句;    1.2 自然连接natural join,   表示自动找寻两张表的相同的列,   然后连接显示,   如果没有找到,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-08-27T02:14:11.000Z">
+<meta property="article:modified_time" content="2022-09-26T00:17:19.651Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/27/shu-ju-ku/04-join-yu-xing-zhuan-lie/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'oracle_join与行转列',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-26 08:17:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">oracle_join与行转列</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-08-27T02:14:11.000Z" title=" 2022-08-27 10:14:11">2022-08-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-09-26T00:17:19.651Z" title=" 2022-09-26 08:17:19">2022-09-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="oracle_join与行转列"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-99语法"><a href="#1-99语法" class="headerlink" title="1. 99语法"></a>1. 99语法</h1><p>由于92语法中的连接部分较为晦涩,   99语法定义了一些表述更加明确的连接关键字;   </p>
+<h2 id="1-1-cross-join"><a href="#1-1-cross-join" class="headerlink" title="1.1 cross join"></a>1.1 cross join</h2><p>a cross join b表示对a和b两张表进行笛卡尔积,   相当于92语法中,   在没有过滤条件的情况之下使用where语句;   </p>
+<h2 id="1-2-自然连接"><a href="#1-2-自然连接" class="headerlink" title="1.2 自然连接"></a>1.2 自然连接</h2><p>natural join,   表示自动找寻两张表的相同的列,   然后连接显示,   如果没有找到,   那就直接进行笛卡尔积;   </p>
+<h2 id="1-3-on语句"><a href="#1-3-on语句" class="headerlink" title="1.3 on语句"></a>1.3 on语句</h2><p>99语法中的条件语句,   相当于where,   可以写等值连接,   又可以写非等值连接;   </p>
+<h2 id="1-4-左右全连接"><a href="#1-4-左右全连接" class="headerlink" title="1.4 左右全连接"></a>1.4 左右全连接</h2><p>左外连接,   将左边张表的数据完全显示,   相当于92语法中的加’+’号的操作,   不过使用的是关键字left outer join,   右连接与之类似;   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from emp e left outer join dept d on e.deptno = d.deptno;</span><br><span class="line">select * from emp e, dept d where e.deptno = d.deptno(+);</span><br></pre></td></tr></table></figure>
+
+<p>全连接full outer join相当于同时在左右两边加上加号;   </p>
+<h2 id="1-5-inner-join"><a href="#1-5-inner-join" class="headerlink" title="1.5 inner join"></a>1.5 inner join</h2><p>其实就是join,   就是最原始的join,   inner可以省略;   </p>
+<h2 id="1-6-using"><a href="#1-6-using" class="headerlink" title="1.6 using"></a>1.6 using</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from emp e join dept d using(deptno);</span><br></pre></td></tr></table></figure>
+
+<p>使用using代替on语句,   但是需要注意的是,   using语句中的过滤条件不再属于任意一张表,   而是作为特殊的列显示在前面,   比如下面这条语句就会报错,   因为deptno已经不属于e了;   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.deptno from emp e join dept d using(deptno);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><input disabled="" type="checkbox">  检索雇员名字、所在单位、薪水等级 </p>
+<p>select e.ename, d.loc, sg.grade<br>  from emp e<br>  join dept d</p>
+<pre><code>on e.deptno = d.deptno
+</code></pre>
+<p>  join salgrade sg</p>
+<pre><code>on e.sal between sg.losal and sg.hisal
+</code></pre>
+<p>需要注意的是emp表和salgrade表是怎样连接的;   </p>
+</li>
+</ul>
+<h1 id="2-子查询"><a href="#2-子查询" class="headerlink" title="2. 子查询"></a>2. 子查询</h1><h2 id="2-1-单行子查询"><a href="#2-1-单行子查询" class="headerlink" title="2.1 单行子查询"></a>2.1 单行子查询</h2><p>在条件语句中使用完整的查询语句;   </p>
+<ul>
+<li><p><input disabled="" type="checkbox">  查询有哪些人的薪水是在整个雇员的平均薪水之上的;   </p>
+<p>先写好查询平均薪水的语句:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(e.sal) from emp e;   </span><br></pre></td></tr></table></figure>
+
+<p>然后查询有哪些人是高于这个薪水的:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.ename,avg(e.sal) from emp e where e.sal &gt; (select avg(e.sal) from emp e);   </span><br></pre></td></tr></table></figure>
+
+<p>当然也可以加上津贴:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">  from emp e</span><br><span class="line"> where (e.sal + nvl(comm, 0)) &gt;</span><br><span class="line">       (select avg((e.sal + nvl(comm, 0))) from emp e)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>作业 </p>
+<ul>
+<li><p><input disabled="" type="checkbox">  1、求平均薪水最高的部门的部门编号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select deptno, avg_sal</span><br><span class="line">  from (select deptno, avg(sal) avg_sal from emp group by deptno) temp</span><br><span class="line"> where avg_sal =</span><br><span class="line">       (select max(avg_sal)</span><br><span class="line">          from (select avg(sal) avg_sal from emp group by deptno))</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果说这需求求的是部门的平均薪水,   那其实很好办,   avg(sal)是组函数,   deptno是group by的条件:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select deptno, avg(sal) from emp group by deptno</span><br></pre></td></tr></table></figure>
+
+
+
+<p>但是如果要求平均最高薪水,   就需要进行组函数嵌套:       </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select deptno, max(avg(sal)) from emp group by deptno</span><br></pre></td></tr></table></figure>
+
+<p><strong>上面这是错误的语句</strong>,   这时只有删除deptno才不会报错,   并且给出最高平均薪水;   但是题目求的是平均薪水最高的部门编号,   所以删除deptno的语句只能作为一个子查询,   并且需要一个主语句去配合他;   所以可以使用一个select子查询将avg(sal)当成一张虚拟表的基本元素,   然后让该元素去匹配最高平均部门薪水:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select deptno, avg_sal</span><br><span class="line">  from (select deptno, avg(sal) avg_sal from emp group by deptno) temp</span><br><span class="line"> where avg_sal =</span><br><span class="line">       (select max(avg(sal)) from emp group by deptno)</span><br></pre></td></tr></table></figure>
+
+<p><strong>最上面</strong>给出的答案,   其实是先用查询找到平均的部门薪水,   然后将这条语句看作子查询,   再查询这仨的最大值,   再将这个查询到的最大值看成子查询,   </p>
+</li>
+<li><p><input disabled="" type="checkbox">  2、求部门平均薪水的等级</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select temp.deptno, temp.avg_sal, sg.grade</span><br><span class="line">  from (select deptno, avg(sal) avg_sal from emp group by deptno) temp</span><br><span class="line">  join salgrade sg</span><br><span class="line">    on temp.avg_sal between sg.losal and sg.hisal</span><br></pre></td></tr></table></figure></li>
+<li><p><input disabled="" type="checkbox">  3、求部门平均的薪水等级</p>
+<p>首先注意求的是<strong>部门平均的,   薪水等级</strong>;   也就是先把部门的员工与等级对应起来,   然后再<strong>对等级进行一个取平均</strong>,   而不是像上面这样,   把部门的平均薪水与等级对应起来;   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select e.deptno, avg(sg.grade)</span><br><span class="line">  from emp e</span><br><span class="line">  join salgrade sg</span><br><span class="line">    on e.sal between sg.losal and sg.hisal</span><br><span class="line">group by e.deptno</span><br></pre></td></tr></table></figure>
+
+<p>可以采取如上的写法,   因为avg(sg.grade)是组函数,   所以可以出现在选择列表中;   当然也可以用一种结构更加清晰的写法:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select deptno, avg(grade) avg_sal_grade</span><br><span class="line">  from (select deptno, grade</span><br><span class="line">          from emp</span><br><span class="line">          join salgrade</span><br><span class="line">            on emp.sal between salgrade.losal and salgrade.hisal)</span><br><span class="line"> group by deptno;</span><br></pre></td></tr></table></figure>
+
+<p>先把emp和salgrade关联起来,   以其中的deptno和grade为元素,   将该查询看成一张表,   那自然可以进行</p>
+</li>
+<li><p><input disabled="" type="checkbox">  4、求薪水最高的前5名雇员</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from (select * from emp e order by e.sal desc) where rownum &lt;= 5</span><br></pre></td></tr></table></figure>
+
+<p>desc为降序排列,   这条语句中,   <strong>子查询排序过后会增加一个字段rownum,   但是内层循环只能将排序过后的数据全部输出</strong>,   只能使用外层循环通过rownum对内层循环限制输出,   达到想要的效果;   </p>
+</li>
+<li><p><input disabled="" type="checkbox">  5、求薪水最高的第6到10名雇员<br>如果像下面这样写,   虽然不会报错,   但是会没有值:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">  from (select * from emp e order by e.sal desc)</span><br><span class="line"> where rownum &gt; 5</span><br><span class="line">   and rownum &lt;= 10</span><br></pre></td></tr></table></figure>
+
+<p>原因没怎么听明白,   说什么rownum不是一个定值,   当看到rownum&gt;5时,   会将前5个数据剔除掉,   进而第6、7、8…个数据就变成了第1、2、3…个数据,   然后就造成了错误    [(ﾟДﾟ≡ﾟдﾟ)?!]</p>
+<p>而正确的方法很复杂,   如下:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">  from (select t1.*, rownum ro</span><br><span class="line">          from (select * from emp e order by e.sal desc) t1) t2</span><br><span class="line"> where t2.ro &gt; 5</span><br><span class="line">   and t2.ro &lt;= 10</span><br></pre></td></tr></table></figure>
+
+<p>首先将emp表按照sal排序,   这时emp表会有一个隐藏的rownum字段,   然后以这个子查询为虚拟表,   提取出rownum字段,   <strong>并且为该rownum取别名</strong>,   然后再将这个子查询看作虚拟表,   这个时候最里面的排好序的rownum就可以当作普通字段在where后面使用了,   也可以说rownum的值就不会变了;   </p>
+<p>当然也可以,   那啥,   也可以提前对rownum进行筛选,   如下:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">  from (select t1.*, rownum ro</span><br><span class="line">          from (select * from emp e order by e.sal desc) t1</span><br><span class="line">         where rownum &lt;= 10) t2</span><br><span class="line"> where t2.ro &gt; 5</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-行转列"><a href="#3-行转列" class="headerlink" title="3. 行转列"></a>3. 行转列</h1><ul>
+<li><p><input disabled="" type="checkbox">  一道SQL语句面试题，关于group by<br>表内容：<br>2005-05-09 胜<br>2005-05-09 胜<br>2005-05-09 负<br>2005-05-09 负<br>2005-05-10 胜<br>2005-05-10 负<br>2005-05-10 负</p>
+<p>如果要生成下列结果, 该如何写sql语句?</p>
+<p>$$<br>&amp;胜&amp;负\</p>
+<p>2005-05-09 &amp; 2&amp;2\<br>2005-05-10 &amp;1 &amp;2<br>$$<br>答案:   就是通过decode将胜胜负负区分开来,   也就是将胜和负分为两列,   然后求数量:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select rq,</span><br><span class="line">       count(decode(shengfu, &#x27;胜&#x27;, 2)) 胜,</span><br><span class="line">       count(decode(shengfu, &#x27;负&#x27;, 2)) 负</span><br><span class="line">  from tmp_2</span><br><span class="line"> group by rq;</span><br></pre></td></tr></table></figure></li>
+<li><p><input disabled="" type="checkbox">  得到类似下面的结果<br>$$<br>\begin{align*}<br>&amp;姓名&amp;&amp;语文&amp;&amp;数学&amp;&amp;英语\<br>&amp;张三&amp;&amp;78&amp;&amp;88&amp;&amp;98\<br>&amp;李四&amp;&amp;89&amp;&amp;76&amp;&amp;90\<br>&amp;王五&amp;&amp;99&amp;&amp;66&amp;&amp;91<br>\end{align*}<br>$$<br>与上一题相似,   把列转成行,   再去空:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select stu.name,</span><br><span class="line">       max(decode(stu.subject, &#x27;语文&#x27;, stu.score)) 语文,</span><br><span class="line">       max(decode(stu.subject, &#x27;数学&#x27;, stu.score)) 数学,</span><br><span class="line">       max(decode(stu.subject, &#x27;英语&#x27;, stu.score)) 英语</span><br><span class="line">  from student_score stu group by stu.name</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">select stu.name,</span><br><span class="line">       max(case stu.subject</span><br><span class="line">             when &#x27;语文&#x27; then</span><br><span class="line">              stu.score</span><br><span class="line">           end) 语文,</span><br><span class="line">       max(case stu.subject</span><br><span class="line">             when &#x27;数学&#x27; then</span><br><span class="line">              stu.score</span><br><span class="line">           end) 数学,</span><br><span class="line">       max(case stu.subject</span><br><span class="line">             when &#x27;英语&#x27; then</span><br><span class="line">              stu.score</span><br><span class="line">           end) 英语</span><br><span class="line"></span><br><span class="line">  from student_score stu</span><br><span class="line"> group by stu.name</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select stu01.name, stu01.score 语文, stu02.score 数学, stu03.score 英语</span><br><span class="line">  from (select stu.name, stu.score</span><br><span class="line">          from student_score stu</span><br><span class="line">         where stu.subject = &#x27;语文&#x27;) stu01</span><br><span class="line">  join (select stu.name, stu.score</span><br><span class="line">          from student_score stu</span><br><span class="line">         where stu.subject = &#x27;数学&#x27;) stu02</span><br><span class="line">    on stu01.name = stu02.name</span><br><span class="line">  join (select stu.name, stu.score</span><br><span class="line">          from student_score stu</span><br><span class="line">         where stu.subject = &#x27;英语&#x27;) stu03</span><br><span class="line">    on stu01.name = stu03.name</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>要注意的是这里的逻辑,   </p>
+<img src="D:/Program%20Files/Typora/img/image-20220926080315200.png" alt="image-20220926080315200" style="zoom: 80%;" />
+
+<p>当遍历到第一条数据时,   显示这一条数据的name,   如果subject是’语文’,   那就显示这一条数据的score得到如下数据:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20220926081147828.png" alt="image-20220926081147828" style="zoom:80%;" />
+
+<p>再以name为分组依据,   对每个name的每个subject进行去空,   也就是取最大值,   即可得到最终的结果;   </p>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox">  有一张表，里面有3个字段：语文，数学，英语。其中有3条记录分别表示语文70分，数学80分，英语58分，请用一条sql语句查询出这三条记录并按以下条件显示出来（并写出您的思路）：<br>   大于或等于80表示优秀，大于或等于60表示及格，小于60分表示不及格。  </p>
+<pre><code>   显示格式：  
+</code></pre>
+<p>$$<br>\begin{align*}<br>&amp;语文&amp;&amp;数学&amp;&amp;英语\<br>&amp;及格&amp;&amp;优秀&amp;&amp;不及格<br>\end{align*}<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/28/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-029-bfprt-yu-xu-shui-chi/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">算法体系结构029_bfprt与蓄水池</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/10/sui-bi/xue-xi-yan-jiu/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">学习研究</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-99%E8%AF%AD%E6%B3%95"><span class="toc-text">1. 99语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-cross-join"><span class="toc-text">1.1 cross join</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E8%87%AA%E7%84%B6%E8%BF%9E%E6%8E%A5"><span class="toc-text">1.2 自然连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-on%E8%AF%AD%E5%8F%A5"><span class="toc-text">1.3 on语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E5%B7%A6%E5%8F%B3%E5%85%A8%E8%BF%9E%E6%8E%A5"><span class="toc-text">1.4 左右全连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-inner-join"><span class="toc-text">1.5 inner join</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-using"><span class="toc-text">1.6 using</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">2. 子查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%8D%95%E8%A1%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">2.1 单行子查询</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%A1%8C%E8%BD%AC%E5%88%97"><span class="toc-text">3. 行转列</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

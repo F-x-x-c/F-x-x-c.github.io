@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>算法体系结构023-动态规划6 | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 数组分裂和 题目 给定一个正数数组arr,   把正数数组分为两个集合,   并且尽量让两个集合的累加和接近,   返回小的那个集合的累加和;     思路递归函数的定义:   对于arr[i… arr.len - 1]这个区间,   区间的累加和为sum,   求出这个区间上的接近但不大于sum &#x2F; 2的元素选择累加和;   这需要对该区间上的每一个位置的元素都进行选择,   选择要还是不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法体系结构023-动态规划6">
+<meta property="og:url" content="http://example.com/2022/05/11/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-023-dong-tai-gui-hua-6/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="1. 数组分裂和 题目 给定一个正数数组arr,   把正数数组分为两个集合,   并且尽量让两个集合的累加和接近,   返回小的那个集合的累加和;     思路递归函数的定义:   对于arr[i… arr.len - 1]这个区间,   区间的累加和为sum,   求出这个区间上的接近但不大于sum &#x2F; 2的元素选择累加和;   这需要对该区间上的每一个位置的元素都进行选择,   选择要还是不">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-05-11T01:57:44.000Z">
+<meta property="article:modified_time" content="2022-06-18T08:54:02.789Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/11/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-023-dong-tai-gui-hua-6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法体系结构023-动态规划6',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-18 16:54:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">算法体系结构023-动态规划6</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-05-11T01:57:44.000Z" title=" 2022-05-11 09:57:44">2022-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-06-18T08:54:02.789Z" title=" 2022-06-18 16:54:02">2022-06-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">算法体系结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法体系结构023-动态规划6"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-数组分裂和"><a href="#1-数组分裂和" class="headerlink" title="1. 数组分裂和"></a>1. 数组分裂和</h1><ol>
+<li><p>题目</p>
+<p>给定一个正数数组arr,   把正数数组分为两个集合,   并且尽量让两个集合的累加和接近,   返回小的那个集合的累加和;   </p>
+</li>
+<li><p>思路<br>递归函数的定义:   对于arr[i… arr.len - 1]这个区间,   区间的累加和为sum,   求出这个区间上的接近但不大于sum / 2的元素选择累加和;   这需要对该区间上的每一个位置的元素都进行选择,   选择要还是不要;   而判断的依据需要依赖这个位置和下一个位置的选择情况,   需要抓取到下一个arr[i - 1… arr.len - 1]上的结果,   然后与选择了这个位置的情况作比较,   返回较大值即可;   </p>
+</li>
+<li><p>是否有利可图?<br>对于数组[5,   2,   3…],   要凑20;   √××,   那么就是(i = 4,   rest = 15);   ×√√,   那么就是(i = 4,   rest = 15),   有利可图;   </p>
+</li>
+</ol>
+<h1 id="2-数组分裂和-限制个数版"><a href="#2-数组分裂和-限制个数版" class="headerlink" title="2. 数组分裂和.限制个数版"></a>2. 数组分裂和.限制个数版</h1><ol>
+<li><p>题目<br>给定一个正数数组,   如果arr的元素个数为偶数,   则要求两个集合的包含的个数一样多,   如果为奇数,   则两个集合的元素个数必须只差一个;   在这种情况下,   尽量让两个集合的累加和接近;   返回小的那个累加和;   </p>
+</li>
+<li><p>思路<br>只需要按照上面的题目的思路,   加上一个限制条件restNum即可;   但是实现起来却有点麻烦;   尤其是左神的思路;   </p>
+</li>
+<li><p>解法1:   递归<br>根据题意,   如果arr元素个数为奇数的话,   则需要比较两个累加和,   返回较小的那个累加和,   也就是说,   较小的累加和有可能是元素个数多的那个集合,   也可能是小的那个集合;   递归函数定义:   在arr[i … len - 1]上进行自由选择,   挑选的个数一定要是restNum个,   累加和小于等于rest;   </p>
+<p>具体实现:   </p>
+<p>(1) 当遍历到末尾的时候,   如果说挑选的刚好挑选完毕,   也就是restNum为0,   则为有效解,   否则为无效解;   为有效解时,   考虑递归函数的定义,   一定返回0,   也就是在一个没有数的领域去挑数,   以此去凑rest,   但是因为没有数了,   所以这个范围就应当返回0;   而为无效解时,   约定返回1;   </p>
+<p>(2) 从左至右的选择模型,   递归函数中对所操作的位置进行选择,   所以有两种情况,   选和不选;   不选很简单,   但是选就有点复杂;   根据题意,   这个集合的总和不能超过rest,   所以如果正在操作的位置index对应的数比rest大,   那么就为无效解,   反之就为有效解,   需要先通过递归函数获取到递归的结果,   如果这个递归结果仍然是-1,   意味着也为无效解,   如果不是1,   则需要结果需要加上这个位置的值;   将其与不选这个位置的结果进行比较,   返回较大值即可;   </p>
+</li>
+<li><p>解法2:   动态规划</p>
+<p>需要使用三重数组,   不需要太过于关注挑选的个数为奇数还是偶数,   不过在初始化的时候,   其他的倒是没什么;  </p>
+</li>
+</ol>
+<h1 id="3-N皇后问题"><a href="#3-N皇后问题" class="headerlink" title="3. N皇后问题"></a>3. N皇后问题</h1><ol>
+<li><p>题目<br>给定一个N * N的棋盘,   依次将N个皇后放在棋盘上,   要求皇后之间两两不能同行、同列和同斜线,   返回有多少种摆法;   </p>
+</li>
+<li><p>思路1:   递归</p>
+<p>在棋盘的第一行第一个位置摆一个皇后,   然后第二行第三个位置再摆一个,   每一行都摆一个皇后,   如果这一行的皇后摆在哪里都不合适,   那就调整上一行的皇后;<br>该题不可用从前简单的对位置依赖进行分析而得出的动态规划,   而是使用更高端的技巧;   </p>
+</li>
+<li><p>解法1</p>
+<p>一共要处理N个皇后,   递归函数定义:   在第index行进行皇后的摆放,   要求不能够与前面的皇后起冲突,   如果没有起冲突,   那就把这个位置信息扔到下一层的递归函数进行方法数的获取;   递归函数有3个参数,   index表示在第几行进行皇后的摆放,   一个整型的数组before,   该数组用于存放已经放置的皇后的列数,   因为用到这个数组的地方只有两个,   一个是去判断是否冲突,   这时需要进行数组从头开始的遍历,   所以不需要行数,   另一个地方是紧接着之后,   如果这个位置与之前所有的皇后都不冲突,   则把这个位置的列数放在下一层的递归函数中去,   进行结果的获取,   而这里因为是遍历的index这一行的每一个位置(每一列),   所以在进行before数组的填写时也可以直接获取行数,   综上,   存储前面的皇后的信息只需要存储这些皇后的列数即可;   判断是否冲突:   遍历before数组,   由于前面的皇后的行数绝对不超过当前递归函数的index,   所以只需要从0遍历到index,   如果出了一点错误,   直接返回false;   而判断的条件由于已经不同行,   那么只需要不同列以及不同斜线即可,   不同列很简单,   而不同斜线需要拿到比较的两个位置的坐标,   横纵坐标分别相减,   再进行相等判断即可;   </p>
+</li>
+<li><p>解法2:   优化常数项时间的解法</p>
+<p>由于N皇后问题里N的数值不宜过大,   所以可以采用整型值的位,   来存储信息,   而在N皇后中,   具体的信息就为已选择的皇后对后面皇后的选择的影响;   这里需要重新审视解法1,   因为每一行只可能有一个皇后,   所以对行进行遍历,   选择皇后,   而前面选择的皇后对后面皇后的选择有影响,   已选取的一个皇后对某行的皇后选取的影响为,   皇后的左斜线右斜线和竖直线与该行的相交元素不可选;   而从整个遍历过程来考虑,   第一行所选择的皇后对第二行的影响为这个皇后的左下,   下,   右下位置不可选,   而对第三行的影响为刚刚提到的位置里的左下位置的左下位置,   以及刚刚提到的位置的右下位置的右下位置不可选,   所以这可以采用三个整型变量来存放这些限制,   分别为左下限制、列限制和右下限制。而由于是一行一行的遍历，并且一个已选皇后的左下和右下的影响按照斜线递增，所以在传递左下限制和右下限制时可以对左下右下限制对应的整型变量采用左移和右移位数据的方式；</p>
+</li>
+<li><p>解法2：递归函数详解</p>
+<p>传递参数：<br>int limit：该整型变量的后N个位全为1，也就是coLimit的最终形态，负责与coLimit完成终止条件的判断；<br>int coLimit：某个皇后的列限制，最终形态为limit；<br>int leftLimit：某个皇后的左下对角线限制；<br>int rightLimit：某个皇后的右下对角线限制；</p>
+<p>终止条件：当coLimit等于limit时，返回1；也就是说，由于要摆N个皇后，所以必定是每一列摆一个，所以列限制的终止条件必定为limit，如果等于了，则表明找到了一种有效方法，所以返回1；</p>
+<p>递归本体：首先要使用一个变量找出所有可以尝试的位置，用1表示,   原因是表示为1之后比较好挨个拿1;   由于那些limit的位为1时表示不可选,   为0时表示可选,   把他们或起来,   再取反后的结果为:   为1的位是可以尝试的位,   但是高出N位的那些位也为1;   所以需要将这个结果与limit相与,   使得高出N的位为0,   又不影响到低N位,   这样就可以得到正确的用1表示可尝试位置的变量canTry了;<br>然后就是挨个尝试可以尝试的位置了;   这里涉及到获取一个变量最右边的1的技巧:   我们获取的是变量canTry最右边的那个1,   这个1如何表示呢? 肯定是要用一个变量来存储的,   所以工作是用一个变量mostRightOne来存储变量canTry最右边的1,   而注意,   对于最右边的那个1(这个位不妨叫它mro),   它的右边一定全部都是0,   那么将变量canTry取反,   使得mro变为0,   而mro右边的位都变为了1,   取反后得到的结果加1,   mro右边的位会不断地往左边进位,   使得mro又变回了1;   而对于mro左边的位,   由于加1的操作并没有影响到它们,   加1的影响到了mro就停止了,   所以mro左边的位就为取反的结果,   然后再把这个结果和canTry相与,   就得到了想要的那个变量mostRightOne,   其实就一句代码的事:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mostRightOne = canTry &amp; (~canTry + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>然后就开始尝试这个位置会导致多少种结果,   其实就是认为已经选择了这个位置作为皇后,   然后把这个位置的影响加到那些limit中进行递归,   具体做法是:   coLimit和mostRightOne相与,   代表更新了列限制,   leftLimit和mostRightOne相与,   再往左无符号移动一位,   因为因为这是对于下一列的影响,   所以需要往左移动一位,   而又因为往左移位本来就是低位添0,   所以无所谓是有符号还是无符号,   rightLimit和mostRightOne相与,   再往右无符号右移1位,   这里就必须是无符号移位了,   因为涉及到对高位进行数字的填补;   把这些东西搞好之后放到递归函数里,   用变量res来进行结果的获取;   这一轮迭代的最后,   让canTry减去mostRightOne,   在下一轮迭代时获取到的是这一轮的mro右边的那个1;   出迭代后,   返回res即可;   </p>
+</li>
+</ol>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/21/ying-ping/bao-lie-gu-shou-ying-ping/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">《爆裂鼓手》影评</div></div></a></div><div class="next-post pull-right"><a href="/2022/04/18/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-022-dong-tai-gui-hua-5/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">算法体系结构022-动态规划5</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84%E5%88%86%E8%A3%82%E5%92%8C"><span class="toc-text">1. 数组分裂和</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E6%95%B0%E7%BB%84%E5%88%86%E8%A3%82%E5%92%8C-%E9%99%90%E5%88%B6%E4%B8%AA%E6%95%B0%E7%89%88"><span class="toc-text">2. 数组分裂和.限制个数版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98"><span class="toc-text">3. N皇后问题</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

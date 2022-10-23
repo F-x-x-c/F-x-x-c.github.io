@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="≈ ≡ ≠ ＝ ≤≥ ＜ ＞ ≮ ≯ ∷ ± ＋ － × ÷ ／ ∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ‖ ∠ ⌒ ≌ ∽ √  Ⅰ Ⅱ ⊕ ⊙∥α β γ δ ε ζ η θ Δ通信原理02_信号噪声分析2.1 确定信号分析2.1.1 确定信号的分类 周期信号与非周期信号$$\begin{align*}&amp;f(t)&#x3D;f(t+ nT) n &#x3D; 0, \pm1,\pm2,\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2022/09/20/tong-xin-yuan-li/tong-xin-yuan-li-di-2-zhang/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="≈ ≡ ≠ ＝ ≤≥ ＜ ＞ ≮ ≯ ∷ ± ＋ － × ÷ ／ ∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ‖ ∠ ⌒ ≌ ∽ √  Ⅰ Ⅱ ⊕ ⊙∥α β γ δ ε ζ η θ Δ通信原理02_信号噪声分析2.1 确定信号分析2.1.1 确定信号的分类 周期信号与非周期信号$$\begin{align*}&amp;f(t)&#x3D;f(t+ nT) n &#x3D; 0, \pm1,\pm2,\">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-09-20T11:51:44.445Z">
+<meta property="article:modified_time" content="2022-10-03T02:41:41.353Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/09/20/tong-xin-yuan-li/tong-xin-yuan-li-di-2-zhang/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-03 10:41:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-09-20T11:51:44.445Z" title=" 2022-09-20 19:51:44">2022-09-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-10-03T02:41:41.353Z" title=" 2022-10-03 10:41:41">2022-10-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="≈-≡-≠-＝-≤≥-＜-＞-≮-≯-∷-±-＋-－-×-÷-／-∫-∮-∝-∞-∧-∨-∑-∏-∪-∩-∈-∵-∴-⊥-‖-∠-⌒-≌-∽-√-Ⅰ-Ⅱ-⊕-⊙∥α-β-γ-δ-ε-ζ-η-θ-Δ"><a href="#≈-≡-≠-＝-≤≥-＜-＞-≮-≯-∷-±-＋-－-×-÷-／-∫-∮-∝-∞-∧-∨-∑-∏-∪-∩-∈-∵-∴-⊥-‖-∠-⌒-≌-∽-√-Ⅰ-Ⅱ-⊕-⊙∥α-β-γ-δ-ε-ζ-η-θ-Δ" class="headerlink" title="≈ ≡ ≠ ＝ ≤≥ ＜ ＞ ≮ ≯ ∷ ± ＋ － × ÷ ／ ∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ‖ ∠ ⌒ ≌ ∽ √  Ⅰ Ⅱ ⊕ ⊙∥α β γ δ ε ζ η θ Δ"></a>≈ ≡ ≠ ＝ ≤≥ ＜ ＞ ≮ ≯ ∷ ± ＋ － × ÷ ／ ∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ‖ ∠ ⌒ ≌ ∽ √  Ⅰ Ⅱ ⊕ ⊙∥α β γ δ ε ζ η θ Δ</h2><h1 id="通信原理02-信号噪声分析"><a href="#通信原理02-信号噪声分析" class="headerlink" title="通信原理02_信号噪声分析"></a>通信原理02_信号噪声分析</h1><h2 id="2-1-确定信号分析"><a href="#2-1-确定信号分析" class="headerlink" title="2.1 确定信号分析"></a>2.1 确定信号分析</h2><h3 id="2-1-1-确定信号的分类"><a href="#2-1-1-确定信号的分类" class="headerlink" title="2.1.1 确定信号的分类"></a>2.1.1 确定信号的分类</h3><ol>
+<li><p>周期信号与非周期信号<br>$$<br>\begin{align*}<br>&amp;f(t)=f(t+ nT) n = 0, \pm1,\pm2,\pm3…&amp;-\infty&lt;t&lt;+\infty</p>
+<p>\end{align*}<br>$$</p>
+</li>
+<li><p>能量信号与功率信号</p>
+<p>一个信号的幅度可以用电流或电压来表示,   而一个信号的功率也可以用电流或电压表示为I<sup>2</sup>R或U<sup>2</sup>/R,   也就是说,   <strong>信号的功率可以用幅度的平方来表示</strong>,   R只不过是一个常数;   所以如果令f(t)为某一个信号的幅度,   那么该信号的功率就可以粗略地表示为f<sup>2</sup>(t);   </p>
+<p>在这个基础之上,   就可以定义信号的能量—能量是功率关于时间的积分:<br>$$<br>E=\int^\infty_{-\infty}f^2(t)dt<br>$$<br>进而可以定义能量型信号,   即,   如果某个信号的能量不为无穷大,   也就是E&lt;∞,   则这个信号为能量信号;   </p>
+<p>要注意:   时限信号和非时限信号均可能是能量型信号,   但是周期信号一定不是能量型信号,   比如非时限周期信号cosωt,   虽然它的函数幅度值正负交替,   但平方过后就全为正,   所以非时限的cosωt的能量为无穷大;   </p>
+<p>对于能量无穷大的信号,   能量本身已经无穷大了,   再用能量去表示这个信号已经无意义,   所以需要用功率去表示这个信号,   即,   在整个坐标轴内该信号的能量对时间取平均:<br>$$<br>P=\lim_{T\rightharpoonup\infty}\frac1T\int^\frac T 2 _{-\frac T2} f^2(t)dt=\overline{f^2(t)}<br>$$<br>对于周期信号,   可以不用取极限,   因为每一个周期都是相同的:<br>$$<br>P=\frac1T\int^\frac T 2 _{-\frac T2} f^2(t)dt=\overline{f^2(t)}<br>$$</p>
+</li>
+<li><p>基带信号与频带信号</p>
+<p>基带信号一般指功率或能量集中在零频附近的信号,   类似于低通信号:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20220920210810479.png" alt="image-20220920210810479" style="zoom:67%;" />
+
+
+
+<p>频带信号一般在载波频率附近:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20220920210942232.png" alt="image-20220920210942232" style="zoom:67%;" />
+
+<blockquote>
+<p>载波频率:   传输信息时,   需要将信息调至特定的频率才可以更好地进行传输,   这种适合于传输信息的频率就是载波频率,   同时揭示了为什么要介绍频带信号 ;   </p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-1-2-周期信号的傅里叶级数"><a href="#2-1-2-周期信号的傅里叶级数" class="headerlink" title="2.1.2 周期信号的傅里叶级数"></a>2.1.2 周期信号的傅里叶级数</h3><p>每个周期信号都可以表示为无限列谐波叠加,   只不过这些谐波的系数不同<br>$$<br>\begin{align*}<br>&amp;f(t) =\sum_{n=-\infty}^{\infty}F_ne^{j2\pi nf_{\scriptsize0} t}&amp;n=0,   \pm1,   \pm2…<br>\end{align*}<br>$$<br>由于n的取值是对称的,   所以f(t)为离散双边谱;   </p>
+<h3 id="2-1-3-周期信号的平均功率和功率谱"><a href="#2-1-3-周期信号的平均功率和功率谱" class="headerlink" title="2.1.3 周期信号的平均功率和功率谱"></a>2.1.3 周期信号的平均功率和功率谱</h3><p>前面已经给出了周期信号的平均功率在时域上的求法,   下面是周期信号的平均功率在频域上的求法:<br>$$<br>P = \sum_{n = - \infty}^\infty|F_n|^2<br>$$<br>说明:   由于周期信号在时域上是周期的,   所以它在频域上就是离散的,   那么周期信号的平均功率就为它的各个离散谐波的功率之和;   </p>
+<p>比如f(t) = Acos2πf<sub>0</sub>t,   进行傅里叶变换之后就为<br>$$<br>F(f) = \frac A2[\delta(f + f_0)+\delta(f - f_0)]<br>$$<br>那么它的平均功率为两个冲击函数的幅度各自的平方之和,   也就为A<sup>2</sup>/2;   </p>
+<p>直流分量指的是傅里叶级数中a<sub>0</sub>分量,   也指傅里叶变换中的f=0的离散谱;   </p>
+<h3 id="2-1-4-傅里叶变换"><a href="#2-1-4-傅里叶变换" class="headerlink" title="2.1.4 傅里叶变换"></a>2.1.4 傅里叶变换</h3><p>$$<br>\begin{align*}<br>F(f) = F[f(t)]=\int_{-\infty}^\infty f(t)e^{-j2\pi ft}dt\<br>f(t) = F^{-1}[F(f)]= \int_{-\infty}^\infty F(f)e^{j2\pi ft}df<br>\end{align*}<br>$$</p>
+<p>如果一个周期信号的周期越大,   该周期信号在频域的离散谱线就越密集,   如果周期无限大,   也就是说周期信号变成了非周期信号,   那么该信号在频域的离散谱线就变连续了;   </p>
+<p>门函数<br>$$<br>\begin{align*}<br>&amp;G_\tau(t)\Leftrightarrow A\tau Sa(\pi f\tau)\<br>\end{align*}<br>$$<br><img src="D:/Program%20Files/Typora/img/image-20220920222940839.png" alt="image-20220920222940839" style="zoom:67%;" /></p>
+<img src="D:/Program%20Files/Typora/img/image-20220920223139763.png" alt="image-20220920223139763" style="zoom: 67%;" />
+
+<p>第一过零点带宽为B<sub>0</sub>=1/τ;   τ为门函数的宽度;   </p>
+<blockquote>
+<p>对于门函数的种种,   需要理出一条线出来,   门函数在时域上有两个指标,   幅度A和门宽τ,   门宽τ和带宽不同,   门宽τ横跨正负两半区,   两半区各分一半;   然后就是它的傅里叶变换式,   AτSa(πfτ),   最后是非常重要的傅里叶变换式的第一零点带宽B=1/τ;   </p>
+</blockquote>
+<p>对于周期函数,   可以直接利用它的傅里叶级数来表示进行傅里叶变换:<br>$$<br>\begin{align*}<br>&amp; f(t) = \sum_{n=-\infty}^\infty F_ne^{j2\pi nf_{\scriptsize0} t},   &amp;e^{j2\pi nf_{\scriptsize0}t}\Leftrightarrow \delta(f-f_0)\<br>&amp;得F(f)=\sum_{n=-\infty}^\infty F_n\delta(f-nf_0)<br>\end{align*}<br>$$</p>
+<h3 id="2-1-5-能量谱密度和功率谱密度"><a href="#2-1-5-能量谱密度和功率谱密度" class="headerlink" title="2.1.5 能量谱密度和功率谱密度"></a>2.1.5 能量谱密度和功率谱密度</h3><p>前面已经阐述,   在时域上,   功率对时间积分就为能量,   而在频域上也需要有一个量与之对应,   也就是说,   需要有一个量积分之后变成能量,   而这个量就是能量谱密度E(f):<br>$$<br>\begin{align*}<br>&amp;E(f)= |F(f)|^2\\<br>&amp;E=\int_{-\infty}^\infty E(f)df=\int_{-\infty}^\infty|F(f)|^2df\\</p>
+<p>&amp;\int_{-\infty}^\infty|f(t)|^2dt=\int_{-\infty}^\infty|F(f)|^2df<br>\end{align*}<br>$$</p>
+<p>注意最后一个式子是非常对称的;   </p>
+<p> 对于能量无限大的功率型信号来说,   功率谱密度的定义与之类似:<br>$$<br>\begin{align*}<br>P= \int_{-\infty}^\infty P(f)df<br>\end{align*}<br>$$<br>周期函数的功率谱密度为:<br>$$<br>P(f)=\sum_{n=-\infty}^\infty|F_n|^2\delta(n-nf_0)<br>$$</p>
+<table>
+<thead>
+<tr>
+<th align="left">小总结:   信号根据能量是否无限大这一标准进行分类,   分为能量型信号和能量无限大的功率型信号;   对于能量型信号,   由于能量有限,   可以用能量对该信号进行度量,   在时域上求能量的方法为功率对时间积分,   在频域上求能量的方法为能量谱对频率积分;   对于功率型信号,   由于能量无限,   所以用功率进行度量,   在时域上求功率的方法为幅度对时间求积分,   再用周期进行平均,   在频域上的求法为功率谱对频率求积分;   <br /><br />时域信号进行傅里叶变换之后,   横轴为频谱的频率f,   纵轴为频谱的幅度F(f),   功率谱就是在频谱的基础之上,   把频谱的幅度进行平方,   就得到了功率谱,   然后将功率谱上的几个冲击加起来,   就是功率了;</th>
+</tr>
+</thead>
+</table>
+<p>Acos2πf<sub>0</sub>t的功率求法:   先对原信号进行傅里叶变换,   得到频谱,   再把频谱的幅度平方,   就得到了功率谱,   对功率谱进行求和或者积分,   就得到了功率;<br>$$<br>Acos2\pi f_0t\Leftrightarrow \frac A2[\delta(f+f_0) + \delta(f-f_0)]<br>$$<br><img src="D:/Program%20Files/Typora/img/image-20220923082131683.png" alt="image-20220923082131683" style="zoom: 50%;" /></p>
+<img src="D:/Program%20Files/Typora/img/image-20220923082145956.png" alt="image-20220923082145956" style="zoom:50%;" />
+
+<p>双边功率谱P(f),   指P(f)在(-∞,   +∞)上对频率f进行积分,   由于区间包含整个横轴,   所以被称为双边功率谱;   然而对于实信号而言,   P(-f)=P(f),   所以可以直接对横轴进行折算,   只用单边谱进行计算,   这个单边谱就是G(f),<br>$$<br>G(f)=\left { \begin{array}{acl}<br>2P(f),   f&gt;0\<br>0,   f&lt;0<br>\end{array} \right.<br>$$<br>所以如果说给定某个信号的单边功率谱为10<sup>-8</sup>,   带宽为10<sup>6</sup>,   那么功率为10<sup>-2</sup>,   如果给定该信号的双边功率谱为10<sup>-8</sup>,   那么功率为2 * 10<sup>-2</sup>;   </p>
+<blockquote>
+<p>这里需要注意,   以后也一定要注意,   约定俗成,   信号的带宽只看正半轴,   也就是说,   说某个信号的带宽为B,   则指的是正半轴的带宽为B,   负半轴的带宽也为B;   </p>
+</blockquote>
+<h4 id="2-1-5-2-信号带宽"><a href="#2-1-5-2-信号带宽" class="headerlink" title="2.1.5.2 信号带宽"></a>2.1.5.2 信号带宽</h4><p>等效矩形带宽:   如果信号在零频处能量(或功率)最大,   则等效矩形带宽为:<br>$$<br>B=\frac{\sum_{n=-\infty}^\infty E(f)df}{2E(0)}\\<br>或者\\<br>B=\frac{\sum_{n=-\infty}^\infty P(f)df}{2P(0)}<br>$$<br>3dB带宽:   如果信号的功率在零频最大,   则下降到最大功率的一半的带宽为3dB带宽:<br>$$<br>E(B_{3dB}) = \frac{E(0)}{2}\\<br>或者\\<br>P(B_{3dB}) = \frac{P(0)}{2}<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>小总结:   总结一下各个量之间的关系,   通过时域信号,   利用自相关函数的定义可以得到自相关函数,   傅里叶变换之后可以得到频域信号,   平方后积分可以求得平均功率;   自相关函数当取到R(0)时为平均功率,   傅里叶变换之后得到功率谱密度;   频域信号平方后得到功率谱密度函数,   平方后积分得到平均功率;   功率谱密度积分后得到平均功率;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="D:/Program%20Files/Typora/img/image-20220923233048709.png" alt="image-20220923233048709" style="zoom: 67%;" /></td>
+</tr>
+</tbody></table>
+<h3 id="2-1-6-确定信号的相关函数"><a href="#2-1-6-确定信号的相关函数" class="headerlink" title="2.1.6 确定信号的相关函数"></a>2.1.6 确定信号的相关函数</h3><h4 id="2-1-6-1-自相关函数"><a href="#2-1-6-1-自相关函数" class="headerlink" title="2.1.6.1 自相关函数"></a>2.1.6.1 自相关函数</h4><ol>
+<li><p>定义<br>$$<br>\begin{align*}<br>&amp;R(\tau)=\int_{-\infty}^\infty f(t)f(t+\tau)dt &amp;-\infty&lt;\tau&lt;+\infty<br>\end{align*}<br>$$</p>
+</li>
+<li><p>性质<br>$$<br>\begin{align*}<br>&amp;R(\tau)=R(-\tau) &amp; ;   自相关函数为偶函数\<br>&amp;|R(\tau)|≤R(0) &amp; ;   R(0)为平均功率 \space!\<br>&amp; R(\tau) \leftrightarrow P(f) &amp; ;   FT[自相关函数]=功率谱密度<br>\end{align*}<br>$$</p>
+</li>
+</ol>
+<p>$$<br>\begin{align*}<br>&amp;方差:   D(X) = E[X-E(X)]^2=E(X^2)-E^2(X)\\<br>&amp;数学期望:   E(X +Y)=E(X) + E(Y)\\<br>&amp;当X和Y独立时,   E(XY)=E(X)E(Y),   D(X+Y)=D(X) + D(Y)\\<br>&amp;R_Y(t_1,   t_2)=E[Y(t_1)Y(t_2)]</p>
+<p>\end{align*}<br>$$</p>
+<p>独立必定不相关,   不相关不⼀定独立;   </p>
+<p>对于高斯过程,   不相关与独立等价;   </p>
+<p>设随机过程Y(t)=Xcos2πt,   X为高斯随机变量,   概率密度函数为<br>$$<br>p(x)=\frac1{\sqrt {2π}}e^{-\frac{(x-1)^2}2}<br>$$<br>试计算m<sub>Y</sub>(0)、m<sub>Y</sub>(0.25)、m<sub>Y</sub>(0.5)、R<sub>Y</sub>(0,   0.5)、R<sub>Y</sub>(0.25,   0.5)</p>
+<blockquote>
+<p>严平稳随机过程一定也是宽平稳随机过程;   </p>
+<p>宽平稳随机过程就不一定是严平稳随机过程;   </p>
+<p>但是对于高斯随机过程,   两者是等价的;   </p>
+</blockquote>
+<p>$$<br>\begin{align*}<br>&amp;宽平稳随机过程的条件:   \<br>&amp;E(X(t))=m_X=常数\<br>&amp;R_X(t_1,   t_2)=E[X(t_1)X(t_2)]=R_X(τ)&amp;(只与时间差有关)<br>\end{align*}<br>$$</p>
+<ul>
+<li><input disabled="" type="checkbox"> 若随机过程Y（t）=3X（t）+ 4，其中X（t）是均值为0，方差为1的平稳随机过程，试问Y（t）是否平稳？</li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/09/26/shu-ju-ku/05-shi-tu-yong-hu-guan-li-xu-lie/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">04_视图、用户管理、序列...</div></div></a></div><div class="next-post pull-right"><a href="/2022/09/18/excalidraw/jvm/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%89%88-%E2%89%A1-%E2%89%A0-%EF%BC%9D-%E2%89%A4%E2%89%A5-%EF%BC%9C-%EF%BC%9E-%E2%89%AE-%E2%89%AF-%E2%88%B7-%C2%B1-%EF%BC%8B-%EF%BC%8D-%C3%97-%C3%B7-%EF%BC%8F-%E2%88%AB-%E2%88%AE-%E2%88%9D-%E2%88%9E-%E2%88%A7-%E2%88%A8-%E2%88%91-%E2%88%8F-%E2%88%AA-%E2%88%A9-%E2%88%88-%E2%88%B5-%E2%88%B4-%E2%8A%A5-%E2%80%96-%E2%88%A0-%E2%8C%92-%E2%89%8C-%E2%88%BD-%E2%88%9A-%E2%85%A0-%E2%85%A1-%E2%8A%95-%E2%8A%99%E2%88%A5%CE%B1-%CE%B2-%CE%B3-%CE%B4-%CE%B5-%CE%B6-%CE%B7-%CE%B8-%CE%94"><span class="toc-text">≈ ≡ ≠ ＝ ≤≥ ＜ ＞ ≮ ≯ ∷ ± ＋ － × ÷ ／ ∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ‖ ∠ ⌒ ≌ ∽ √  Ⅰ Ⅱ ⊕ ⊙∥α β γ δ ε ζ η θ Δ</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%8602-%E4%BF%A1%E5%8F%B7%E5%99%AA%E5%A3%B0%E5%88%86%E6%9E%90"><span class="toc-text">通信原理02_信号噪声分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%A1%AE%E5%AE%9A%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90"><span class="toc-text">2.1 确定信号分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E7%A1%AE%E5%AE%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">2.1.1 确定信号的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0"><span class="toc-text">2.1.2 周期信号的傅里叶级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%B9%B3%E5%9D%87%E5%8A%9F%E7%8E%87%E5%92%8C%E5%8A%9F%E7%8E%87%E8%B0%B1"><span class="toc-text">2.1.3 周期信号的平均功率和功率谱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-text">2.1.4 傅里叶变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-%E8%83%BD%E9%87%8F%E8%B0%B1%E5%AF%86%E5%BA%A6%E5%92%8C%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-text">2.1.5 能量谱密度和功率谱密度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-5-2-%E4%BF%A1%E5%8F%B7%E5%B8%A6%E5%AE%BD"><span class="toc-text">2.1.5.2 信号带宽</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-%E7%A1%AE%E5%AE%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text">2.1.6 确定信号的相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-6-1-%E8%87%AA%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text">2.1.6.1 自相关函数</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

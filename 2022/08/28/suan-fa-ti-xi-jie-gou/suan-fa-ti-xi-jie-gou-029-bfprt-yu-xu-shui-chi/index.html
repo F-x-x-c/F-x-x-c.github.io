@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>算法体系结构029_bfprt与蓄水池 | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="寻找第K小的数算法1:   类快排一个比较好,   但并不是bfprt算法的算法,   利用与快排相似的概率的思想,   将时间复杂度降低至O(N);    求某个数组中的第k小的数,   其实就是把这个数组从小到大进行排序,   然后找到下标为k-1的数,   所以递归函数中传递的是要求的下标k-1:    123456public static int minKth2(int[] array,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法体系结构029_bfprt与蓄水池">
+<meta property="og:url" content="http://example.com/2022/08/28/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-029-bfprt-yu-xu-shui-chi/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="寻找第K小的数算法1:   类快排一个比较好,   但并不是bfprt算法的算法,   利用与快排相似的概率的思想,   将时间复杂度降低至O(N);    求某个数组中的第k小的数,   其实就是把这个数组从小到大进行排序,   然后找到下标为k-1的数,   所以递归函数中传递的是要求的下标k-1:    123456public static int minKth2(int[] array,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-08-28T07:53:04.000Z">
+<meta property="article:modified_time" content="2022-09-28T13:23:00.108Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/28/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-029-bfprt-yu-xu-shui-chi/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法体系结构029_bfprt与蓄水池',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-28 21:23:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">算法体系结构029_bfprt与蓄水池</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-08-28T07:53:04.000Z" title=" 2022-08-28 15:53:04">2022-08-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-09-28T13:23:00.108Z" title=" 2022-09-28 21:23:00">2022-09-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法体系结构029_bfprt与蓄水池"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="寻找第K小的数"><a href="#寻找第K小的数" class="headerlink" title="寻找第K小的数"></a>寻找第K小的数</h1><h2 id="算法1-类快排"><a href="#算法1-类快排" class="headerlink" title="算法1:   类快排"></a>算法1:   类快排</h2><p>一个比较好,   但并不是bfprt算法的算法,   利用与快排相似的概率的思想,   将时间复杂度降低至O(N);   </p>
+<p>求某个数组中的第k小的数,   其实就是把这个数组从小到大进行排序,   然后找到下标为k-1的数,   所以递归函数中传递的是要求的下标k-1:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minKth2</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] arr = copyArray(array);</span><br><span class="line">    <span class="keyword">return</span> process2(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>, k - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">process2</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> index)</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<p>然后就按照快排的思想,   从数组中随机挑出一个数pivot作为标称值,   对数组进行partition,   找到与pivot的值相等的区域的左右边界,   也就是说,   partition过后,   局部排好了,   剩下只需要进行小于区域和大于区域的排序,   这是快排的思想,   而要求的只是排好序之后的第k-1个数,   所以这时只需要判断k-1是否落在等于区域内,   如果落在,   那就直接返回等于区域的值,   如果没有,   看k-1是大于等于区域呀还是小于等于区域,   根据判断结果前往对应的区域进行递归;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (L == R) &#123; <span class="comment">// L == R == INDEX</span></span><br><span class="line">        <span class="keyword">return</span> arr[L];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 不止一个数  L +  [0, R -L]</span></span><br><span class="line">    <span class="keyword">int</span> pivot = arr[L + (<span class="keyword">int</span>) (Math.random() * (R - L + <span class="number">1</span>))];</span><br><span class="line">    <span class="keyword">int</span>[] range = partition(arr, L, R, pivot);</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= range[<span class="number">0</span>] &amp;&amp; index &lt;= range[<span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr[index];</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index &lt; range[<span class="number">0</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> process2(arr, L, range[<span class="number">0</span>] - <span class="number">1</span>, index);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> process2(arr, range[<span class="number">1</span>] + <span class="number">1</span>, R, index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要注意选择随机数的时候,   是从[L,   R]这个区域内选取,   所以L的偏移量为[0,   R-L],   而又因为要取到R-L,   所以Math.random()后面所乘的值为R-L+1;   </p>
+<p>接下来就是复习partition了,   两个指针把数组分为三部分,   各自从各自的越界位置开始,   如果当前位置小于标称值,   就将小于区域的下一个位置与当前位置做交换,   小于区域往左扩,   当前位置跳下一个,   如果当前位置大于标称值,   就将大于区域的左边那个位置的数与当前位置做交换,   当前位置不变;   大于时的情况很好理解,   就是如果大于了,   就将这个数与大于区域的左边一个数做交换,   然后大于区域往左边扩,   说白了就是,   如果发现了一个大于标称值的数,   就将这个数放到大于区域的前边,   然后让大于区域括住它,   再来看看被放到cur位置的数是个啥,   因为之前没看;   </p>
+<p>小于的情况和等于的情况需要连起来看,   如果cur的值一直都是小于标称值的,   那么小于区域的指针和cur会一直挨着,   换句话说,   cur发现一个值比标称值小,   就让小于区域去括住它,   然后cur跳下一个,   如果cur对应的值一直小于标称值,   那么小于区域会一直往右边扩,   直到发现了一个与标称值相等的值,   这个时候cur跳下一个,   小于区域不动,   这一小点是符合事实的–小于区域不能括住等于标称值的数,   然后就是关键了,   如果下一个数是小于标称值的话,   那么会将cur对应的值与小于区域的下一个数做交换,   也就是将前面那个等于标称值的值与刚刚发现的这个小于标称值的值做交换;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] partition(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> pivot) &#123;</span><br><span class="line">    <span class="keyword">int</span> less = L - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> more = R + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> cur = L;</span><br><span class="line">    <span class="keyword">while</span> (cur &lt; more) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[cur] &lt; pivot) &#123;</span><br><span class="line">            swap(arr, ++less, cur++);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[cur] &gt; pivot) &#123;</span><br><span class="line">            swap(arr, cur, --more);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cur++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;less + <span class="number">1</span>, more - <span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这么说其实有些抽象,   看下面这个例子,   cur遇到了一连串的6,   此时cur和less已经分道扬镳,   当cur遇到了这个4的时候,   按照前面说的,   小于区域的下一个位置与cur位置的值做交换,   也就是第一个6和cur指向的4做交换,   然后小于区域往右边扩,   为什么敢扩呢,   因为4交换过来了呀,   cur跳下一个位置,   为什么敢跳呢,   因为6到了4这里呀;   也逗是嗦,   <strong>小于区域推着等于区域在往右边走</strong>,   直到等于区域的边界遇到了大于区域的边界,   也就是cur和大于区域的指针more重合;   </p>
+<p><img src="D:/Program%20Files/Typora/img/image-20220905163142006.png" alt="image-20220905163142006"></p>
+<h2 id="算法2-bfprt"><a href="#算法2-bfprt" class="headerlink" title="算法2:   bfprt"></a>算法2:   bfprt</h2><p>bfprt算法用于求一个数组中的第k个最小数;   </p>
+<p>算法的思路与快排类似,   利用荷兰国旗的排序方法将数组分为三部分,   小于部分、相等部分、大于部分,   将相等的部分的左右边界返回;   如果第k个数落在相等的部分,   那么就找到了,   如果没有落在相等的部分,   那就进行判断,   如果k小于左边界,   那么就对小于部分进行荷兰国旗,   反之则对大于部分进行操作,   如果还未找到,   那就继续递归下去;   </p>
+<p>bfprt算法实现找出一个数组中第k-1小的数,   但是该算法和上述的算法的差别仅仅在于怎样选择标称值pivot,   上述的算法是随机选的,   而bfprt算法选择这个值是非常非常考究的;   下面这个是bfprt算法的主函数,   可以看到与上述的函数process2()基本相同,   不同的只有medianOfMedians();   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bfprt</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (L == R) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr[L];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pivot = medianOfMedians(arr, L, R);</span><br><span class="line">    <span class="keyword">int</span>[] range = partition(arr, L, R, pivot);</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= range[<span class="number">0</span>] &amp;&amp; index &lt;= range[<span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr[index];</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index &lt; range[<span class="number">0</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> bfprt(arr, L, range[<span class="number">0</span>] - <span class="number">1</span>, index);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> bfprt(arr, range[<span class="number">1</span>] + <span class="number">1</span>, R, index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>选取的流程是这样的:<br>(1) 将该数组arr5个5个地分为N/5个小数组,   将小数组进行排序;<br>(2) 将每一个小组的中位数拎出来,   组成中位数数组mArr,   这个数组的长度为N/5;<br>(3) 将数组mArr中的中位数拎出来,   返回给主函数bfprt()作为pivot;   </p>
+<p>对应的补充几点:<br>(1) 如果说arr的长度并不是5的倍数,   那么最后几个不满5个的元素揉成一个小数组,   如果这个数组是偶数,   一律取上中位数,   当然下中位数也阔以;<br>(2) 数组mArr的长度如果不是N/5,   就是N/5 + 1,   +1就是加的最后的那个不满5个元素的小数组;<br>(3) 数组mArr的中位数可以通过函数bfprt()拎出来,   因为函数bfprt()就是为了求某个数组的某个位置的数的嘛,   而传给bfprt()的参数就是数组mArr,   以及要找到的中位数的位置N/10,   因为mArr的长度为N/5,   所以数组mArr的中位数就是在数组mArr中N/10处的;   </p>
+<p>首先获取到这个数组的长度,   由于是递归调用,   所以需要使用左右边界;<br>如果当前需要处理的区间长度不为5的倍数,   那么数组mArr需要加1;<br>通过函数getMedian()获取每一个小数组的中位数,   填入mArr中,   注意在传参的时候,   第一个数组的参数应该是getMedian(L,   L+4),   第二个是geMedian(L+5,   L+9),   如果最后一个小数组不够5个,   就像下面这样写,   在比较前面的数组中,   R始终是最大的,   在比较最后一个数组的时候,   要么R和teamFirst + 4一样小,   要么就是R小,   如果R比teamFirst + 4大的话,   就说明一定可以再分一个小数组,   就是说,   如果这样就不是最后一个数组;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">medianOfMedians</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> size = R - L + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> offset = size % <span class="number">5</span> == <span class="number">0</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] mArr = <span class="keyword">new</span> <span class="keyword">int</span>[size / <span class="number">5</span> + offset];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> team = <span class="number">0</span>; team &lt; mArr.length; team++) &#123;</span><br><span class="line">        <span class="keyword">int</span> teamFirst = L + team * <span class="number">5</span>;</span><br><span class="line">        <span class="comment">// L 	... L + 4</span></span><br><span class="line">        <span class="comment">// L +5 ... L + 9</span></span><br><span class="line">        <span class="comment">// L +10... L + 14</span></span><br><span class="line">        mArr[team] = getMedian(arr, teamFirst, Math.min(R, teamFirst + <span class="number">4</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 找到数组mArr的中位数</span></span><br><span class="line">    <span class="keyword">return</span> bfprt(mArr, <span class="number">0</span>, mArr.length - <span class="number">1</span>, mArr.length / <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里有一个对插入排序的优化,   插入排序的思想就是先将前面的元素进行排序,   导致了当遍历到某个元素时,   这个元素前面的元素都是排好序的,   只需要把这个元素排到该排的位置即可,   所以当发现正在插入的这个元素比它前面的元素要小时,   那就说明它就该排在这里,   所以而二重循环在这里就可以停止了,   所以可以像下面这样写:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = L + <span class="number">1</span>; i &lt;= R; i++) &#123;</span><br><span class="line">        <span class="comment">//正在插入的位置一开始为arr[L + 1], 之后一直为arr[j + 1]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= L &amp;&amp; arr[j] &gt; arr[j + <span class="number">1</span>]; j--) &#123;</span><br><span class="line">                swap(arr, j, j + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="算法3-堆"><a href="#算法3-堆" class="headerlink" title="算法3:   堆"></a>算法3:   堆</h2><p>利用堆的特性;   时间复杂度为O(N*logK);   </p>
+<p>思路:   求第k小的数,   就是将数组排序之后,   返回下标为k-1的数;   该解法就是将所有的数装入堆中,   然后弹出N-K个数,   这弹出的N-K个数是排序过后的后N-K个数,   弹出之后,   堆顶的元素就为第K小的数了;  </p>
+<p>不过这种方法可以进行优化,   也就是不先把堆塞满,   而始终保持堆中只有K个数;   具体做法为,   先把无序数组的前K个数无脑装进去;   对于后N-K个数,   如果遍历到的数小于堆顶元素,   那就将该数压进去,   将堆顶元素弹出来,   保证堆中只有K个数;   </p>
+<p>这样做的依据是,   最开始无脑加入进去前K个数,   相当于找到了以前K个元素为数组的第K小的数,   也就是这个子数组的最大值,   那如果再往这个数组中加一个数之后,   还求这个数组的第K小数,   则需要对想要加进来的这个数进行判断,   如果这个数大于当前数组的最大值,   则加进来之后的第K小数保持不变,   如果这个数小于当前数组的最大值,   则把这个数加进来之后重新排序,   排完序之后,   原来的第二大的数(也是现在的第二大的数)就是这个数组的第K小数,   而换成堆的操作,   其实就是把最大值从堆里弹出,   这样,   在不断弹出加入完整个数组之后,   自然就可以找到第K小数;   </p>
+<blockquote>
+<p>上面的叙述略微有些晦涩,   通俗一点的说,   把堆看成是一个封闭起来的容器,   由于目标是找到第k小的数,   也就是要第k小的数位于栈顶,   分析一下此时堆中的状态,   必定是,   原数组arr中大于第k小数的数都不在堆中,   小于第k小数的数全在堆中,   所以上述操作一开始先无脑把前k个数扔进堆中,   假设运气非常好,   这前k个数就是数组的前k小的数,   那么后面的数就完全不用再加进来;   如果这k个数是鱼龙混杂的,   也就是说要弹出一些数,   再加进去一些数之后,   才可以变成那个最终形态的话,   这个操作应该是怎么样的? 应该这样的,   继续遍历数组,   碰到小于堆顶元素的数,   就加进来,   并且把堆顶元素弹出,   碰到大于堆顶元素的数,   就不管,   这样操作完成之后,   位于堆顶的就一定是第k小的数;   </p>
+</blockquote>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><ol>
+<li><p>题目</p>
+<p>给定一个无序数组arr,   给定一个整数k,   k∈[1,   arr.len],   返回前k个较大数,   要求用3种方法,   O(N * logN)、O(N + K * logN)、O(N + k * logk);   </p>
+</li>
+<li><p>解法</p>
+<p>第一种解法就是直接进行较好方式的排序,   然后找到前k个较大数即可;   第二种解法,   先建立堆,   对一个无序数组建立大根堆的过程如果从底向上建堆的话是O(N),   然后从这个堆中弹出前k个值,   每弹一次都会进行调堆,   调堆的过程是O(logN),   所以总的时间复杂度就为O(N + K * logN);   第三种解法,   利用bfprt算法求出第k大的数,   需要O(N),   遍历一遍数组,   找到比第k大数大的数,   如果找到的比第k大数大的数的数量小于k,   那么剩下的k个一定由第k大数来补全,   由于<strong>题目要求是将数组从大到小排序</strong>,   所以要对那k个数,   进行排序,   所以需要O(k * logk);    </p>
+</li>
+<li><p>实现</p>
+<p>(1) 排序(略)</p>
+<p>(2) 堆</p>
+<pre><code>    时间复杂度O(N + K*logN);   将一个无序数组建成堆,   可用从底向上的方式进行,   时间复杂度为O(N);   
+</code></pre>
+<blockquote>
+<p>自下往上建堆的方式:   自下往上对每一个节点进行heapify,   对每一个经历了heapify的节点,   以该节点为根节点的树都已经调堆完成,   顺利变成了堆;   </p>
+<p>TC为O(N)的原因:   设某一个完全二叉树的节点数为N,   那么叶子节点的数量,   也就是没有孩子的节点的数量一定为N/2±1,   不论最后一层有没有满,   倒数第二层的子节点的数量有N/4±1个,   倒数第三层的子节点的数量有N/8±1个,   以此类推;   叶子节点的再heapify的时候只访问了一次数组,   倒数第二层的子节点只访问了两次数组,   以此类推;<br>$$<br>\begin{align}<br>&amp;T(N)=\frac N2<em>1+\frac N4</em>2+\frac N8<em>3+…&amp;(i)\<br>&amp;2 * T(N) = N</em>1+\frac N2<em>2+\frac N4</em>3+… &amp;(ii)\<br>&amp;T(N)=N<em>1+\frac N2</em>1+\frac N4<em>1+\frac N8</em>1+…&amp;(ii-i)<br>\end{align}<br>$$<br>最后推得T(N)为等比数列,   一定收敛于O(N);   </p>
+</blockquote>
+<p>首先比较k和N哪个大,   选取较小的那个:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> N = arr.length;</span><br><span class="line">k = Math.min(N, k);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后对给定的无序数组进行自底向上的建堆:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = N - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    heapify(arr, i, N);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>就如同堆排序的步骤一样,   把前k个较大数扔到数组的后面,   这样做导致的结果是,   数组的后面k个数已经从大到小排好序,   而前面N-k个数组成一个大根堆:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (heapSize &gt; <span class="number">0</span> &amp;&amp; count &lt; k) &#123;</span><br><span class="line">    swap(arr, <span class="number">0</span>, --heapSize);</span><br><span class="line">    heapIfy(arr, <span class="number">0</span>, heapSize);</span><br><span class="line">    count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后创建一个数组ans,   将数组arr的后k个数反序扔到ans中,   返回即可:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = N - <span class="number">1</span>, j = <span class="number">0</span>; j &lt; k; i--, j++)&#123;</span><br><span class="line">    ans[j] = arr[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
+<p>实际上这个方法就和寻找第k小的数里的用到堆的方法是一样的  ╮(￣▽￣)╭</p>
+<p>都是先建堆,   然后弹出一些值即可;   只不过那个方法是只建大小为k的堆,   然后保持堆的大小,   将后面的那些元素按大小选择是否扔进堆中;   </p>
+<p>(3) 先找kth数</p>
+<p>先通过概率快排或者bfprt算法找到第k小的数:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = minKth(arr, N - k);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>再遍历数组,   找到比第k小的数大的数,   填入数组ans中,   如果ans还有空着的,   则全部用第k小数填满:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line"><span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j : arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (j &gt; num) &#123;</span><br><span class="line">        ans[index++] = j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (index &lt; k) &#123;</span><br><span class="line">    ans[index++] = num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里需要注意的是,   数组ans的长度为k,   但是比第k小数大的数的数量+与第k小数一样大的数的数量有可能大于k,   所以不能像下面这样写,   因为可能会报下标越界异常:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j : arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (j &gt;= num) &#123;</span><br><span class="line">        ans[index++] = j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最后将数组用Arrays.sort( )进行排序,   不过用这玩意儿对整型数组排序的话,   顺序只能从小到大,   因为这玩意儿的比较器必须是整型的包装类型,   所以在这里需要手动进行数组元素的前后调换:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(ans);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = ans.length - <span class="number">1</span>; i &lt; j; i++, j--)&#123;</span><br><span class="line">    swap(ans, i, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>而minKth(int[] arr,    int k)的最简洁的写法是随机快排的迭代版本,   bfprt太麻烦了;   </p>
+</li>
+</ol>
+<h1 id="蓄水池算法"><a href="#蓄水池算法" class="headerlink" title="蓄水池算法"></a>蓄水池算法</h1><ol>
+<li><p>描述</p>
+<p>有一个管道,   从里面源源不断地滚出球来,   每个球按滚出管道的顺序编号,   另外有一个袋子,   袋子只能装10个球,   滚出来的这个球可以进袋子,   也可以直接被抛弃,   当管道中第i号球滚出来时,   要求第1~第i号球能够存在在袋子里的概率相等,   求这种算法机制;   </p>
+</li>
+<li><p>思路<br>$$<br>\begin{align*}<br>&amp;第i号球滚出管道时,   以\frac{10} i的概率进袋子,   如果第i号球进袋子,  那么就一定\<br>&amp;会从袋子中弹出一颗球,  假设弹出的是第j号球,   也就是第j号球原本存在在\<br>&amp;袋子中,   它弹出的概率为\frac1{10},   所以第i号球将第j号球弹出的概率为\frac1{i};   \\</p>
+<p>&amp;重新开始梳理一遍,   当第j号球滚出管道并且1≤j≤10时,   第j号球进入袋\<br>&amp;概率为1,   当第11号球滚出并已经判断了是否入袋之后,   求第j号球依然在袋\<br>&amp;子中的概率; 既然第i号球将第j号球弹出的概率为\frac1{i},   那么此时这个概率就\<br>&amp;是\frac{10}{11},也就是\frac{i-1}{i},   这样就可以写出当第i号球入袋时,第j号球依然存在\<br>&amp;于袋中的概率:   \<br>&amp;1 * \frac{10}{11} * \frac{11}{12}<em>\frac{12}{13}</em>…<em>\frac{i-1}{i}=\frac{10}{i}\<br>&amp;而第j号球也以\frac{10}{i}的概率入袋,   所以满足了从1到i号球存在在袋中的概率相等;   \<br>&amp;同样的,   当j≥11时,   也可以得到同样的结果;<br>\end{align</em>}<br>$$</p>
+</li>
+<li><p>实现</p>
+<p>设置总测试次数testTimes和总球数ballNum,   并通过count数组对每次结束后袋子中的球号进行统计;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> test = <span class="number">10000</span>;</span><br><span class="line"><span class="keyword">int</span> ballNum = <span class="number">1729</span>;</span><br><span class="line"><span class="keyword">int</span>[] count = <span class="keyword">new</span> <span class="keyword">int</span>[ballNum + <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>设置好袋子和袋子里的位置:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; test; i++) &#123;</span><br><span class="line">	<span class="keyword">int</span>[] bag = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">int</span> bagIndex = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>流中的球开始滚出,   前十个直接进袋子:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>  (<span class="keyword">int</span> num = <span class="number">1</span>; num &lt;= ballNum; num++) &#123;</span><br><span class="line">	<span class="keyword">if</span> (num &lt;= <span class="number">10</span>) &#123;</span><br><span class="line">		bag[bagIndex++] = num;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当滚出的球号大于10时,   以10/i的概率将这个球装进袋子中,   也就是从袋子中的10个位子里选一个出来,   替换为当前将要入袋的球的球号:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// num &gt; 10</span></span><br><span class="line">	<span class="keyword">if</span> (random(num) &lt;= <span class="number">10</span>) &#123; <span class="comment">// 一定要把num球入袋子</span></span><br><span class="line">		bagIndex = (<span class="keyword">int</span>) (Math.random() * <span class="number">10</span>);</span><br><span class="line">		bag[bagIndex] = num;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一次测试结束过后,   统计袋子中的球号,   然后进行下一次测试:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num : bag) &#123;</span><br><span class="line">	count[num]++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>测试很多次之后,   将统计的结果打印,   发现,   如果球的个数不多,   而测试次数较多的情况之下,   每个球装入袋子的次数都差不多:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= ballNum; i++) &#123;</span><br><span class="line">	System.out.println(count[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/28/sui-bi/jing-ci-yi-yi/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">经此一役</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/27/shu-ju-ku/04-join-yu-xing-zhuan-lie/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">oracle_join与行转列</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%BB%E6%89%BE%E7%AC%ACK%E5%B0%8F%E7%9A%84%E6%95%B0"><span class="toc-text">寻找第K小的数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%951-%E7%B1%BB%E5%BF%AB%E6%8E%92"><span class="toc-text">算法1:   类快排</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%952-bfprt"><span class="toc-text">算法2:   bfprt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%953-%E5%A0%86"><span class="toc-text">算法3:   堆</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%93%84%E6%B0%B4%E6%B1%A0%E7%AE%97%E6%B3%95"><span class="toc-text">蓄水池算法</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

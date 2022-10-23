@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="事务事务,   表示一系列操作的集合,   可以看作一个操作序列,   这个操作序列要么被执行就执行完成,   要么不被执行就不被执行;    事务从一个DML语句开始;    事务的结束 正常结束 以commit或者rollback结尾,   可以点击PLSQL的按钮进行操作,   也可以在sql语句后面添加对应的语句进行操作;     自动提交 执行一个sql语句就提交一次,   不过效率太低">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2022/10/06/shu-ju-ku/06-shu-ju-ku-shi-wu/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="事务事务,   表示一系列操作的集合,   可以看作一个操作序列,   这个操作序列要么被执行就执行完成,   要么不被执行就不被执行;    事务从一个DML语句开始;    事务的结束 正常结束 以commit或者rollback结尾,   可以点击PLSQL的按钮进行操作,   也可以在sql语句后面添加对应的语句进行操作;     自动提交 执行一个sql语句就提交一次,   不过效率太低">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-10-06T02:41:21.621Z">
+<meta property="article:modified_time" content="2022-10-19T02:26:30.255Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/10/06/shu-ju-ku/06-shu-ju-ku-shi-wu/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-19 10:26:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">78</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-10-06T02:41:21.621Z" title=" 2022-10-06 10:41:21">2022-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-10-19T02:26:30.255Z" title=" 2022-10-19 10:26:30">2022-10-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>事务,   表示一系列操作的集合,   可以看作一个操作序列,   这个操作序列要么被执行就执行完成,   要么不被执行就不被执行;   </p>
+<p>事务从一个DML语句开始;   </p>
+<h2 id="事务的结束"><a href="#事务的结束" class="headerlink" title="事务的结束"></a>事务的结束</h2><ol>
+<li><p>正常结束</p>
+<p>以commit或者rollback结尾,   可以点击PLSQL的按钮进行操作,   也可以在sql语句后面添加对应的语句进行操作;   </p>
+</li>
+<li><p>自动提交</p>
+<p>执行一个sql语句就提交一次,   不过效率太低;   </p>
+</li>
+<li><p>关闭会话</p>
+<p>用户关闭会话时,   会自动提交事务;   </p>
+</li>
+<li><p>系统崩溃</p>
+<p>系统崩溃或断电的时候,   会回滚事务,   也就是将数据恢复到上一个事务的状态;   </p>
+</li>
+</ol>
+<h2 id="savepoint"><a href="#savepoint" class="headerlink" title="savepoint"></a>savepoint</h2><p>当一个操作集合中包含了很多条语句,   而我们想要让某一个部分执行,   让某一部分不执行,   这个时候可以利用savepoint和rollback to语句来实现;   比如下面这三条语句:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">delete from emp2 where empno = 2200;</span><br><span class="line">delete from emp2 where empno = 9000;</span><br><span class="line">delete from emp2 where empno = 7369;</span><br></pre></td></tr></table></figure>
+
+<p>如果想要让前面两条语句执行,   而让后面一条语句不执行,   可以像下面这样写:   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">delete from emp2 where empno = 2200;</span><br><span class="line">delete from emp2 where empno = 9000;</span><br><span class="line">savepoint sp1;</span><br><span class="line">delete from emp2 where empno = 7369;</span><br><span class="line">rollback to sp1;</span><br></pre></td></tr></table></figure>
+
+<p>也就是说,   当执行完前面两条DML语句时,   暂存一下这个状态,   然后执行最后一条DML语句,   再回滚到执行最后一条DML语句之前,   也就相当于执行了前面两条DML语句,   但是完成了整个操作序列;   而此时,   由于回滚到了savepoint处,   此时刚刚执行了两条DML语句,   还没有进行提交,   所以PLSQL的那两个按钮会显示可以按,   所以这时如果执行commit语句,   则能够将数据永久删除;   </p>
+<h2 id="四大特性-ACID"><a href="#四大特性-ACID" class="headerlink" title="四大特性(ACID)"></a>四大特性(ACID)</h2><p>原子性、一致性、持久性、隔离性;   </p>
+<p>原子性:   一个事务中的语句,   要么全部被执行,   要全部不被执行,   没有中间状态;   </p>
+<p>一致性:   事务的一致性最终是为了保证数据的一致性,   比如转账,   转账的对象一定有两个,   所以一定要满足两个账户的账户金额总和不变,   一方加钱一方减钱,   说的抽象一点,   就是从一个一致性状态转移到另一个一致性状态;   </p>
+<p>隔离性:   各个事务之间互相不会产生影响;   某一个事务必须在不干扰其他进程或事务的前提下进行,   从另一个角度来说,   在事务或工作单元正在被执行时,   该事务所需要的数据不能受到其他进程或事物的影响;   两个角度联合来看,   称,   互不影响;   </p>
+<blockquote>
+<p>其实这一点与进程、函数的理念是完全一样的;   对于进程,   在想要准备执行某个进程的时候,   需要保留上一个进程的信息,   然后进行中断,   再读取该进程的信息,   再执行该进程;   对于函数,   当某个主函数调用某被调函数时,   需要首先保存主函数的信息(通过寄存器或系统栈的方式),   然后再去执行被调函数;   </p>
+</blockquote>
+<blockquote>
+<p>严格的隔离性将会降低效率,   为了提高效率,   需要降低隔离级别:<br>(1) 读未提交<br>(2) 读已提交<br>(3) 可重复读<br>(4) 序列化</p>
+<p>不同的隔离级别会带来不同的数据不一致性问题:<br>(1) 脏读<br>(2) 不可重复读<br>(3) 幻读</p>
+</blockquote>
+<p>持久性:   所有的数据都需要持久化的存储到存储介质中,   不会因为应用程序的关闭而导致数据丢失;   </p>
+<h2 id="提交与回滚前后的状态"><a href="#提交与回滚前后的状态" class="headerlink" title="提交与回滚前后的状态"></a>提交与回滚前后的状态</h2><img src="D:/Program%20Files/Typora/img/image-20221009091555102.png" alt="image-20221009091555102" style="zoom:67%;" />
+
+<p>这样看来,   程序员修改数据库,   就好像数据库先自身拷贝一份,   扔给程序员,   程序员对该拷贝进行修改,   然后提交给数据库本体;   当然严谨的说,   恐怕不是拷贝的整个数据库,   而是数据库的一小部分,   或者说是要修改的那部分;   在操作时,   那一部分数据库被锁住,   程序员操作完成之后才解锁;   </p>
+<h2 id="锁的机制"><a href="#锁的机制" class="headerlink" title="锁的机制"></a>锁的机制</h2><p>在数据库中也有类似于Java中的锁机制,   即,   对数据库的锁、对表的锁、对行的锁;   </p>
+<p>解决并发问题的关键是加锁,   而为了提高效率,   加锁时,   需要考虑锁的粒度问题;   一般情况之下,   都是加行级锁,   也就是对某张表的某一行数据解以加锁,   这样的话,   效率会提高很多;   </p>
+<h2 id="mysql事务测试"><a href="#mysql事务测试" class="headerlink" title="mysql事务测试"></a>mysql事务测试</h2><ol>
+<li><p>打开两个MySQL命令行,   将自动提交事务关闭:   </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查看是否自动提交 1表示开启 0表示未开启</span></span><br><span class="line"><span class="keyword">select</span> @<span class="variable">@autocommit</span>;   </span><br><span class="line"></span><br><span class="line"><span class="comment">--如果为1, 则设置关闭</span></span><br><span class="line"><span class="keyword">set</span> autocommit <span class="operator">=</span> <span class="number">0</span>;   </span><br></pre></td></tr></table></figure></li>
+<li><p>数据准备</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建数据库</span></span><br><span class="line"><span class="keyword">create</span> database tran;  </span><br><span class="line"></span><br><span class="line"><span class="comment">--在两个MySQL窗口中查看数据库的创建情况</span></span><br><span class="line"><span class="keyword">show</span> databases;   </span><br><span class="line"></span><br><span class="line"><span class="comment">--在两个MySQL窗口中使用该数据库</span></span><br><span class="line">use tran;   </span><br><span class="line"></span><br><span class="line"><span class="comment">--创建表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> psn(id <span class="type">int</span> <span class="keyword">primary</span> key, name <span class="type">varchar</span>(<span class="string">&#x27;10&#x27;</span>)) engine<span class="operator">=</span>innodb;   </span><br><span class="line"></span><br><span class="line"><span class="comment">--插入数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> psn <span class="keyword">values</span>(<span class="number">1</span>, <span class="string">&#x27;Faker&#x27;</span>);   </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> psn <span class="keyword">values</span>(<span class="number">2</span>, <span class="string">&#x27;Bang&#x27;</span>);   </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> psn <span class="keyword">values</span>(<span class="number">3</span>, <span class="string">&#x27;Bengi&#x27;</span>);   </span><br><span class="line"><span class="keyword">commit</span>;   </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>测试事务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">--事务的四个隔离级别</span><br><span class="line">read uncommitted;   --读未提交</span><br><span class="line">read committed;   	--读已提交</span><br><span class="line">repeatable read;   	--可重复读</span><br><span class="line">serializable;   		--序列化执行(串行执行)</span><br><span class="line"></span><br><span class="line">--产生的数据不一致的情况</span><br><span class="line">--脏读</span><br><span class="line">--不可重复读</span><br><span class="line">--幻读</span><br></pre></td></tr></table></figure></li>
+<li><p>测试1:   读未提交</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--设置当前会话的隔离级别, 两个窗口都执行</span><br><span class="line">set session transaction isolation level read uncommitted;   </span><br><span class="line"></span><br><span class="line">--开启事务, 两个窗口都执行</span><br><span class="line">start transaction;   </span><br><span class="line"></span><br><span class="line">--A: 修改psn的数据;</span><br><span class="line">update psn set name = &#x27;Deng&#x27;;   </span><br><span class="line"></span><br><span class="line">--A: 查询A中的数据,  发现数据已经改变;   </span><br><span class="line">select * from psn;   </span><br><span class="line"></span><br><span class="line">--B: 在B的psn表中查询数据, 结果发现A中未提交的数据已经进行了修改, 如图2</span><br><span class="line">select * from psn;   </span><br></pre></td></tr></table></figure>
+
+
+
+<p>此时出现的问题叫脏读,   也就是读取到了未提交的数据,   当隔离级别为读未提交的时候会出现脏读;   </p>
+</li>
+<li><p>测试2:   读已提交</p>
+<p>当使用读已提交(read committed)的时候,   就不会出现脏读;   在前面踩坑的时候已经见识到了read committed的效果了（￣へ￣）;   </p>
+<p>而使用读已提交时,   虽然不会出现脏读,   但是会出现不可重复读;   </p>
+<blockquote>
+<p>不可重复读:   当使用读已提交的模式时,   还是有两个窗口,   两个窗口都先查询一遍psn表的数据,   一开始一定是一样的,   窗口A修改psn表的某一项数据,   再在窗口B中查询psn表,   发现psn表发生了变化,   从窗口B的视角(也许是一个用户,   或者是一个程序员)来看,   在查数据时,   一开始账户余额为1000,   突然变成了5000,   这就是不可重复读问题,   也就是当终端A在终端B两次查询数据X的中间空闲时刻对数据X进行改变并时,   终端B查询到了两个不同的数据;   这是不对的,   必须要保证即使在终端A中对某项数据进行修改了,   在终端B中也不可以看到那些修改,   用银行取钱的例子很容易理解;   </p>
+</blockquote>
+<blockquote>
+<p>一个坑:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221009163539082.png" alt="image-20221009163539082" style="zoom:67%;" />
+
+<p>在演示隔离等级时,   最后进行查询数据的时候,   本来读已提交模式下,   终端B是可以查询到提交结果;   但是如果采用上面的时间线进行设置的话,   最后查询到的结果可能不会对应不可重复读;   在这种设置时间线之下,   如果想要得到正确的不可重复读导致的错误结果,   需要将设置隔离等级放在终端A提交数据之后;   也就是说,   需要像下面这样做:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221009184217378.png" alt="image-20221009184217378" style="zoom:67%;" /></blockquote>
+</li>
+<li><p>测试3:   </p>
+<p>和上面一样啦,   只不过就是将等级设置为repeatable read;   但是repeatable read会出现幻读;   </p>
+<blockquote>
+<p>幻读,   也就是当使用repeatable read时,   在终端A中插入一个数据,   然后如果想要在终端B中插入一个有着相同主键的数据时,   终端B会报错,   从终端B的角度来看,   本来在这个事务中并没有对应的主键,   但是却插入不进去,   也就是说,   在可重复读的模式下,   终端B读到了终端A插入的数据,   只是没有显示出来而已;   </p>
+</blockquote>
+<p>利用最高级别的隔离模式—序列化,   就可以解决幻读问题;   </p>
+<p>也就是说,   序列化会对查询和插入语句进行加锁,   举个例子,   终端A在插入一个数据后,   如果没有提交,   那么在一定时间内它将一直占有这把锁,   其他的终端想要插入或者查询时,   必须等待终端A释放这把锁,   所以在其他终端写入DML语句并按下回车时,   会出现卡死一般的情况,   其实是在同步,   而一段时间后如果终端A还没有放弃这把锁,   那么其他等待的终端会出现获取锁失败的错误,   并且在终端A释放锁之后,   该条语句不会执行;   </p>
+<p><img src="D:/Program%20Files/Typora/img/image-20221010102542670.png" alt="image-20221010102542670"></p>
+<p>​                                                                            终端A</p>
+<p><img src="D:/Program%20Files/Typora/img/image-20221010102620936.png" alt="image-20221010102620936"></p>
+<p>​                                                                            终端B</p>
+</li>
+</ol>
+<blockquote>
+<p>其实不应该设置set session transaction….,   而是应该set global transaction…,   也就是一设置就设置全局的隔离级别;   </p>
+</blockquote>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/11/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-031-xian-duan-shu/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/10/04/wu-xian-jian-pan-da-de-bi-ji/wu-xian-jian-pan-bi-ji-01-01/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%BB%93%E6%9D%9F"><span class="toc-text">事务的结束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#savepoint"><span class="toc-text">savepoint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7-ACID"><span class="toc-text">四大特性(ACID)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E5%9B%9E%E6%BB%9A%E5%89%8D%E5%90%8E%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-text">提交与回滚前后的状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="toc-text">锁的机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql%E4%BA%8B%E5%8A%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">mysql事务测试</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
