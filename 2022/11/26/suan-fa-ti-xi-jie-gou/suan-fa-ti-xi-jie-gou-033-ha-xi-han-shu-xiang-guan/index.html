@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="哈希函数哈希函数有几个性质;    一是输入输出的变量的取值范围,   输入变量的取值范围是无穷,   对一个对象进行哈希,   就可以取它的内存地址,   对一个整数进行哈希,   就直接取它的整数值;   而输入的变量一般用字符串来表示;   而输出变量的取值范围为0~N,   N为某一个正整数,   N可以是264-1,   反正输出变量的取值范围是有限的;    二是哈希碰撞;   由于输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2022/11/26/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-033-ha-xi-han-shu-xiang-guan/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="哈希函数哈希函数有几个性质;    一是输入输出的变量的取值范围,   输入变量的取值范围是无穷,   对一个对象进行哈希,   就可以取它的内存地址,   对一个整数进行哈希,   就直接取它的整数值;   而输入的变量一般用字符串来表示;   而输出变量的取值范围为0~N,   N为某一个正整数,   N可以是264-1,   反正输出变量的取值范围是有限的;    二是哈希碰撞;   由于输">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-11-26T07:57:00.414Z">
+<meta property="article:modified_time" content="2022-12-20T13:20:10.602Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/26/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-033-ha-xi-han-shu-xiang-guan/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-20 21:20:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">137</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-11-26T07:57:00.414Z" title=" 2022-11-26 15:57:00">2022-11-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2022-12-20T13:20:10.602Z" title=" 2022-12-20 21:20:10">2022-12-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h1><p>哈希函数有几个性质;   </p>
+<p>一是输入输出的变量的取值范围,   输入变量的取值范围是无穷,   对一个对象进行哈希,   就可以取它的内存地址,   对一个整数进行哈希,   就直接取它的整数值;   而输入的变量一般用字符串来表示;   而输出变量的取值范围为0~N,   N为某一个正整数,   N可以是2<sup>64</sup>-1,   反正输出变量的取值范围是有限的;   </p>
+<p>二是哈希碰撞;   由于输入无限,   输出有限,   所以必定会有某几个输入对应一个输出,   这也就产生了哈希碰撞;   </p>
+<p>三是哈希函数的离散性;   由于输出域一般用整数表示,   所以输出域可以看成是一条直线,   而输入域到输出域的映射,   可以看成是一团密密麻麻的物体射到输出域直线的线条;   当有大量的输入进行映射后,   取一个常数L,   要保证对于任意长度,   从任意下标开始的L,   都满足输入输出映射的点在L上的数量差不多相等;   </p>
+<blockquote>
+<p>也就是说,   模型建立起之后,   拿好多好多的输入样例,   去映射到输出域直线上,   直线上就会出现很多很多的点,   然后拿一根任意长度的棍子去比在这条直线上,   要求不管棍子平移到这条直线的何处,   都必须保证棍子上的点近似相等;   </p>
+<p>对应着哈希函数的离散性,   也可以称为在同样一个范围的均匀性,   就是说,   输入的数据不管多么的紧凑,   不管多么的分散,   映射到输入域后,   都是均匀离散的;   如下图;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221126162947265.png" alt="image-20221126162947265" style="zoom: 67%;" />
+</blockquote>
+<blockquote>
+<p>在Java1.7的HashMap的实现源码中,   可以查看生成哈希码的函数hashCode()的实现方式,   大致就是左移移,   右移移,   再揉到一起异或异或之类的;   </p>
+</blockquote>
+<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>由于哈希函数可以将输入均匀映射到输出域上去,   所以将映射结果模上一个数x之后,   其结果在[0,   x-1]这个区间上也是均匀的;   对应到哈希表中,   不断地往表中加值,   因为哈希函数具有离散性,   所以当哈希表的一个位置满了之后,   其他位置也大差不差地满了;   </p>
+<p>哈希表插入值和删除值的操作略;   当表中的数据过多的时候,   查找的时间复杂度达到了O(N),   这个时候就需要对哈希表进行扩容;   开辟新的内存空间,   让哈希表的容量翻倍,   并且将表中的数据全部重新除以新的表容量,   最终得到的表的每一个位置的链表相对于未扩容时的表,   其长度都要减小一半;   </p>
+<p>而引入了扩容机制,   增删改查的时间复杂度也是O(1)的;   不妨设哈希表的初始容量为1,   当放入的数据量超过表容量时,   表就需要扩容;   也就是说,   插入第二个元素的时候,   表容量扩为2,   插入第三个元素的时候,   表容量扩为4,   插入第五个元素的时候,   表容量扩为8;   所以当想要插入N个元素的时候,   哈希表需要扩容logN次,   而由于每次扩容的数据移动代价加起来为一个等比数列求和,   所以当加到数据N的时候,   得到的数据移动总代价为O(N),   所以哈希表的单次移动的代价为O(1);   </p>
+<h1 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h1><p>布隆过滤器用于查找某个字符串是否是某个巨大集合的元素;   巨大集合有100亿个字符串;   由于所需要的内存空间实在太大,   不能够使用哈希表;   </p>
+<p>布隆过滤器的失误类型为宁可错杀不愿放过;   对于的确存在在集合中的元素,   布隆过滤器100%可以查出来,   对于不存在在集合中的元素,   布隆过滤器可能会认为它在集合中;   </p>
+<p>布隆过滤器需要一个位图,   位图的位数为m;   一个字符串,   分别通过三个哈希函数,   得到三个哈希值,   都模上m,   让其映射到位图上;   在位图上,   将其描黑,   当要查找字符串是否在集合中时,   只需通过同样的处理,   到位图对应的位置上去找该位置有没有变黑,   如果三个位置都变黑了,   那么该字符串一定在集合中,   如果有一个没变黑,   则不在其中;   所以失误率不可避免,   因为总会存在我的哈希值是你的哈希值的时候;   </p>
+<p>所以这个m如何取就很关键;   设数据量为n,   预期的失误率为p,   则布隆过滤器的大小为m比特,   通过如下式子算出的结果向上取整;<br>$$<br>m=-\frac{n*lnp}{(ln2)^2}<br>$$</p>
+<p>根据m和n,   通过如下式子向上取整,   可以计算出需要多少个哈希函数:<br>$$<br>k=ln2\frac mn=0.7ln2\frac mn<br>$$</p>
+<p>根据n,   k和m,   可以计算出真实的失误率:<br>$$<br>(1-e^{-\frac{nk}m})^k<br>$$</p>
+<p>而k个哈希函数,   则可以只取得两个哈希函数f<sub>1</sub>和f<sub>2</sub>,   然后通过f<sub>i</sub> = i * f<sub>1</sub> + f<sub>2</sub>,   得到其他的哈希函数;   </p>
+<h1 id="一致性哈希"><a href="#一致性哈希" class="headerlink" title="一致性哈希"></a>一致性哈希</h1><p>经典的多机数据存储策略,   或者服务器接收请求的策略,   对数据进行哈希,   将得到的哈希值对服务器的数量进行取模,   通过得到的索引值将数据或请求放入对应的服务器中;   </p>
+<p>但是这种做法,   一旦服务器的数量改变,   则全部数据都需要重新计算模值,   再放入对应的服务器中,   也就是说,   在服务器数量改变的情况之下,   这种方法所发生的数据变动是全量的;   </p>
+<p>而将服务器依据某个哈希值放入哈希环的某个位置上,   当数据也通过哈希函数到达哈希环上之后,   可人为的规定数据需要沿着哈希环顺时针找到存储或服务它的服务器,   并且,   当有服务器下线或宕机的时候,   也只需要把数据交给它的顺时针的下一台服务器即可,   也就是说,   这种方法的数据变动不是全量的;   </p>
+<p>在实际实现的时候,   每一个服务器只需要留有一张对应表&lt;哈希值,   服务器名称&gt;即可;   在寻找请求应该扔给哪一台服务器时,   只需要寻找大于该请求的哈希模后值的最小的有对应于服务器值即可;   </p>
+<p>但是让服务器上环,   也就是让每个服务器各自承受了一定弧度上将要到来的负载;   而如果是随意上环的话,   会导致每台服务器承受的负载不均,   也会导致在变更服务器数量的时候,   每台服务器所承受的负载不均的问题;   </p>
+<p>解决方法—虚拟节点技术;   就和分身术一样,   让实际的物理服务器生成各自的上千个虚拟节点,   然后让这些虚拟节点上环,   将环切割成细小的段,   平均下来,   每个物理服务器的负载就一定大致相同;   当有新的服务器想要加进来时,   只需使用同样的步骤,   向老服务器总共要来对应量的数据,   并迁移到自己身上;   </p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/20/day-planners/mei-zhou-ren-wu/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/11/26/tong-xin-yuan-li/tong-xin-yuan-li-di-5-zhang-01/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="toc-text">哈希函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-text">哈希表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">布隆过滤器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C"><span class="toc-text">一致性哈希</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

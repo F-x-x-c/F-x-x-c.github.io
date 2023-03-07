@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="有序表02sb树基础搜索二叉树可以看成是一个非抽象父类,   它有自己的功能,   也就是搜索功能,   它实现了两个供子类用的方法,   左旋和右旋;   继承于它的子类通过父亲给的这两个方法,   实现自己的平衡策略;    AVL树的平衡策略是|左树高度-右树高度| &lt; 2;    而SizeBalancedTree的平衡策略是—以叔叔节点为头的子树的节点个数必须大于等于以它侄子节点为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2023/03/01/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-036-you-xu-biao-02/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="有序表02sb树基础搜索二叉树可以看成是一个非抽象父类,   它有自己的功能,   也就是搜索功能,   它实现了两个供子类用的方法,   左旋和右旋;   继承于它的子类通过父亲给的这两个方法,   实现自己的平衡策略;    AVL树的平衡策略是|左树高度-右树高度| &lt; 2;    而SizeBalancedTree的平衡策略是—以叔叔节点为头的子树的节点个数必须大于等于以它侄子节点为">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-03-01T07:21:49.247Z">
+<meta property="article:modified_time" content="2023-03-02T08:32:09.546Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/01/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-036-you-xu-biao-02/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-02 16:32:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">137</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-03-01T07:21:49.247Z" title=" 2023-03-01 15:21:49">2023-03-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-03-02T08:32:09.546Z" title=" 2023-03-02 16:32:09">2023-03-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="有序表02"><a href="#有序表02" class="headerlink" title="有序表02"></a>有序表02</h1><h2 id="sb树基础"><a href="#sb树基础" class="headerlink" title="sb树基础"></a>sb树基础</h2><p>搜索二叉树可以看成是一个非抽象父类,   它有自己的功能,   也就是搜索功能,   它实现了两个供子类用的方法,   左旋和右旋;   继承于它的子类通过父亲给的这两个方法,   实现自己的平衡策略;   </p>
+<p>AVL树的平衡策略是|左树高度-右树高度| &lt; 2;   </p>
+<p>而SizeBalancedTree的平衡策略是—以叔叔节点为头的子树的节点个数必须大于等于以它侄子节点为头的子树的节点个数;   </p>
+<blockquote>
+<p>因为是二叉树,   所以一个节点只有两个子节点,   也就是说每一个节点的叔叔节点只有一个,   而每一个节点的侄子节点只有两个;   </p>
+</blockquote>
+<p>现在看来,   如果平衡性是从下往上保证的,   那就是要找到每一个节点的叔叔节点,   然后再比较;   如果平衡性是从上往下保证的,   那就要找到每一节点的侄子节点,   然后再比较;   </p>
+<blockquote>
+<p>时间复杂度估计:   因为在这种平衡机制的作用下,   最悬殊的情况也就是某个爷节点的左孩子的节点个数与右孩子的左(右)孩子节点的节点个数相等,   也就是说,   爷节点的左孩子的节点个数为右孩子的节点个数的1/2,   而这样,   在查询的时候,   从上往下,   每下一层,   最少也会抛弃1/3的节点,   所以在这种平衡机制下,   查询的时间复杂度为O(logN);   </p>
+</blockquote>
+<h2 id="sb树破坏类型"><a href="#sb树破坏类型" class="headerlink" title="sb树破坏类型"></a>sb树破坏类型</h2><p>也有四种,   LL型,   LR型,   RL型,   RR型;   </p>
+<p>设爷节点为Z,   两个孩子分别是X和Y,   破坏类型为AB型;   如果说节点X违规了,   则说明节点X的节点数量比爷节点Z的A边的B边的节点的节点数量要少;   </p>
+<blockquote>
+<p>也就是说,   如果节点X为左孩子节点,   它只能产生RL型和RR型的违规;   右孩子节点则对应之;   </p>
+<p>下面统一把爷节点称为父节点;   </p>
+</blockquote>
+<p>对于LL型的违规,   把父节点传到函数中,   因为这个过程可能会换头,   所以需要有一个节点类型的返回值;   而具体而言,   如果发现右孩子因为左孩子的左孩子的节点数量而违规,   则需要让整棵树右旋,   然后看哪些节点的子树发生了变化,   对于那些子树变化了的头节点,   需要递归调用该函数;   </p>
+<blockquote>
+<p>只要换了孩子的节点都要递归,   因为不能够确定新换过来的孩子是否能够干得过叔叔节点;   </p>
+<p>AVL树的平衡性非常敏感,   也就意味着每旋转一次可能都会有平衡性的调整,   而sb树的平衡性相对于AVL树而言不那么敏感,   所以它调整的次数比较少,   而真正需要调整的时候,   调整的次数&gt;1,   但是数学上可以证明时间复杂度最终收敛为O(logN);   也就是说加节点的时候,   进行平衡性的调整,   而删除节点的时候就不进行平衡性的调整,   由于整体的高度为logN,   所以就算长时间不添加节点,   整棵树的高度也不会太大,   所以在删除节点的时候可以不进行平衡性的调整;   </p>
+</blockquote>
+<blockquote>
+<p>积压结构:   ArrayList会进行自动扩容,   而在扩容的时候,   本质上是开辟一块新空间,   然后把旧的数据拷贝进去,   也就是说ArrayList会在扩容的时候迎来一个性能瓶颈;   在1的时候扩容,   在2的时候扩容,   在4的时候扩容,   在8的时候扩容…    也就是说拷贝的次数是一个等比数列,   所以拷贝的次数为O(N),   而又因为加了N个节点,   所以均摊下来时间复杂度为O(1);   </p>
+<p>红黑树和sb树都属于积压结构,   所以这些树经常用于硬盘结构,   老长时间不变动,   等到积压够了就进行一次大变动,   如果频繁地读取数据,   硬盘IO的瓶颈就展现了;   而在CPU的高速缓存当中,   AVL树的频繁读写可以很快;   </p>
+</blockquote>
+<h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><p>跳表的每一个节点都有许多的链表指针,   以及一个存放该节点值的变量;   </p>
+<p>步骤:   </p>
+<p>(1) 独立步骤—摇色子:   对于每一个节点,   在创建之初,   都进行摇色子的步骤;   每一个节点的链表指针数量为1,   通过摇色子,   0.5概率使指针的数量+1,   0.5的概率不改变指针数量,   而色子一直摇,   直到摇到不改变指针数量这种情况结束,   这个节点的链表指针数量也就定了;   </p>
+<p>(2) 一开始时,   头节点没有链表指针,   在尝试把第一个值纳入跳表中时,   创建第一个节点,   把这个值放入节点中,   并对第一个节点摇色子,   获得第一节点的链表指针数量;   建立起头节点的链表指针,   其数量和第一节点的链表指针数量一致;   将头节点的所有链表指针指向第一节点;   </p>
+<p>(3) 跳表运行一段时间之后,   当新加入一个值X的时候,   对头结点的链表指针做如下操作:   现在遍历到头结点的第i个链表指针,   找到该指针所对应的链表中的第一个节点值大于X的节点Z,   设节点Z之前的节点为节点Y,   将这个新加入的节点放在节点Y和节点Z中间,   也就是让节点Y对应的第i个链表指针指向新节点,   然后让新节点的第i个链表指针指向节点Z;   </p>
+<p>(4) 现在节点Y的第i个链表指针指向了新节点,   此时,   跳到节点Y的第i-1个链表指针,   重复上面的操作,   直到链表指针的标号为1,   并挂完这个新节点;   </p>
+<p>对于某一个输入值X,   随机摇色子,   假设扔出了a层,   所以这个输入值X在[1~a]层都有值,   所以节点的分布规律与输入数据规律无关,   完全随运气决定,   由于各个节点每往上一层,   概率就小0.5,   所以假设有N个节点,   底层(第一层)就一定有N个节点,   而第二层就只有N/2个节点,   第三层就只有N/4个节点;   也就是说,   跳表通过随机因素把输入数据规律解耦掉了;   </p>
+<p>加入一个节点的时间复杂度分析:   当想要加入一个节点时,   从头节点的最高一层链表指针开始,   往右一直找,   找到了就停,   然后从找到的节点开始又继续往右找,   一直到第一层,   每找一次都要跨过最底层的N个节点中的不知道多少个节点,   想象最坏的情况,   每一次就是每一层遍历都要遍历到当前层的最右边,   设总共m层,   也就是说,   最顶层跨过N/2<sup>m-1</sup>个节点,   下一层跨过N/2<sup>m-2</sup>-N/2<sup>m-1</sup>个节点,   一直往下,   总共时间复杂度就为O(logN);   </p>
+<p>实现暂时放放吧;   </p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/01/shui-mian-yan-jiu/shui-mian-yan-jiu-jie-guo/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/03/01/hou-duan-gong-cheng-shi/spring01/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E8%A1%A802"><span class="toc-text">有序表02</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sb%E6%A0%91%E5%9F%BA%E7%A1%80"><span class="toc-text">sb树基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sb%E6%A0%91%E7%A0%B4%E5%9D%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text">sb树破坏类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%A1%A8"><span class="toc-text">跳表</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

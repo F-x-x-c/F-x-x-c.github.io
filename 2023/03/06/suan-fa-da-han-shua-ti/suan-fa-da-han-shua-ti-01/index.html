@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大厂刷题01题目1给定一个有序数组arr,   代表坐落在x轴的点,   给定一个正数K,   代表绳子长度,   返回绳子中最多压中的几个点? (绳子边缘覆盖的点也算) 解法1:   贪心 绳子的末尾只需要压在每一个arr[i]处,   判断此时能够压住多少点即可,   绳子的末尾不需要压在非arr[i]处;   设绳长为L,   当遍历到arr[i]的时候,   绳子锁盖住的范围为[ arr[">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2023/03/06/suan-fa-da-han-shua-ti/suan-fa-da-han-shua-ti-01/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="大厂刷题01题目1给定一个有序数组arr,   代表坐落在x轴的点,   给定一个正数K,   代表绳子长度,   返回绳子中最多压中的几个点? (绳子边缘覆盖的点也算) 解法1:   贪心 绳子的末尾只需要压在每一个arr[i]处,   判断此时能够压住多少点即可,   绳子的末尾不需要压在非arr[i]处;   设绳长为L,   当遍历到arr[i]的时候,   绳子锁盖住的范围为[ arr[">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-03-06T06:58:04.468Z">
+<meta property="article:modified_time" content="2023-03-07T08:41:12.817Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/06/suan-fa-da-han-shua-ti/suan-fa-da-han-shua-ti-01/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-07 16:41:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">137</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-03-06T06:58:04.468Z" title=" 2023-03-06 14:58:04">2023-03-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-03-07T08:41:12.817Z" title=" 2023-03-07 16:41:12">2023-03-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="大厂刷题01"><a href="#大厂刷题01" class="headerlink" title="大厂刷题01"></a>大厂刷题01</h1><h2 id="题目1"><a href="#题目1" class="headerlink" title="题目1"></a>题目1</h2><p>给定一个有序数组arr,   代表坐落在x轴的点,   给定一个正数K,   代表绳子长度,   返回绳子中最多压中的几个点? (绳子边缘覆盖的点也算)</p>
+<p>解法1:   贪心</p>
+<p>绳子的末尾只需要压在每一个arr[i]处,   判断此时能够压住多少点即可,   绳子的末尾不需要压在非arr[i]处;   设绳长为L,   当遍历到arr[i]的时候,   绳子锁盖住的范围为[ arr[i]-L,   arr[i] ],   <strong>这个时候只需要获得坐标轴上,   下标大于等于arr[i]-L并且还存在于arr中的点即可</strong>,   具体做法:   对arr进行二分,   先取得arr[(0+i)/2]的值,   判断该值是否大于等于arr[i]-L,   如果大于,   则让左指针跳到mid+1的地方;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">nearestIndex</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> R, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> L = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> index = R;</span><br><span class="line">	<span class="keyword">while</span> (L &lt;= R) &#123;</span><br><span class="line">		<span class="keyword">int</span> mid = L + ((R - L) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (arr[mid] &gt;= value) &#123;</span><br><span class="line">			index = mid;</span><br><span class="line">			R = mid - <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			L = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> index;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如此便可采用二分的方法找到大于arr[i]-L的最小下标;   根据每一个最近的下标,  算出这条线上有多少个值即可;   </p>
+<p>解法2:   滑动窗口</p>
+<p>讨论必须以左指针L为头的窗口,   并且右指针R到达窗口最大值的时候,   能够包含多少个点,   这是一个动态的过程,   L一个一个地往右,   R也是,   所以这种方法地时间复杂度为O(N),   因为只遍历数组两次;   而上面的方法的时间复杂度为O(N * logN);   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxPoint2</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">int</span> right = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">int</span> N = arr.length;</span><br><span class="line">   <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">while</span> (left &lt; N) &#123;</span><br><span class="line">      <span class="keyword">while</span> (right &lt; N &amp;&amp; arr[right] - arr[left] &lt;= L) &#123;</span><br><span class="line">         right++;</span><br><span class="line">      &#125;</span><br><span class="line">      max = Math.max(max, right - left);</span><br><span class="line">      left++;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="题目2"><a href="#题目2" class="headerlink" title="题目2"></a>题目2</h2><p>给定一个文件目录路径,   写一个函数统计这个目录下面的所有文件的数量并返回,   隐藏文件也算,    但文件夹不算;   </p>
+<p>解法:   准备一个队列,   遍历到的是文件,   则count++,   是文件夹,   则放入队列中去;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getFileNumber</span><span class="params">(String folderPath)</span> </span>&#123;</span><br><span class="line">    File root = <span class="keyword">new</span> File(folderPath);</span><br><span class="line">    <span class="keyword">if</span> (!root.isDirectory() &amp;&amp; !root.isFile()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.isFile()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Queue&lt;File&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    queue.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        File curFile = queue.poll();</span><br><span class="line">        <span class="keyword">for</span> (File file : curFile.listFiles()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (file.isFile()) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (file.isDirectory())&#123;</span><br><span class="line">                queue.add(file);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String path = <span class="string">&quot;D:\\Program Files\\Neat Download\\ArcSoft_ArcFace_Java_Windows_x64_V3.0&quot;</span>;</span><br><span class="line">    System.out.println(getFileNumber(path));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="题目3"><a href="#题目3" class="headerlink" title="题目3"></a>题目3</h2><p>题目:   给定一个非负整数num,   如何不用循环语句,   返回&gt;=num,   并且离num最近的2次幂数;   </p>
+<p>思路:   一段神奇的代码~在这个代码中,   完成那一堆无符号右移与操作之后,   可以把二进制形式下的n最高位的1右边全部填为1,   这玩意儿+1,   就变成了比n大的最小2次幂数;   为了避免本身就是2的次幂数进行上述操作之后导致的问题,   所以需要减1;   也就是说,   如果n刚好是2的次幂,   则给它打到后一位去,   防止它通过算法找到它的下一个2次幂数;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	n--;</span><br><span class="line">	n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">	n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">	n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">	n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">	n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 到这里n为0...0111111...11, 加一就变成了只有一个1</span></span><br><span class="line">	<span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="题目4"><a href="#题目4" class="headerlink" title="题目4"></a>题目4</h2><p>题目:   一个数组中只有’G’和’B’,   想让所有的G都放在左侧,   所有的B都放在右侧,   但是只能在相邻字符之间进行交换操作,   至少需要交换几次,   返回交换次数;   </p>
+<p>思路:   贪心策略—每一个’B’都不会跑到前一个’B’的前面,   每一个’G’都不会跑到前一个’G’的前面;   所以这道题可以这么干:   拿一个指针b指向B,   拿一个指针g指向G,   指针g指向的是当前遍历到的需要调整位置的字符’G’的位置,   而指针b指向的是最左边的’B’,   这两个指针之间的字符一定全是’B’,   所以就这么调整咯,   两个指针都不回退,   所以时间复杂度O(N);   该贪心策略其实就是排序算法的稳定性的问题,   即相同的被排序元素的相对位置是否不变;   在这道题中,   不管是’B’还是’G’,   其相对位置都没有必要发生变化,   因为如果发生了变化,   则说明一个元素跑到了与它相同的前一个元素的前面,   也就是多交换了几位;    </p>
+<p>因为只需要返回次数,   所以根本不需要调动字符数组;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minSteps1</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="keyword">null</span> || s.equals(<span class="string">&quot;&quot;</span>)) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">char</span>[] str = s.toCharArray();</span><br><span class="line">	<span class="keyword">int</span> step1 = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> gi = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123; </span><br><span class="line">		<span class="keyword">if</span> (str[i] == <span class="string">&#x27;G&#x27;</span>) &#123;</span><br><span class="line">			step1 += i - (gi++);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> step2 = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> bi = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (str[i] == <span class="string">&#x27;B&#x27;</span>) &#123;</span><br><span class="line">			step2 += i - (bi++);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Math.min(step1, step2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>而原题既可以是G在左边,   又可以是B在左边,   两相比较,   判断哪种所需的次数少,   代码与上面的一致;   </p>
+<h2 id="题目5"><a href="#题目5" class="headerlink" title="题目5"></a>题目5</h2><p>题目一个二维数组,   可以从任何位置出发,   向上下左右任意方向行走,   返回能走出的最长的递增链长度;   要注意是<strong>最长</strong>以及<strong>递增</strong>;   </p>
+<p>直接把暴力递归改成记忆化搜索即可;   但是需要注意,   由于dp[i] [j]依赖的是上下左右四个位置,   所以这道题目不好改成严格位置依赖,   所以就记忆化搜索得了~</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">longestIncreasingPath2</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> rols = matrix.length;</span><br><span class="line">    <span class="keyword">int</span> cols = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[rols][cols];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++) &#123;</span><br><span class="line">            ans = Math.max(ans, process2(matrix, <span class="number">0</span>, <span class="number">0</span>, dp));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">process2</span><span class="params">(<span class="keyword">int</span>[][] mat, <span class="keyword">int</span> rol, <span class="keyword">int</span> col, <span class="keyword">int</span>[][] dp)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (dp[rol][col] != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> dp[rol][col];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> up;</span><br><span class="line">    <span class="keyword">int</span> down;</span><br><span class="line">    <span class="keyword">int</span> left;</span><br><span class="line">    <span class="keyword">int</span> right;</span><br><span class="line">    <span class="keyword">int</span> rolN = mat.length;</span><br><span class="line">    <span class="keyword">int</span> colN = mat[<span class="number">0</span>].length;</span><br><span class="line">    up = rol - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; mat[rol][col] &lt; mat[rol - <span class="number">1</span>][col] ?</span><br><span class="line">            process2(mat, rol - <span class="number">1</span>, col, dp) : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    down = rol + <span class="number">1</span> &lt; rolN &amp;&amp; mat[rol][col] &lt; mat[rol + <span class="number">1</span>][col] ?</span><br><span class="line">            process2(mat, rol + <span class="number">1</span>, col, dp) : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    left = col - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; mat[rol][col] &lt; mat[rol][col - <span class="number">1</span>] ?</span><br><span class="line">            process2(mat, rol, col - <span class="number">1</span>, dp) : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    right = col + <span class="number">1</span> &lt; colN &amp;&amp; mat[rol][col] &lt; mat[rol][col + <span class="number">1</span>] ?</span><br><span class="line">            process2(mat, rol, col + <span class="number">1</span>, dp) : <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    dp[rol][col] = Math.max(Math.max(up, down), Math.max(left, right)) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> dp[rol][col];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>什么情况之下要改成严格位置依赖? </p>
+<p>dp[i] [j]所依赖的位置是一连串的时候,   比如这道题为什么不改,   是因为它就依赖4个位置,   或者说它就依赖O(1)个位置,   所以不用改,   但是如果它依赖的是一行或者一列,   则需要改成严格位置依赖;   </p>
+</blockquote>
+<h2 id="题目6"><a href="#题目6" class="headerlink" title="题目6"></a>题目6</h2><p>题目:   给定两个非负数组x和hp,   长度为N,   再给定一个正数range,   以及一个有序数组x,   x[i]表示i号怪兽在x轴上的位置,   hp[i]表示i号怪兽的血量,   range表示法师如果站在x位置,   用AOE技能打到的范围为[x - range,   x + range],   被打到的每只怪兽损失1点血量,   返回要把所有怪兽血量清空所释放的最少AOE技能的次数;   </p>
+<p>思路:   先来一个贪心,   对最左边的血量不为0的元素,   把施法范围的左边界卡在它的位置上,   然后开始摁技能,   摁到它死,   再看下一最左边的血量不为0的元素,   采用同样的方法;   </p>
+<p>使用线段树就可以解决,   也就是贪心策略+线段树,   所以线段树和IndexTree的代码要熟记呀</p>
+<h2 id="题目7"><a href="#题目7" class="headerlink" title="题目7"></a>题目7</h2><p>题目:   给定一个数组arr,   可以在每个数字之前决定+或者-,   但是必须所有数字都参与,   再给定一个数target,   所有数字跟它前面的符号相结合进行计算,   求最后算出的结果刚好为target的方法数;   </p>
+<p>思路1:   暴力递归</p>
+<p>当越界的时候,   如果刚好此时rest减完,   则方法数+1,   否则方法数+0;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">findTargetSumWays1</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> process1(arr, <span class="number">0</span>, target);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">process1</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> index, <span class="keyword">int</span> rest)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (index == arr.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> rest == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> process1(arr, index + <span class="number">1</span>, rest + arr[index]) +</span><br><span class="line">            process1(arr, index + <span class="number">1</span>, rest - arr[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>改成动态规划,   动态规划数组dp[index,   rest]的含义是:   对于arr[0,   index],   凑出rest的方法数;   但是改成动态规划的话,   太过于复杂,   因为rest的范围是[target-Max(arr),   target+Max(arr)];   </p>
+<p>优化1:   可能arr的元素有正有负,   改变正负其实并不影响计算,   所以将所有的元素取绝对值,   变成正值;   </p>
+<p>优化2:   处理完成之后,   将所有的元素值相加,   和为sum,   如果target&gt;sum,   则方法数为0;   </p>
+<p>优化3:   如果sum和target的奇偶性不同,   则,   方法数为0;   </p>
+<p>优化4:   数组arr的元素取正取负后相加组成target,   所以arr中的元素可以被划分为正集合和负集合,   设正集合为P,   负集合为N,   则P-N=target,   两边同时加P+N,   得到2P=(target+sum),   也就是说,   有多少种方法,   P就对应了多少种(target+sum)/2,   也就是说问题转变为了(target+sum)/2的取法;   </p>
+<p>优化5:   空间压缩技巧;   </p>
+<p>由此得到的暴力递归</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">findTargetSumWays2_iter</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr.length == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.abs(arr[<span class="number">0</span>]) == Math.abs(target) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> tarAndSum = (target + sum) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> sum &lt; target || ((target &amp; <span class="number">1</span>) ^ (sum &amp; <span class="number">1</span>)) != <span class="number">0</span> ? <span class="number">0</span> : process2(arr, <span class="number">0</span>, tarAndSum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">process2</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> index, <span class="keyword">int</span> rest)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (index == arr.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> rest == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> process2(arr, index + <span class="number">1</span>, rest) + process2(arr, index + <span class="number">1</span>, rest - arr[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实左程云对这道题的思路根本就不是先提出那5个优化之后,   再进行的代码编写,   而是先提出了优化1和优化4,   写出代码之后发现不对,   然后提出的优化3! 因为使用优化1和优化4进行代码编写的时候,   一定会发现的问题是如果target + sum是一个奇数,   则除2之后结果不正确;   通过观察发现target + sum一定为偶数,   这种思路才得以实现,   然后才推出了优化3;   </p>
+<p>而且这种方法改成动态规划还有一个坑,   就是如果target + sum&lt;0,   则返回0;   </p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/05/bi-ye-lun-wen/pca-yuan-ma/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A7%E5%8E%82%E5%88%B7%E9%A2%9801"><span class="toc-text">大厂刷题01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE1"><span class="toc-text">题目1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE2"><span class="toc-text">题目2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE3"><span class="toc-text">题目3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE4"><span class="toc-text">题目4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE5"><span class="toc-text">题目5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE6"><span class="toc-text">题目6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE7"><span class="toc-text">题目7</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="边缘检测与轮廓算法边缘检测图像中亮度(灰度值)发生明显变化的像素集合;    Sobel算子 含义 把图像中每个像素的上下左右4个区域的灰度值加权差,   在边缘处达到极值从而检测边缘;     作用 对噪声据有平滑抑制作用,   但是得到边缘较粗,   可能出现伪边缘;     卷积核$$\left[\begin{array}{cc}-1&amp;0&amp; +1\-2&amp;0&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2023/01/06/bi-ye-lun-wen/f008-bian-yuan-jian-ce-yu-lun-kuo-suan-fa/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="边缘检测与轮廓算法边缘检测图像中亮度(灰度值)发生明显变化的像素集合;    Sobel算子 含义 把图像中每个像素的上下左右4个区域的灰度值加权差,   在边缘处达到极值从而检测边缘;     作用 对噪声据有平滑抑制作用,   但是得到边缘较粗,   可能出现伪边缘;     卷积核$$\left[\begin{array}{cc}-1&amp;0&amp; +1\-2&amp;0&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-01-06T01:49:05.515Z">
+<meta property="article:modified_time" content="2023-01-08T08:59:37.430Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/01/06/bi-ye-lun-wen/f008-bian-yuan-jian-ce-yu-lun-kuo-suan-fa/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-08 16:59:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">137</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-01-06T01:49:05.515Z" title=" 2023-01-06 09:49:05">2023-01-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-01-08T08:59:37.430Z" title=" 2023-01-08 16:59:37">2023-01-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="边缘检测与轮廓算法"><a href="#边缘检测与轮廓算法" class="headerlink" title="边缘检测与轮廓算法"></a>边缘检测与轮廓算法</h1><h2 id="边缘检测"><a href="#边缘检测" class="headerlink" title="边缘检测"></a>边缘检测</h2><p>图像中亮度(灰度值)发生明显变化的像素集合;   </p>
+<h3 id="Sobel算子"><a href="#Sobel算子" class="headerlink" title="Sobel算子"></a>Sobel算子</h3><ol>
+<li><p>含义</p>
+<p>把图像中每个像素的上下左右4个区域的灰度值加权差,   在边缘处达到极值从而检测边缘;   </p>
+</li>
+<li><p>作用</p>
+<p>对噪声据有平滑抑制作用,   但是得到边缘较粗,   可能出现伪边缘;   </p>
+</li>
+<li><p>卷积核<br>$$<br>\left[\begin{array}{cc}<br>-1&amp;0&amp; +1\<br>-2&amp;0&amp; +2\<br>-1&amp;0&amp;+1<br>\end{array}\right]\<br>X方向\\<br>\left[\begin{array}{cc}<br>+1&amp;+2&amp; +1\<br>-0&amp;0&amp; 0\<br>-1&amp;-2&amp;-1<br>\end{array}\right]\<br>Y方向<br>$$</p>
+</li>
+<li><p>函数</p>
+<p>Imgproc.Sobel(Mat src,    Mat dst,    int ddepth,    int dx,   int dy);   </p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox">  ddepth如果=-1,   则处理结果图像的深度与src一样(8位位图);   </p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  dx和dy分别为对应方向上的差分阶数;   </p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Scharr算子"><a href="#Scharr算子" class="headerlink" title="Scharr算子"></a>Scharr算子</h3><p>略;   </p>
+<h3 id="Laplace算子"><a href="#Laplace算子" class="headerlink" title="Laplace算子"></a>Laplace算子</h3><p>使用二阶导数来计算边缘部分;   对噪声敏感,   在边缘检测中起辅助作用;   </p>
+<h3 id="Canny边缘检测"><a href="#Canny边缘检测" class="headerlink" title="Canny边缘检测"></a>Canny边缘检测</h3><ol>
+<li><p>最优边缘检测</p>
+<p>尽可能多的表示出图像中的实际边缘;   </p>
+<p>标识出的边缘要与实际图像中的实际边缘尽可能接近;   </p>
+<p>检测出的边缘点与实际边缘点一一对应;   </p>
+</li>
+<li><p>算法步骤</p>
+<p>(1) 进行高斯滤波;   </p>
+<p>(2) 计算梯度图像与角度图像;   </p>
+<p>(3) 对梯度图像进行非极大值抑制;   </p>
+<p>(4) 使用双阈值进行边缘连接;   即设置两个阈值minVal与maxVal;   当图像的灰度梯度高于maxVal时被认为是真的边界,   低于minVal的边界会被抛弃;   如果介于两者之间,   则要看这个点是否与某个被确定为真正的边界点相连,   如果是,   则认为它是边界点,   不是即被抛弃;    </p>
+<img src="D:/Program%20Files/Typora/img/image-20230106102021826.png" alt="image-20230106102021826" style="zoom: 80%;" />
+
+<p>A点大于maxVal,   所以A点为真正边界点;   B点介于最值之间,   但是与A相连,   所以B也为真正边界点;   C未与真正边界点相连,   被抛弃;   </p>
+</li>
+</ol>
+<h3 id="算法结果对比"><a href="#算法结果对比" class="headerlink" title="算法结果对比"></a>算法结果对比</h3><img src="D:/Program%20Files/Typora/img/image-20230106105651504.png" alt="image-20230106105651504" style="zoom: 80%;" />
+
+<img src="D:/Program%20Files/Typora/img/image-20230106105811628.png" alt="image-20230106105811628" style="zoom:80%;" />
+
+<img src="D:/Program%20Files/Typora/img/image-20230106105850798.png" alt="image-20230106105850798" style="zoom:80%;" />
+
+<img src="D:/Program%20Files/Typora/img/image-20230106105906446.png" alt="image-20230106105906446" style="zoom:80%;" />
+
+<p>sobel算子的结果图像中的边缘较粗,   scharr算子的结果图像中出现了许多的噪点,   拉普拉斯算子的结果图像边缘轮廓较细,   而canny算法可以得到非常清晰且正确的边缘轮廓;   </p>
+<h2 id="轮廓算法"><a href="#轮廓算法" class="headerlink" title="轮廓算法"></a>轮廓算法</h2><img src="D:/Program%20Files/Typora/img/image-20230106134830663.png" alt="image-20230106134830663" style="zoom:80%;" />
+
+<img src="D:/Program%20Files/Typora/img/image-20230106134852490.png" alt="image-20230106134852490" style="zoom:80%;" />
+
+
+
+
+
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/07/bi-ye-lun-wen/f009-ren-lian-jian-ce/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/01/05/gong-wu-yuan-kao-shi/1-pan-duan-tui-li-002-lei-bi-tui-li/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E4%B8%8E%E8%BD%AE%E5%BB%93%E7%AE%97%E6%B3%95"><span class="toc-text">边缘检测与轮廓算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-text">边缘检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sobel%E7%AE%97%E5%AD%90"><span class="toc-text">Sobel算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scharr%E7%AE%97%E5%AD%90"><span class="toc-text">Scharr算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace%E7%AE%97%E5%AD%90"><span class="toc-text">Laplace算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B"><span class="toc-text">Canny边缘检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%BB%93%E6%9E%9C%E5%AF%B9%E6%AF%94"><span class="toc-text">算法结果对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E7%AE%97%E6%B3%95"><span class="toc-text">轮廓算法</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
