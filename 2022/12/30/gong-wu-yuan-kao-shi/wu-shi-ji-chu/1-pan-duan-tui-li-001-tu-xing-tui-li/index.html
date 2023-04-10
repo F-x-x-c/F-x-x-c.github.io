@@ -1,0 +1,470 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="图形推理位置规律针对于元素组成基本相同的图形题;      平移​    需要看方向和平移的步数,   方向有上下,   左右和斜对角线,   以及绕圈;   步数的话,   需要注意步数是恒定的还是等差的,   一般出现的等差都是递增;   很多时候可以两者结合来看,   也需要结合来看;   对应的题型有九宫格,   十六宫格,   在一个圆圈里转悠,   在一个方块里转悠;    ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aegis">
+<meta property="og:url" content="http://example.com/2022/12/30/gong-wu-yuan-kao-shi/wu-shi-ji-chu/1-pan-duan-tui-li-001-tu-xing-tui-li/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="图形推理位置规律针对于元素组成基本相同的图形题;      平移​    需要看方向和平移的步数,   方向有上下,   左右和斜对角线,   以及绕圈;   步数的话,   需要注意步数是恒定的还是等差的,   一般出现的等差都是递增;   很多时候可以两者结合来看,   也需要结合来看;   对应的题型有九宫格,   十六宫格,   在一个圆圈里转悠,   在一个方块里转悠;    ​">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-12-30T02:09:22.777Z">
+<meta property="article:modified_time" content="2023-02-03T08:35:14.260Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/12/30/gong-wu-yuan-kao-shi/wu-shi-ji-chu/1-pan-duan-tui-li-001-tu-xing-tui-li/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Aegis',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-03 16:35:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">168</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2022-12-30T02:09:22.777Z" title=" 2022-12-30 10:09:22">2022-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-02-03T08:35:14.260Z" title=" 2023-02-03 16:35:14">2023-02-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="图形推理"><a href="#图形推理" class="headerlink" title="图形推理"></a>图形推理</h1><h2 id="位置规律"><a href="#位置规律" class="headerlink" title="位置规律"></a>位置规律</h2><p>针对于元素组成基本相同的图形题;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230102212706632.png" alt="image-20230102212706632"  />
+
+<h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><p>​    需要看方向和平移的步数,   方向有上下,   左右和斜对角线,   以及绕圈;   步数的话,   需要注意步数是恒定的还是等差的,   一般出现的等差都是递增;   很多时候可以两者结合来看,   也需要结合来看;   对应的题型有九宫格,   十六宫格,   在一个圆圈里转悠,   在一个方块里转悠;   </p>
+<p>​    对于宫格类的题目,   需要注意几点:   </p>
+<ol>
+<li><p>基本的判断方法是选择不相同的元素进行规律的选择,   比如下面这题;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221230102025241.png" alt="image-20221230102025241" style="zoom:67%;" />
+
+<blockquote>
+<p>分组类型的题目,   就是一组为找规律的组,   另一组给出前几个元素,   要求找到后面的一个元素;   </p>
+</blockquote>
+<p>其中不相同的元素有小黑格和空白格,   发现小黑格在以直线形式行走,   而且是顺时针一次两格,   空白格在以逆时针一次1格的形式在行走,   于是规律就找到了;   不难发现,   这类题目的解题技巧其实是<strong>找到不同的元素,   然后分而治之;</strong>   </p>
+</li>
+<li><p>另一种针对于宫格类的题目的解题技巧是:   </p>
+<p>“中间”黑色格数量相同,   优先内外看;   </p>
+<p>“中间”黑色格数量不同,   优先横竖看;   </p>
+<p>“中间”的含义,   对于九宫格就是正中间,   对于16宫格就是中间部分由正中央的4个格子组成的正方形;   </p>
+<p>比如下面这题;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221230102954768.png" alt="image-20221230102954768" style="zoom:67%;" />
+
+<p>中间的黑格数量相同,   那就优先分内外看,   发现中间4格里的黑格在顺时针行走;   而外面的两个格子,   一个在以3格的速度在顺时针行走,   一个在以1格的速度在顺时针行走,   所以在特殊位置他们会重合;   这样规律就找到了;   </p>
+<blockquote>
+<p>先标号,   再就近假设;   </p>
+</blockquote>
+</li>
+</ol>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p>旋转分为旋转和翻转,   翻转主要考虑竖直对称和左右对称;   在实际做题的时候,   对称考虑的对象是两张图,   也就是画横线或者竖线的地方是两张图之间!</p>
+<p>​    提醒大约就是给定一个九宫格,   前8格都填好了,   问第九个是啥,   然后就是前6个格子找规律,   最后一行格子填答案,   注意翻转类的题目,   我猜测如果一道题目里有翻转,   那就一定是左右翻转和华夏反转一起考,   所以<strong>一道题目里主要有翻转,   就一定全是翻转和旋转,   那么就可以直接看翻转的,   而不去看旋转的图</strong>,   因为有些图片旋转过后其实不是那么好辨认,   而翻转其实更好辨认一些;   </p>
+<h2 id="样式规律"><a href="#样式规律" class="headerlink" title="样式规律"></a>样式规律</h2><p>样式规律针对于元素组成相似的题目;   </p>
+<blockquote>
+<p>相似指的是,   有相同的图形反复出现,   有相同的线条反复出现,   以及黑白方块数量不定!</p>
+</blockquote>
+<p><img src="D:/Program%20Files/Typora/img/image-20230102212759670.png" alt="image-20230102212759670"></p>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><blockquote>
+<p>缺啥补啥~</p>
+</blockquote>
+<img src="D:/Program%20Files/Typora/img/image-20221230112438082.png" alt="image-20221230112438082" style="zoom:67%;" />
+
+<p>3张图组成一组,   一组一共9个图形,   所以只需要找到没有出现的图形即可;   </p>
+<h3 id="加减同异-重要"><a href="#加减同异-重要" class="headerlink" title="加减同异(重要!!!)"></a>加减同异(重要!!!)</h3><p>也就是线条之间相加减,   或者求同,   或者求异;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20221230112827217.png" alt="image-20221230112827217" style="zoom:67%;" />
+
+<p>第一个就是两个图形的线条相加,   第二个就是两个图形的线条求同,   第三个就是求异,   也就是相加之后再减去相同的部分,   可以说,   求异=相加-求同=并-交;   </p>
+<blockquote>
+<p>先样式规律还是先位置规律:   谁搞特殊先转谁;   </p>
+<ol>
+<li>前两幅图有明显相同的线条的时候,   优先进行运算;   </li>
+<li>前两幅图没有明显相同的线条的时候,   拿图1和图2,   跟图3相比,   如果谁没有明显相同的线条,   就先转谁!</li>
+</ol>
+</blockquote>
+<h3 id="黑白运算"><a href="#黑白运算" class="headerlink" title="黑白运算"></a>黑白运算</h3><p>​    几个黑白方块,   因为有黑和白四种颜色,   所以黑和白的组合就有4种,   这种题目需要看小方块对应的位置相加之后的规律,   其实也不是相加,   就是当出现黑白的某种排列之后会变成什么颜色而已;   </p>
+<blockquote>
+<p>​    如果黑白方块的数量是相同的,   优先考虑平移,   如果黑白方块的数量是不同的,   优先考虑黑白运算!</p>
+</blockquote>
+<h2 id="属性规律"><a href="#属性规律" class="headerlink" title="属性规律"></a>属性规律</h2><p>针对于元素组成不相同,   不相似的图形题;   </p>
+<p><img src="D:/Program%20Files/Typora/img/image-20230102213622902.png" alt="image-20230102213622902"></p>
+<h3 id="对称性-重要"><a href="#对称性-重要" class="headerlink" title="对称性(重要!!!)"></a>对称性(重要!!!)</h3><p>对称分为<strong>轴对称</strong>和<strong>中心对称</strong>;   </p>
+<p>轴对称为沿着一条轴对称,   注意不要只考虑左右轴对称,   而是应该考虑任意轴的对称!<br>轴对称时,   还需要<strong>考虑对称轴的方向和数量;</strong><br><img src="D:/Program%20Files/Typora/img/image-20230102214830507.png" alt="image-20230102214830507" style="zoom:67%;" /></p>
+<blockquote>
+<p>平行四边形不是轴对称哦!!</p>
+</blockquote>
+<blockquote>
+<p>当出现等边三角形或者类等边三角形的时候(如下图),   一定要去考虑对称轴的数量上的规律;<br><img src="D:/Program%20Files/Typora/img/image-20230102215422519.png" alt="image-20230102215422519" style="zoom:50%;" /><img src="D:/Program%20Files/Typora/img/image-20230102215504818.png" alt="image-20230102215504818" style="zoom:50%;" /></p>
+</blockquote>
+<p>中心对称指能够找到一个中心点,   让图形围绕这个中心点进行翻转<strong>180度</strong>;   (中心对称最好的判断方式就是旋转试卷!)</p>
+<p>当然图形也有可能是既轴对称又中心对称的!</p>
+<blockquote>
+<p>没出现那种让人眼花缭乱的图形的话,   很可能考的就是对称性;   </p>
+</blockquote>
+<p>第三种考法就是对称轴与图形的点,   线,   面之间的关系;<br>就是对称轴与图形相交的地方是否垂直,   相交的地方是否呈钝角或锐角;   线就是是否有线与对称轴重合或者平行的;   面就是对称轴经过了图形所围成的几个面,   比如下面这题就需要考虑对称轴与面的关系:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230102221829638.png" alt="image-20230102221829638" style="zoom:80%;" />
+
+<p>下面这题根据对称轴与点线面的关系,   可以把这六个图形划分为125和346!</p>
+<img src="D:/Program%20Files/Typora/img/image-20230102220637334.png" alt="image-20230102220637334" style="zoom: 80%;" />
+
+<blockquote>
+<p><strong>当每个图形都只有一条对称轴的时候</strong>,   优先考虑对称轴的方向,   然后再考虑对称轴与点线面之间的关系;   </p>
+</blockquote>
+<p>第四种考法为一个图形中包含几个小图形,   这几个小图形是轴对称的,   需要分开看对称轴的关系;   </p>
+<blockquote>
+<p>总结对称的考法:   </p>
+<ol>
+<li>区分对称图形;   轴对称,   中心对称,   轴对称+中心对称;   </li>
+<li>对称轴的数量和方向;   </li>
+<li>对称轴与图形的点线面的关系;   </li>
+<li>一个图形中包含几个对称的小图形,   需要分开挨个看;   </li>
+</ol>
+</blockquote>
+<h3 id="曲直性"><a href="#曲直性" class="headerlink" title="曲直性"></a>曲直性</h3><p>分为三种,   全直线图形,   全曲线图形,   以及直线+曲线图形;   </p>
+<blockquote>
+<p>注意,   如果看到有一排图形都是全曲线图形,   那么就需要往这上面去考虑了;   去观察全曲线而不是全直线的原因是全曲线较为引人注目;   </p>
+</blockquote>
+<h3 id="开闭性"><a href="#开闭性" class="headerlink" title="开闭性"></a>开闭性</h3><p>分为三种,   全封闭,   全开放,   以及半开半闭的;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230102223411245.png" alt="image-20230102223411245" style="zoom:50%;" />
+
+<p><strong><font color='red'>开闭性考察趋势:   有封闭区域即可;   </font></strong></p>
+<img src="D:/Program%20Files/Typora/img/image-20230102223722790.png" alt="image-20230102223722790"  />
+
+<p>上面那句红色的话的意思是,   对于上图的图5而言,   闹钟下面的两条腿其实是并不是全封闭的图形,   但是图234太过于开放,   所以应该选择图234为一组,   图156为一组;   </p>
+<h2 id="特殊规律"><a href="#特殊规律" class="headerlink" title="特殊规律"></a>特殊规律</h2><p>​    </p>
+<h3 id="图形间关系"><a href="#图形间关系" class="headerlink" title="图形间关系"></a>图形间关系</h3><p>图形特征为多个封闭图形连在一起;   </p>
+<p>考法:   </p>
+<ol>
+<li><p>相离;   两个封闭图形没有挨着;   </p>
+</li>
+<li><p>相交</p>
+<p>(1) 相交于点;   需要注意,   如果两个图形相离,   但是用一条线连起来,   属于相交于点<br>(2) 相交于线;   即,   两个图形有线重合</p>
+<blockquote>
+<p>相交于边的细化考法:   </p>
+<ol>
+<li><p>看数量;   看相交的边有几条;   </p>
+</li>
+<li><p>看样式;<br>(1)长/短,   相交的边在整个图形中相比于其他的边的长度,   是最短,   还是最长;<br>(2)整体/部分,   公共边是图形的一条完整的边,   或者为图形中一条边的一部分;<br>(3)曲/直;   公共边是曲线还是直线;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230102225735973.png" alt="image-20230102225735973" style="zoom:67%;" />
+
+<p>一定要注意图形的划分,   一定是封闭的图形为一个图形,   比如图1,   就是一个六边形和一个三角形组合在一起的,   图4是一个10边形和一个三角形组合在一起的;    </p>
+</li>
+</ol>
+</blockquote>
+<p>(3) 相交于面;   两个图形你中有我我中有你了</p>
+<blockquote>
+<p>相交于面的细化考法:   </p>
+<ol>
+<li>相交面的形状和属性;   形状,   几边形;   属性,   对称性;   </li>
+<li>相交面与图形的关系;   </li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>两个封闭图形不规则,   并且连在一起,   <strong>优先分开看对称,   然后再看公共边;</strong>   </p>
+</blockquote>
+<h3 id="功能元素"><a href="#功能元素" class="headerlink" title="功能元素"></a>功能元素</h3><p><img src="D:/Program%20Files/Typora/img/image-20230103193634901.png" alt="image-20230103193634901"></p>
+<p>功能指某一个小点或者箭头在图形中的作用;   也就是出现小黑点,   小白点或者小箭头标记了某个点,   线,   角,   面;   就是把标记元素放到要被标记的元素的旁边或者重合;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230103192249918.png" alt="标记点" style="zoom:67%;" />
+
+<center>上图为标记点</center>
+
+
+
+<img src="D:/Program%20Files/Typora/img/image-20230103192524750.png" alt="image-20230103192524750" style="zoom:67%;" />
+
+<center>上图为标记线</center>
+
+
+
+<img src="D:/Program%20Files/Typora/img/image-20230103192436920.png" alt="image-20230103192436920" style="zoom:67%;" />
+
+<center>上图为标记角</center>
+
+
+
+<p>点在中间就是标记面;   </p>
+<p>如果是标记的线,   那就需要看看所标记的线的特征,   有:   直线曲线? 最长线最短线? </p>
+<p>如果是标记的角,   那就需要看看所标记的角的特征,   有:   直角锐角钝角? 最大角最小角?</p>
+<h2 id="数量规律"><a href="#数量规律" class="headerlink" title="数量规律"></a>数量规律</h2><p>元素组成不同,   且属性没有规律;   </p>
+<p>考点分为点,   线,   角,   面,   素;   </p>
+<h3 id="面数量"><a href="#面数量" class="headerlink" title="面数量"></a>面数量</h3><p>**<font color='red'>白色的封闭区域</font>**为一个面,   <strong>黑色的不是面 !</strong></p>
+<blockquote>
+<p>什么时候数面?<br>    (1) 图形被分割明显,   封闭面明显:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230103200236594.png" alt="image-20230103200236594" style="zoom:67%;" />
+
+
+
+<p>​    (2) 生活化图形,   粗线条图形:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230103200322646.png" alt="image-20230103200322646" style="zoom:67%;" />
+</blockquote>
+<blockquote>
+<p><strong><font color='red'>生活化图形优先数面!</font></strong></p>
+</blockquote>
+<blockquote>
+<p>面的细化考法:   </p>
+<ol>
+<li><p>考虑分割的所有小面的形状</p>
+<img src="D:/Program%20Files/Typora/img/image-20230103201115244.png" alt="image-20230103201115244" style="zoom:80%;" />
+
+<p>重点关注三角形,   尤其是当出现大量被分割的面和大量三角形的时候;<br><strong>需要先考虑三角形面的数量,   然后再考虑三角形的数量</strong>;   因为三角形面的数量好数,   如果用三角形面的数量就能够做出来,   那就皆大欢喜,   如果做不出来,   那才去考虑三角形的数量;   </p>
+</li>
+<li><p>相同面的数量<br>看有几个完全相同的面;   </p>
+</li>
+<li><p>最大面和最小面</p>
+<p>最大面最小面的形状,   属性,   最大面和最小面的对比,   以及最面与外框的关系(如面积,   两者的轮廓);   </p>
+</li>
+</ol>
+</blockquote>
+<h3 id="线数量"><a href="#线数量" class="headerlink" title="线数量"></a>线数量</h3><ol>
+<li><p>线的识别</p>
+<p>直线,   就是横着过去,   竖着过来,   就叫直线;   </p>
+<p>曲线,   就是圆滑的线,   不需要考虑一条曲线被其他的线分割为很多条曲线,   只要曲线是<strong>圆滑</strong>的,   那么它就是<strong>一条</strong>曲线;   </p>
+</li>
+<li><p>什么时候数直线?</p>
+<p>(1) 直线特征图;   当出现<strong>多边形</strong>,   以及<strong>单一直线</strong>的时候;   </p>
+<p>(2) 曲线特征图;   当出现<strong>曲线图形</strong>,   以及<strong>单一曲线</strong>的时候;   </p>
+<blockquote>
+<p>线的特殊考点:   笔画数</p>
+<ol>
+<li><p>一笔画(在不重复的情况之下,   能够一笔画成)</p>
+<p>怎么判断是否可以一笔画?</p>
+<p>(1) 线条之间是连通的;   也就是说,   线条和线条之间挨在一起的,   就是连通的;   </p>
+<p>(2) 奇点数量为0或者2;   从一个点出发的线条数量为奇数即为奇点;   所以判断方法为先判断点是否为奇点,   然后再数奇点的个数;   </p>
+<p>(3) 端点是奇点,   因为从它出发只有一条边!</p>
+</li>
+<li><p>多笔画</p>
+<p>笔画数=奇点数/2  (注意:   <strong>奇点数一定是偶数个!</strong>)</p>
+<blockquote>
+<p>笔画数的常见特征图:   五角星,   日,   田,   圆相切/相交,   <font color='red'><strong>出现明显端点</strong></font>,   以及一眼晃过去就看出是一笔乱画的图形;   </p>
+<p>日字形的变形(完整的外框中间有条线):   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230103214345666.png" alt="image-20230103214345666" style="zoom:50%;" />
+
+<p>田字形的变形(完整的外框内有相交的两线):   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230103214453372.png" alt="image-20230103214453372" style="zoom:50%;" /></blockquote>
+</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h3 id="点数量"><a href="#点数量" class="headerlink" title="点数量"></a>点数量</h3><p><strong><font color='red'>点数量指的是线与线的交点的数量!</font></strong></p>
+<blockquote>
+<p>什么是点?</p>
+<p>线与线的交点,   端点是不算点数量的!<br>要注意圆或者弧与直线的切点也算点;   </p>
+</blockquote>
+<blockquote>
+<p>什么时候数点?</p>
+<p>线条交叉较多,   图形相切较多;   </p>
+</blockquote>
+<p>**<font color='red'>当线条交叉较多的时候,   分支数较多的时候,   优先考虑笔画数,   然后考虑交点数;  </font>**比如下面这道题,   选B:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230104220031537.png" alt="image-20230104220031537" style="zoom:67%;" />
+
+<blockquote>
+<p>点的细化考法:   </p>
+<ol>
+<li><p>切点</p>
+<p>当出现相切较多的图形时考虑;   可能是圆(弧)与圆(弧)相切,   也可能是圆(弧)与直线相切;   </p>
+</li>
+<li><p>曲直交点</p>
+<p>曲直交点比较明显;   </p>
+</li>
+<li><p>圆内的交点</p>
+<p>如果出现一些乱七八糟的直线与一个圆组合在一起,   那么应该先考虑相切的点,   再考虑曲直交点,   再考虑圆内的交点;   圆内的交点指的是除开圆上的交点和圆外的交点以外,   其他的交点;   </p>
+</li>
+</ol>
+</blockquote>
+<h3 id="素数量"><a href="#素数量" class="headerlink" title="素数量"></a>素数量</h3><p>素指的是独立的小图形;   </p>
+<p>优先考虑数量,   然后考虑种类数;   然后考虑相同;   </p>
+<blockquote>
+<p>相同指的是图与图之间的相同点,   包括”一组图中都包含某种图形”,   “每一张图中有几个相同的图形”;   </p>
+</blockquote>
+<p>还要注意的是,   如果是小图形之间只有方向不同,   或者是只有大小不同,   那么先把它们看成相同的元素去做;   如果小图形之间只有颜色不同,   那就是两种不同的元素;   </p>
+<blockquote>
+<p>特殊考法:   部份数</p>
+<p>元素连在一起,   就是一部分,   元素没有连在一起就不是一部分;   </p>
+</blockquote>
+<blockquote>
+<p>总结可能遇到的图形的情况:   </p>
+<ol>
+<li><p>元素组成基本相同的图形</p>
+<p>黑白六宫格或者九宫格;   考虑平移与旋转;   </p>
+</li>
+<li><p>元素组成基本相似的图形</p>
+<p>图形与图形之间相似,   但是细看又不完全相同,   有种眼花的感觉;   考虑样式规律;   </p>
+</li>
+<li><p>生活化的图形<br>(1) 黑色部分居多;   考虑数量规律中的面数量;   </p>
+<p>(2) 线条组成居多;   考虑属性规律中的开闭性;   </p>
+<p>(3) 还可以考虑部分数;   </p>
+<p>(4) 还可以考虑面数量;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230104223611103.png" alt="image-20230104223611103" style="zoom: 33%;" /></li>
+<li><p>看着并非让人眼花缭乱的图形,   据有对称美感的图形</p>
+<p>考虑对称性;   </p>
+</li>
+<li><p>封闭图形</p>
+<p>(1) 被线切割成许多多边形;   考虑面数量;   </p>
+<p>(2) 明显由两个图形组成相交或相离组成的图形;   考虑特殊规律中的图形间关系;   </p>
+<p>(3) 日字及其变形的图形,   田字及其变形的图形;   考虑线数量的笔画数;   </p>
+</li>
+<li><p>出现明显的单独的线的图形</p>
+<p>(1) 包括明显的单独直线和单独曲线的图形;   考虑线数量;   </p>
+<p>(2) 明显能够一笔画的图形或者能够几笔画的图形;   优先数笔画数,   然后考虑点数量;   </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+</blockquote>
+<h2 id="空间重构"><a href="#空间重构" class="headerlink" title="空间重构"></a>空间重构</h2><h3 id="相对面"><a href="#相对面" class="headerlink" title="相对面"></a>相对面</h3><p>一组相对面同时出现时,   该选项直接排除;   </p>
+<blockquote>
+<p>相对面:   </p>
+<p>(1) 同行或同列中间隔了一个面的左右或者上下那两个面;   </p>
+<p>(2) “Z”字型的两端(两端必须紧邻中线)</p>
+<p><img src="D:/Program%20Files/Typora/img/image-20230104225103274.png" alt="image-20230104225103274"></p>
+</blockquote>
+<h3 id="相邻面"><a href="#相邻面" class="headerlink" title="相邻面"></a>相邻面</h3><p>在六面体中,   如果两个面不是相对面,   那就是相邻面;   </p>
+<p>只要两个面相邻,   那么这两个面一定一条公共边;   </p>
+<blockquote>
+<p>公共边:   </p>
+<ol>
+<li><p>构成直角的两条边,   为公共边;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230104225401747.png" alt="image-20230104225401747" style="zoom: 33%;" /></li>
+<li><p>一行/一列中,   <strong><font color='red'>连着4个面</font></strong>,   两头的两条边为一条公共边;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230104225954844.png" alt="image-20230104225954844" style="zoom:50%;" /></li>
+<li><p>图像特征所指;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230104230436809.png" alt="image-20230104230436809" style="zoom:50%;" />
+
+<p>如上图,   箭头指心型;   </p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>公共点:   </p>
+<p>形成直角的三个面的公共点是直角处的点,   所以下面这个是错的:   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230104231418575.png" alt="image-20230104231418575" style="zoom:50%;" />
+</blockquote>
+<blockquote>
+<p>画边法:   </p>
+</blockquote>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/05/gong-wu-yuan-kao-shi/wu-shi-ji-chu/1-pan-duan-tui-li-002-lei-bi-tui-li/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/12/20/day-planners/mei-zhou-ren-wu/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86"><span class="toc-text">图形推理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E8%A7%84%E5%BE%8B"><span class="toc-text">位置规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E7%A7%BB"><span class="toc-text">平移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-text">旋转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E8%A7%84%E5%BE%8B"><span class="toc-text">样式规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%87%8F%E5%90%8C%E5%BC%82-%E9%87%8D%E8%A6%81"><span class="toc-text">加减同异(重要!!!)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E7%99%BD%E8%BF%90%E7%AE%97"><span class="toc-text">黑白运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E8%A7%84%E5%BE%8B"><span class="toc-text">属性规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E6%80%A7-%E9%87%8D%E8%A6%81"><span class="toc-text">对称性(重要!!!)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B2%E7%9B%B4%E6%80%A7"><span class="toc-text">曲直性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E9%97%AD%E6%80%A7"><span class="toc-text">开闭性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E8%A7%84%E5%BE%8B"><span class="toc-text">特殊规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E9%97%B4%E5%85%B3%E7%B3%BB"><span class="toc-text">图形间关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%85%83%E7%B4%A0"><span class="toc-text">功能元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E9%87%8F%E8%A7%84%E5%BE%8B"><span class="toc-text">数量规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E6%95%B0%E9%87%8F"><span class="toc-text">面数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%95%B0%E9%87%8F"><span class="toc-text">线数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E6%95%B0%E9%87%8F"><span class="toc-text">点数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A0%E6%95%B0%E9%87%8F"><span class="toc-text">素数量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E9%87%8D%E6%9E%84"><span class="toc-text">空间重构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E9%9D%A2"><span class="toc-text">相对面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%82%BB%E9%9D%A2"><span class="toc-text">相邻面</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

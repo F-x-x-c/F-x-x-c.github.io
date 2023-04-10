@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-03-07 16:51:11'
+  postUpdate: '2023-04-10 23:03:45'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -138,83 +138,135 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">138</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://picsum.photos/id/857/6935/4283')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Aegis</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/06/pai-dui-lun/ji-qun-fu-wu-qi-jian-mo-yu-fen-xi/" title="集群服务器建模与分析"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="集群服务器建模与分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/06/pai-dui-lun/ji-qun-fu-wu-qi-jian-mo-yu-fen-xi/" title="集群服务器建模与分析">集群服务器建模与分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-06-06T14:24:40.000Z" title=" 2022-06-06 22:24:40">2022-06-06</time></span></div><div class="content">集群服务器建模与分析1. 集群服务器的优势当今中国，人口基数很大，高并发场景自然成为了一大难题，集群式服务器是试验之后所公认的一个除了高并发算法外的一个良好的解决方案，同时也是负载均衡算法的基础。集群服务器的优势在于服务器整体水平不高，并不需要支付较高昂的服务器费用与维修费用，从排队论的角度来讲，由于互联网中存在的大量请求，这些请求所需要的处理时间变化非常大，所以以往的先到先服务的单个服务器的排队模型已不再适合，比如一个TCP链接建立请求堵在一个获取Redis缓存中的某个数据的请求前面，那么小请求就会被堵塞住好一阵。这时候集群服务器的优势凸显出来，配合良好的负载均衡算法，集群服务器能够很好的处理高并发问题。
-2. 建模我们把集群服务器看成一个系统，为了分析简便，让该系统只有一个缓存队列，请求依据泊松分布到达系统，到达率为λ；每个请求所需要的处理时间遵循指数分布，处理率为μ。
-3. M/M/k/k模型首先将服务器群建模为M/M/k/k模型，也就是说没有缓存队列，只要有服务器空闲，就直接服务，而如果没有服务器空闲，则该请求直接被丢弃。
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">168</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://picsum.photos/id/857/6935/4283')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Aegis</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/17/day-planners/mei-ri-ren-wu/" title="无题"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/17/day-planners/mei-ri-ren-wu/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-09-17T04:13:08.790Z" title=" 2022-09-17 12:13:08">2022-09-17</time></span></div><div class="content">累计钻石数量
+ 288
 
-列出如下状态转移图，注意状态指的是系统中繁忙服务器的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/06/pai-dui-lun/pai-dui-lun-shi-zhan-di-8-zhang/" title="排队论实战第8章"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="排队论实战第8章"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/06/pai-dui-lun/pai-dui-lun-shi-zhan-di-8-zhang/" title="排队论实战第8章">排队论实战第8章</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-06-06T09:39:28.000Z" title=" 2022-06-06 17:39:28">2022-06-06</time></span></div><div class="content">离散马尔科夫链1. 离散马尔可夫基础一台机器如果今天在工作,   那么它明天工作的概率为95%,   如果它今天在被修理,   那么它明天投入工作的概率为40%,   那么它的转移概率矩阵为$$P = \left[\matrix{\ 0.95 &amp; 0.05 \ 0.40 &amp; 0.60}\right]$$如果一台机器连续修了4天 那么直接换一台机器,   这样的马尔可夫链如下图;   
+每日任务奖励
+ 08: 00之前到达自习室
+ 领取3钻
+ 成功打开PotPlayer、Typora和讲义资料
+ 领取2钻
+ 完成半堂马士兵课程
+ 领取10钻
+ 完成一堂马士兵课程
+ 获得解救琪雨的机会, 领取5钻
+ 13: 00之前到达自习室
+ 领取3钻
+ 完成两堂马士兵课程
+ 获得解救赛娑的机会, 领取10钻
+ 18: 00之前到达自习室
+ 领取3钻
 
+额外任务1
+ 公考读物作睡醒视频
+ 领取2钻
+ 公考读物作午睡前视频
+ 公考读物作午睡醒视频
+ 领取2钻
+ 公考读物作睡前视频
+ 获得解救柳素的机会, 领取3钻
 
-一个粗心的教授有两把雨伞,   这两把雨伞的任何一把都可能在家里或者是办公室里,   设通勤时下雨的概率为p,   问这个教授通勤时被雨淋湿的概率;一个地方可能的伞的数量为0、1和2,   所以转移矩阵为$$P = \left[\matrix{\ 0.95 &amp; 0.05 \ 0.40 &amp; 0.60}\right]$$
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/06/pai-dui-lun/pai-dui-lun-shi-zhan-di-6-zhang/" title="排队论实战第6章"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="排队论实战第6章"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/06/pai-dui-lun/pai-dui-lun-shi-zhan-di-6-zhang/" title="排队论实战第6章">排队论实战第6章</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-06-06T07:15:18.000Z" title=" 2022-06-06 15:15:18">2022-06-06</time></span></div><div class="content">排队论基本规则1. 开放系统中的Little对于开放系统，有$$E[N] = \lambda E[T]$$其中E[N]指系统中的平均请求个数,   λ指系统的平均到达率,   E[T]指请求在系统中的平均逗留时间;   
-该法则适合于任何的系统,   而且没有许多前提条件;   
-2. 封闭系统中的Little封闭系统中的E[N]为固定数N,   系统的请求完成率为吞吐量X,   E[T]为系统请求在系统中的平均逗留时间,   所以有$$N = X \space E[T]$$开放式系统的吞吐量和平均响应时间是不相关的,   但是对于封闭式系统而言,   得出了平均逗留时间就相当于得到了吞吐量;   
-get the fuck out of my sight
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/21/ying-ping/bao-lie-gu-shou-ying-ping/" title="《爆裂鼓手》影评"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《爆裂鼓手》影评"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/21/ying-ping/bao-lie-gu-shou-ying-ping/" title="《爆裂鼓手》影评">《爆裂鼓手》影评</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-05-21T09:18:51.000Z" title=" 2022-05-21 17:18:51">2022-05-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BD%B1%E8%AF%84/">影评</a></span></div><div class="content">《爆裂鼓手》影评魔鬼导师这么做的目的是为了让一个那个天才拥有每天起床就拥有开始练习的动力吗？如果是这样的话那其实方法有很多，   不是只有嘲讽或者社死这类打压的手段。
-另外一点，本片没有过多的着眼于主角付出了如何如何的努力才进入到最好的音乐室中去的，而是着眼于进入工作室中是花费了如何如何的努力才达到成就卓越的，这显然是因为导演想要展示成就卓越的过程，但恰好与当今的高三学生、要考研的大学生和刚进公司的年轻人想要看到的鸡汤截然不同。高考、考研以及找工作面试，其实都是在为着一个考试去努力，补课机构、考研机构还有找工作对应的培训班，都是告诉它们的学生怎样进入学生想要进的地方，这本来没有错，但是过度的强调这一方面，忽视了进入那个地方之后要怎么办，就是错误的，这是本片与普通鸡汤的区别，而另外一个区别就是本片并没有一味地恩灌鸡汤、说很多大道理、扯到父母、荣耀、诱惑啥的,   
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/11/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-023-dong-tai-gui-hua-6/" title="算法体系结构023-动态规划6"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法体系结构023-动态规划6"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/11/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-023-dong-tai-gui-hua-6/" title="算法体系结构023-动态规划6">算法体系结构023-动态规划6</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-05-11T01:57:44.000Z" title=" 2022-05-11 09:57:44">2022-05-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">算法体系结构</a></span></div><div class="content">1. 数组分裂和
-题目
-给定一个正数数组arr,   把正数数组分为两个集合,   并且尽量让两个集合的累加和接近,   返回小的那个集合的累加和;   
-
-思路递归函数的定义:   对于arr[i… arr.len - 1]这个区间,   区间的累加和为sum,   求出这个区间上的接近但不大于sum / 2的元素选择累加和;   这需要对该区间上的每一个位置的元素都进行选择,   选择要还是不要;   而判断的依据需要依赖这个位置和下一个位置的选择情况,   需要抓取到下一个arr[i - 1… arr.len - 1]上的结果,   然后与选择了这个位置的情况作比较,   返回较大值即可;   
-
-是否有利可图?对于数组[5,   2,   3…],   要凑20;   √××,   那么就是(i = 4,   rest = 15);   ×√√,   那么就是(i = 4,   rest = 15),   有利可图;   
-
-
-2. 数组分裂和.限制个数版
-题目给定一个正数数组,   如果arr的元素个数为偶数,   则要求两个集合的包含的个数一样多,   如果为奇数,   则 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/18/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-022-dong-tai-gui-hua-5/" title="算法体系结构022-动态规划5"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法体系结构022-动态规划5"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/18/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-022-dong-tai-gui-hua-5/" title="算法体系结构022-动态规划5">算法体系结构022-动态规划5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-04-18T13:12:09.000Z" title=" 2022-04-18 21:12:09">2022-04-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">算法体系结构</a></span></div><div class="content">1. 杀怪
-题目
-一个怪兽有N滴血,   玩家可以砍它k次,   每一次造成[0,   M]的伤害,   问砍完k刀后怪兽死亡的概率;   
-
-思路
-在计算机里运行,   结果为怪兽死亡的点数除以怪兽k刀以后的生死可能总情况;   总情况是怪兽死亡了也得砍,   直到砍满k次;   为什么要如此处理,   是因为砍了k刀之后怪兽仍然存活的情况是要抵达第k层,   也就是最后一层才可以计算的,   而在最后一层中除去存活的情况剩下的就是怪兽死亡的情况,   所以怪兽k刀之后的总情况是需要到第k层才可以看见的,   这使得怪兽死亡的情况也需要到第k层才能看见;   所以k刀之后总的怪兽状态情况为(M + 1)k,   也就是第k层的总支数;   
-
-
-解法1:   递归
-目标就是求第k层的死亡情况,   有两种情况,   一是刚砍到k刀怪兽恰好没血了,   这时返回方法数1,   二是没砍到k刀时怪兽已经没血了,   这时以这种情况为父节点的第k层分支都为怪兽死亡的情况,   所以如果遇到这种情况,   方法数应该加上(M + 1)restTimes,   其中restTimes为当血量& ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/04/14/pai-dui-lun/tong-xin-wang-di-4-zhang/" title="通信网第4章_通信网结构"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通信网第4章_通信网结构"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/14/pai-dui-lun/tong-xin-wang-di-4-zhang/" title="通信网第4章_通信网结构">通信网第4章_通信网结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-04-14T00:32:54.000Z" title=" 2022-04-14 08:32:54">2022-04-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8E%92%E9%98%9F%E8%AE%BA/">排队论</a></span></div><div class="content">1. 问题引入1.1 一笔画问题从图的一点出发,   一笔遍历图中所有的边,   每个边都只被遍历一次,   问有哪些图可以被一笔画;   
-1.2 概念引入
-奇点,   有奇数条边与之相连的点;   
-偶点,   有偶数条边与之相连的点;   
-
-如下图,   奇点为A,   B,   偶点为C;   
-
-分析:   奇点只能作为起点或者终点,   因为起点必有一条边可以看成是从该点往外输出的起始输出边,   对应的终点也需要有一条边被看成是终止输入边;   而奇点的边数为奇数,   如果作为起点,   则可以任意选择一条边作为起始输出边,   而剩下的边数则为偶数,   那自然可以不关心,   因为当从某个点画到该点并从该点往外画时,   必是使用了这个点两条边,   而奇点作为起点则终点也必为奇点,   可以把起点的起始输出边和终点的终止输出边看成是一条,   比如上图的A和B节点的最上面那条公共边,   可以想象在这条公共边上有很多很多的点被屏蔽了;   奇点作为终点时也一样;   偶点则可以做起点终点和中间点;   所以最终得出结论,   一个图中奇点的个数必须为0,   或 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/12/lan-qiu/tou-lan/" title="投篮"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="投篮"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/12/lan-qiu/tou-lan/" title="投篮">投篮</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-04-12T14:59:36.000Z" title=" 2022-04-12 22:59:36">2022-04-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AF%AE%E7%90%83/">篮球</a></span></div><div class="content">篮球投篮技巧
-右手
-举球之前右手需要压紧球,   从开始举,   到举到起始发力点的过程中建议都压紧球;   举球需要举到头顶起始发力点;   在起始发力点时,   左手的压球位置应该是右手指,   也就是说右手指应该感觉到左手给的压力;   举球后眼睛观察右手和右小臂,   右手和右小臂之间应该有一个夹角,   而不是成一条往下的竖线,   这样做可以保证拨球是正的;   
-
-右臂
-右小臂应该竖直于地面,   这样的话就需要右肩往后缩,   达到一种架起来的感觉;更正:   右小臂与地面呈一定角度,   同时,   让球压在手掌前三个手指所构成的凹陷处;   
-
-右肩
-在投篮的一瞬间,   右肩的肱三角肌应该贴着右脸,   配合右臂后缩达到无意识的向上投;   
-更正:   右肩、右小臂在把球举到一定发力点时应该内缩,   使得右臂能够更有力的发力；   
-
-肘
-举球到发力点时,   左肘应该高于右肘,   在投篮出去的一瞬间,   左肘和右肘应该是齐平的,   而且整个身体有一种平衡,   以及平衡发力的感觉;   
-
-左肘与左小臂
-左肘与左小臂应该尽量靠近右小臂,   配合右臂形 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/04/09/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-021-dong-tai-gui-hua-4/" title="算法体系结构021_动态规划4"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法体系结构021_动态规划4"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/09/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-021-dong-tai-gui-hua-4/" title="算法体系结构021_动态规划4">算法体系结构021_动态规划4</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-04-09T14:22:41.000Z" title=" 2022-04-09 22:22:41">2022-04-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">算法体系结构</a></span></div><div class="content">1. 货币组成
-题目有一堆货币,   用一个数组来表示,   每个货币都是不一样的,   给定一个目标钱数aim,   要求返回组成目标钱数的方案数;   
-
-解法1这道题目有一个隐含的条件,   每一种可能都需要遍历到数组的末尾,   当遍历到数组末尾时,   去判断剩余的钱数是否刚好为0,   如果刚好为0,   则这条路行得通,   那么可能性就加1;   
+额外任务2
+ 算法课作电子榨菜1次
+ 算法课作电子榨菜2次
+ 领取4钻
 
 
+归档
+ 2023-01-24 20:38 成功打开PotPlayer、Typora和讲义资料
 
-如果到达末尾钱数不为0, 则可能钱多了,   可能钱少了,   反正都不行;   如果没达到末尾时钱就已经为0了,   则只有一种行得通的可能,   就是剩下的货币全都不选,   如果没达到末尾时钱已经小于0了,   则直接返回0;   但是不管怎么样,   就这样大条地遍历,   结果是没有问题的;
+%% kanban:settings
+1&#123;&quot;kanban-plugin&quot;:&quot;basic&quot;&#125;
+%%
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/16/sui-bi/sui-bi/lun-tuo-yan/" title="论拖延"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="论拖延"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/16/sui-bi/sui-bi/lun-tuo-yan/" title="论拖延">论拖延</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-09-16T08:19:17.000Z" title=" 2022-09-16 16:19:17">2022-09-16</time></span></div><div class="content">论拖延拖延一直是我的缺点,   小学、初中和高中的周末作业一定是拖到星期天晚上做,   假期作业要么就是拖到假期最后几天开始做,   要么就是回到学校再假模假样地赶一赶,   到大学,   作业和报告是能拖就拖,   绝不手软;   在生活中,   不管是洗碗,   还是洗衣服,   我都会时不时贯彻拖延战略;   
+直到今天中午,   我在吃完饭之后立刻将饭碗洗净,   下午四点我去厨房,   看到了那么整洁的灶台,   不禁感叹提前做事的美好;   可能以后拖延还会降临在我身上,   但是这可能是一个好的开始;   
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/06/jvm/ma-shi-bing-jvm01-jvm-ru-men-yu-class-wen-jian-jie-gou/" title="马士兵_JVM1"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="马士兵_JVM1"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/06/jvm/ma-shi-bing-jvm01-jvm-ru-men-yu-class-wen-jian-jie-gou/" title="马士兵_JVM1">马士兵_JVM1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-09-06T12:39:59.000Z" title=" 2022-09-06 20:39:59">2022-09-06</time></span></div><div class="content">Java从编码到运行
+编写好的.java文件被javac编码为.class文件,   .class文件被ClassLoader连同java类库一起加载到内存,   然后字节码解释器或JIT即时编译器会编译内存中的代码,   最后执行引擎执行代码;   右边那一块内容叫JVM;   
+Class文件结构
+magic number代表这个文件是class文件,   minor和major version都代表版本号,   constant_pool_count为常量池的数量的标识,   代表了后面的常量池数量为constant_pool_count - 1;   常量池从1号开始,   constant_pool_count号结束,   一共constant_pool_count个,   注意这采用了大端法表示信息,   所以值为16,   代表常量池有15个;   
+常量池表往后是access_flags,   指class文件是哪种类型,   比如public、final等等,   每一个类型对应着一个4位十六进制数,   但是通过合理的编码,   可以在一个4位十六进制数(也就是两个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/06/jvm/shen-ru-li-jie-java-xu-ni-ji-di-1-zhang/" title="深入理解Java虚拟机"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入理解Java虚拟机"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/06/jvm/shen-ru-li-jie-java-xu-ni-ji-di-1-zhang/" title="深入理解Java虚拟机">深入理解Java虚拟机</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-09-06T11:39:32.000Z" title=" 2022-09-06 19:39:32">2022-09-06</time></span></div><div class="content">1.6 编译JDK1.6.1 搭建环境下载jdk12的源码,   …
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/31/sui-bi/sui-bi/sui-bi-2022-08-31/" title="随笔2022/08/31"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="随笔2022/08/31"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/31/sui-bi/sui-bi/sui-bi-2022-08-31/" title="随笔2022/08/31">随笔2022/08/31</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-08-31T01:55:58.000Z" title=" 2022-08-31 09:55:58">2022-08-31</time></span></div><div class="content">随笔2022.08.31八月的尾巴,   其实并没有什么特殊的含义,   不过是无意间翻看了初中的相册,   想起些许往事;   
+想到了初中的最后一个冬天,   似乎过的还可以;   每天早上大课间跑步;   冷冷的空气包裹着我和朋友之间的闲言碎语,   有一股别样的感觉,   可能是我从来没有回顾过,   感觉这种感觉很新;   
+初中的事我很少回忆,   再加上这些年我经历和思考的事,   残存在脑海中的初中回忆已经不多了;   而那些幸存下来的回忆,   在时间的软磨硬琢之下,   不论是好是坏,   都在变得更加明亮;   
+记得回家路上,   一个男伙伴想要去看啥啥车,   我就对他说,   哎呀等以后有钱了我给你买一个;   
+丫的,   我居然对一个男人许下了承诺;   好吧应该是一个小屁孩儿;   
+我对一个小屁孩儿许下的承诺,   在某个一样凉爽的早晨,   能够给我在没有压迫的环境下的一个努力的理由;   
+可能那个小屁孩儿在我说出那句话的后几秒就忘记了,   但是我会努力,   只因我记得;   
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/28/sui-bi/sui-bi/jing-ci-yi-yi/" title="经此一役"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="经此一役"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/28/sui-bi/sui-bi/jing-ci-yi-yi/" title="经此一役">经此一役</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-08-28T13:34:45.000Z" title=" 2022-08-28 21:34:45">2022-08-28</time></span></div><div class="content">T1战败后的思考这个想法在很早以前就已经在我的脑袋里萌芽了,   只是没有蓬勃成长而已,   我再也不想因为别人的原因而让自己输了,   比如英雄联盟,   从头到尾就是五个人的游戏,   其他路的队友送出去的优势反过来会作用在我身上;   比如看比赛,   能够决定比赛输赢的有很多人,   但是绝对不包括我,   我为什么要为了别人的失败而伤心,   我什么都没有付出,   也什么都不能影响;   
+所以我想把时间都花在我能够主导的事情上,   想想其实有很多,   大部分事情都是我能够主导的,   比如学习,   学习的时间和专注度;   比如睡眠质量;   比如篮球,   看上去是5v5实际却是1v1;   比如个人容貌和气质;   比如唱功,   这确实完完全全是个人的事情;   比如记忆宫殿,   完全需要自己去修炼;   比如工作技能比如看书等等…
+细想下来,   能够自己主导的事情其实占绝大多数,   那就没有必要把太多时间花在自己不能主导的事情上;   所以游戏和比赛,   还是不要看了;   政治上的事情,   我一个普通人也不能够造成任何的影响,   所以还是不要看 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/28/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-029-bfprt-yu-xu-shui-chi/" title="算法体系结构029_bfprt与蓄水池"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法体系结构029_bfprt与蓄水池"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/28/suan-fa-ti-xi-jie-gou/suan-fa-ti-xi-jie-gou-029-bfprt-yu-xu-shui-chi/" title="算法体系结构029_bfprt与蓄水池">算法体系结构029_bfprt与蓄水池</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-08-28T07:53:04.000Z" title=" 2022-08-28 15:53:04">2022-08-28</time></span></div><div class="content">寻找第K小的数算法1:   类快排一个比较好,   但并不是bfprt算法的算法,   利用与快排相似的概率的思想,   将时间复杂度降低至O(N);   
+求某个数组中的第k小的数,   其实就是把这个数组从小到大进行排序,   然后找到下标为k-1的数,   所以递归函数中传递的是要求的下标k-1:   
+123456public static int minKth2(int[] array, int k) &#123;    int[] arr = copyArray(array);    return process2(arr, 0, arr.length - 1, k - 1);&#125;public static int process2(int[] arr, int L, int R, int index) &#123;
+
+然后就按照快排的思想,   从数组中随机挑出一个数pivot作为标称值,   对数组进行partition,   找到与pivot的值相等的区域的左右边界,   也就是说,   partition过后,   局部排好了,   剩下只需要进行小于区域和 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/27/shu-ju-ku/04-join-yu-xing-zhuan-lie/" title="oracle_join与行转列"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="oracle_join与行转列"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/27/shu-ju-ku/04-join-yu-xing-zhuan-lie/" title="oracle_join与行转列">oracle_join与行转列</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-08-27T02:14:11.000Z" title=" 2022-08-27 10:14:11">2022-08-27</time></span></div><div class="content">1. 99语法由于92语法中的连接部分较为晦涩,   99语法定义了一些表述更加明确的连接关键字;   
+1.1 cross joina cross join b表示对a和b两张表进行笛卡尔积,   相当于92语法中,   在没有过滤条件的情况之下使用where语句;   
+1.2 自然连接natural join,   表示自动找寻两张表的相同的列,   然后连接显示,   如果没有找到,   那就直接进行笛卡尔积;   
+1.3 on语句99语法中的条件语句,   相当于where,   可以写等值连接,   又可以写非等值连接;   
+1.4 左右全连接左外连接,   将左边张表的数据完全显示,   相当于92语法中的加’+’号的操作,   不过使用的是关键字left outer join,   右连接与之类似;   
+12select * from emp e left outer join dept d on e.deptno = d.deptno;select * from emp e, dept d where e.deptno = d.deptno(+);
+
+全连接fu ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/10/sui-bi/sui-bi/xue-xi-yan-jiu/" title="学习研究"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习研究"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/10/sui-bi/sui-bi/xue-xi-yan-jiu/" title="学习研究">学习研究</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-08-10T09:22:06.000Z" title=" 2022-08-10 17:22:06">2022-08-10</time></span></div><div class="content">英雄联盟成就系统
+炉火纯青
+(1) 这是一个推塔游戏
+    参与拿下对局中的第一座塔
+
+(2) 专注发育
+    前10分钟击杀80个线上小兵
+
+(3) 不灭魔王
+    赢得对局且一次不死
+
+(4) 节奏大师
+    15分钟内参与击杀英雄12次
+
+(5) 炉火纯青
+    赚取来自炉火纯青中的成就点数
 
 
+主宰全场
+(1) 补刀碾压
+    赢得对局且补刀数比同线玩家多100+
+
+(2) 对线主宰
+    在14分钟时领先20%金币和经验
+
+(3) 对线掌控
+    在7分钟时领先20%金币和经验
+
+(4) 草丛里的眼珠子
+    在结束时领先20%视野得分
+
+(5) 我在第五层
+    在任意一个时间点比同线对手高3级以上
+
+(6) 主宰全场
+    赚取来自主宰全场中的成就点数
 
 
-解法2:   采用空间压缩的动态规划
-按照解法1进行dp数组的填写,   可变参数有操作的货币index和剩余钱数rest,   由于二维数组的方式太简陋了,   所以这里采用一维数组填写,   也就是以rest为变量,   通过技巧省略可变参数index,   首先要进行rest的越界,   如果rest -  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/06/ying-ping/bian-fu-xia-hei-an-qi-shi-ying-ping/" title="《蝙蝠侠: 黑暗骑士》影评"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《蝙蝠侠: 黑暗骑士》影评"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/06/ying-ping/bian-fu-xia-hei-an-qi-shi-ying-ping/" title="《蝙蝠侠: 黑暗骑士》影评">《蝙蝠侠: 黑暗骑士》影评</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-04-06T06:48:44.000Z" title=" 2022-04-06 14:48:44">2022-04-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BD%B1%E8%AF%84/">影评</a></span></div><div class="content">《蝙蝠侠: 黑暗骑士》影评这部电影本人看了很多遍了,   斗胆来写写影评;   
-1. 人物詹姆斯·戈登戈登,   在上一部蝙蝠侠中还是一个小警员,   在这一部中已经变成了重案局头子,   相比于上一部,   戈登的谈吐之中多出了一份严谨和幽默,   即便是对于哥谭市法律中的第一道光,   光明骑士丹特,   也保持了一份距离,   犹见开篇戈登和丹特在丹特办公室交谈的那一段,   以及哥谭法治三铁腕在重案局楼顶的谈话,   都可以看出戈登虽然信任丹特,   但他们之间的隔阂也很大;   幽默体现在戈登在抓法科内黑帮头子马罗尼时与他的对话,   这里顺便说一句,   戈登就算和马罗尼一起吃饭都不奇怪,   我是这么理解的,   因为戈登和马罗尼把抓和被抓的规则玩的很透,   他俩的段位都很高,   在没有突破性的证据落到戈登手里之前,   马罗尼都不会怕自己会被戈登抓,   就好像两个王者中单,   前期如果在河道碰上了,   也有可能不会对对方开火,   因为他们急着回到兵线上,   都生怕自己漏兵,   因为他们都知道,   他们之间的博弈并不在此刻的操作上,   而在于谁对于这 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/10/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/#content-inner">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/#content-inner">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/#content-inner">14</a><a class="extend next" rel="next" href="/page/12/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Deng</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">138</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+无可匹敌
+(1) 控场大师
+    成为单局内控制得分最高的玩家
+
+(2) 拆眼大师
+    在单局内参与击杀了最多守卫
+
+(3) 极致输出
+    成为单局内对英雄造成伤害最多的玩家
+
+(4) 热衷输出
+    在单局内造成分均伤害700以上 的伤害
+
+(5) 极致承伤
+    赢得对局且你的承 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/08/lan-qiu/lan-qiu-ri-ji/" title="篮球日记"><img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="篮球日记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/08/lan-qiu/lan-qiu-ri-ji/" title="篮球日记">篮球日记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label"></span><time datetime="2022-08-08T02:06:51.000Z" title=" 2022-08-08 10:06:51">2022-08-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AF%AE%E7%90%83/">篮球</a></span></div><div class="content">2022.08.08证实了两个有用的技巧,   微微内八和右小臂倾斜;   不过右小臂倾斜技术还是需要改进,   比如加入侧身,   打磨最佳出手位置,   以及拨球时的手型;   
+领悟到一个新的技巧:   在拨球的时候,   左手扶球手需要有一点点上升的迹象,   以实现对球的不干扰,   不过这一点需要时间和练习去验证是否正确;   
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/10/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/#content-inner">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/#content-inner">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#content-inner">17</a><a class="extend next" rel="next" href="/page/12/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Deng</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">168</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
     <i class="fas fa-angle-right"></i></a>
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSAPP/"><span class="card-category-list-name">CSAPP</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Spring/"><span class="card-category-list-name">Spring</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TCPIP/"><span class="card-category-list-name">TCPIP</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E6%96%87%E7%A7%91%E5%AD%A6/"><span class="card-category-list-name">人文科学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BD%B1%E8%AF%84/"><span class="card-category-list-name">影评</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8E%92%E9%98%9F%E8%AE%BA/"><span class="card-category-list-name">排队论</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">算法体系结构</span><span class="card-category-list-count">18</span></a></li>
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSAPP/"><span class="card-category-list-name">CSAPP</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java-Web/"><span class="card-category-list-name">Java Web</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SSM/"><span class="card-category-list-name">SSM</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Spring/"><span class="card-category-list-name">Spring</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TCPIP/"><span class="card-category-list-name">TCPIP</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E6%96%87%E7%A7%91%E5%AD%A6/"><span class="card-category-list-name">人文科学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/"><span class="card-category-list-name">公务员考试</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"><span class="card-category-list-name">公考_强化提升</span><span class="card-category-list-count">1</span></a></li>
             </ul></div></div></div></main><footer id="footer" style="background-image: url('https://picsum.photos/id/857/6935/4283')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';

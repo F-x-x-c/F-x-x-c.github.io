@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Spring_IoC源码 | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="IoC启动源码Resource定位也就是Bean文件的定位,   由于Spring提供多种配置文件的定位方式,   所以这块值得拿出来说;    Resource类为Spring定义的IO封装类,   该类中包含着配置文件(的路径?)   Spring提供了ResourceLoader接口来获取对应的资源,   ResourceLoader作为接口,   自然有许多的实现子类,   不同的实现子类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring_IoC源码">
+<meta property="og:url" content="http://example.com/2023/03/18/hou-duan-gong-cheng-shi/spring/spring04-ioc-yuan-ma/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="IoC启动源码Resource定位也就是Bean文件的定位,   由于Spring提供多种配置文件的定位方式,   所以这块值得拿出来说;    Resource类为Spring定义的IO封装类,   该类中包含着配置文件(的路径?)   Spring提供了ResourceLoader接口来获取对应的资源,   ResourceLoader作为接口,   自然有许多的实现子类,   不同的实现子类">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-03-18T12:57:25.000Z">
+<meta property="article:modified_time" content="2023-03-20T07:53:45.225Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/18/hou-duan-gong-cheng-shi/spring/spring04-ioc-yuan-ma/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Spring_IoC源码',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-20 15:53:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">168</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Spring_IoC源码</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-03-18T12:57:25.000Z" title=" 2023-03-18 20:57:25">2023-03-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-03-20T07:53:45.225Z" title=" 2023-03-20 15:53:45">2023-03-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/SSM/">SSM</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Spring_IoC源码"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="IoC启动源码"><a href="#IoC启动源码" class="headerlink" title="IoC启动源码"></a>IoC启动源码</h1><h2 id="Resource定位"><a href="#Resource定位" class="headerlink" title="Resource定位"></a>Resource定位</h2><p>也就是Bean文件的定位,   由于Spring提供多种配置文件的定位方式,   所以这块值得拿出来说;   </p>
+<p>Resource类为Spring定义的IO封装类,   该类中包含着配置文件(的路径?)</p>
+<img src="D:/Program%20Files/Typora/img/image-20230318210220480.png" alt="image-20230318210220480" style="zoom:80%;" />
+
+<p>Spring提供了ResourceLoader接口来获取对应的资源,   ResourceLoader作为接口,   自然有许多的实现子类,   不同的实现子类通过实现getResource方法来进行资源的获取;   </p>
+<h2 id="BeanDefinition的生成"><a href="#BeanDefinition的生成" class="headerlink" title="BeanDefinition的生成"></a>BeanDefinition的生成</h2><p>通过配置文件注入的bean对象在IoC容器中就是一个一个的BeanDefinition对象;   IoC容器对bean的管理和依赖注入都是通过BeanDefinition来实现的;   </p>
+<p>下面讲述如何将BeanDefinition放入IoC容器中;   </p>
+<p>在AbstractXmlApplicationContext类中定义了一个方法loadBeanDefinitions(DefaultListableBeanFactory beanFactory),   用于获取BeanDefinition;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">loadBeanDefinitions</span><span class="params">(DefaultListableBeanFactory beanFactory)</span> <span class="keyword">throws</span> BeansException, IOException </span>&#123;</span><br><span class="line">   <span class="comment">// Create a new XmlBeanDefinitionReader for the given BeanFactory.</span></span><br><span class="line">   XmlBeanDefinitionReader beanDefinitionReader = <span class="keyword">new</span> XmlBeanDefinitionReader(beanFactory);</span><br><span class="line">   <span class="comment">// Configure the bean definition reader with this context&#x27;s</span></span><br><span class="line">   <span class="comment">// resource loading environment.</span></span><br><span class="line">   beanDefinitionReader.setEnvironment(<span class="keyword">this</span>.getEnvironment());</span><br><span class="line">   beanDefinitionReader.setResourceLoader(<span class="keyword">this</span>);</span><br><span class="line">   beanDefinitionReader.setEntityResolver(<span class="keyword">new</span> ResourceEntityResolver(<span class="keyword">this</span>));</span><br><span class="line">   <span class="comment">// Allow a subclass to provide custom initialization of the reader,</span></span><br><span class="line">   <span class="comment">// then proceed with actually loading the bean definitions.</span></span><br><span class="line">   initBeanDefinitionReader(beanDefinitionReader);</span><br><span class="line">   loadBeanDefinitions(beanDefinitionReader);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在代码中看到,   首先创建一个XmlBeanDefinitionReader对象,   设置好相应的参数之后,   调用下面的重载方法;   在重载方法中,   通过这个对象加载路径,   其中有用户指定的配置文件路径,   也有IoC容器所需要的配置文件;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">loadBeanDefinitions</span><span class="params">(XmlBeanDefinitionReader reader)</span> <span class="keyword">throws</span> BeansException, IOException </span>&#123;</span><br><span class="line">	Resource[] configResources = getConfigResources();<span class="comment">//获取所有定位到的resource资源位置（用户定义）</span></span><br><span class="line">	<span class="keyword">if</span> (configResources != <span class="keyword">null</span>) &#123;</span><br><span class="line">		reader.loadBeanDefinitions(configResources);</span><br><span class="line">	&#125;</span><br><span class="line">	String[] configLocations = getConfigLocations();<span class="comment">//获取所有本地配置文件的位置（容器自身）</span></span><br><span class="line">	<span class="keyword">if</span> (configLocations != <span class="keyword">null</span>) &#123;</span><br><span class="line">		reader.loadBeanDefinitions(configLocations);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>而loadBeanDefinitions的实现:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 该方法属于AbstractBeanDefinitionReader类, 父接口BeanDefinitionReader</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">loadBeanDefinitions</span><span class="params">(Resource... resources)</span> <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;</span><br><span class="line">    Assert.notNull(resources, <span class="string">&quot;Resource array must not be null&quot;</span>);</span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (Resource resource : resources) &#123;</span><br><span class="line">        <span class="comment">// 将所有资源全部加载，交给AbstractBeanDefinitionReader的实现子类处理这些resource</span></span><br><span class="line">        counter += loadBeanDefinitions(resource);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> counter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>loadBeanDefinitions重载方法的逻辑是,   一个负责与外部进行对接,   把全部的配置文件都拿到,   另一个负责具体的对单一配置文件进行处理;   而这两个方法都由接口BeanDefinitionReader实现,   但是AbstractBeanDefinitionReader类并没有实现单一参数值的loadBeanDefinitions方法,   或者说它只实现了对本地资源的单个具体处理方法,   而对用户指定的配置文件,   具体是由XmlBeanDefinitionReader来实现的;   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230318214320942.png" alt="image-20230318214320942" style="zoom:80%;" />
+
+
+
+<p>所以下面来分析XmlBeanDefinitionReader类中的对loadBeanDefinitions方法的实现,   XmlBeanDefinitionReader类中对于配置文件的loadBeanDefinitions方法又有两个重载,   第一个是将配置文件打包为EncodedResource,   第二个则是进行具体的操作:   将资源转为输入流,   然后经典流套流打包为InputSource,   最后放入doLoadBeanDefinitions方法中执行,   在该方法中,   通过DocumentLoader将资源再打包为Document类,   调用registerBeanDefinitions方法;   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">loadBeanDefinitions</span><span class="params">(Resource resource)</span> <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;</span><br><span class="line">    <span class="comment">// 包装resource为EncodeResource类型</span></span><br><span class="line">    <span class="keyword">return</span> loadBeanDefinitions(<span class="keyword">new</span> EncodedResource(resource)); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载包装后的EncodeResource资源</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">loadBeanDefinitions</span><span class="params">(EncodedResource encodedResource)</span> <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;</span><br><span class="line">    Assert.notNull(encodedResource, <span class="string">&quot;EncodedResource must not be null&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (logger.isInfoEnabled()) &#123;</span><br><span class="line">        logger.info(<span class="string">&quot;Loading XML bean definitions from &quot;</span> + encodedResource.getResource());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 通过resource对象得到XML文件内容输入流，并为IO的InputSource做准备</span></span><br><span class="line">        InputStream inputStream = encodedResource.getResource().getInputStream();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// Create a new input source with a byte stream.</span></span><br><span class="line">            InputSource inputSource = <span class="keyword">new</span> InputSource(inputStream);</span><br><span class="line">            <span class="keyword">if</span> (encodedResource.getEncoding() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                inputSource.setEncoding(encodedResource.getEncoding());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 开始准备 load bean definitions from the specified XML file</span></span><br><span class="line">            <span class="keyword">return</span> doLoadBeanDefinitions(inputSource, encodedResource.getResource());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123;</span><br><span class="line">            inputStream.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> BeanDefinitionStoreException(</span><br><span class="line">                <span class="string">&quot;IOException parsing XML document from &quot;</span> + encodedResource.getResource(), ex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">doLoadBeanDefinitions</span><span class="params">(InputSource inputSource, Resource resource)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 获取指定资源的验证模式</span></span><br><span class="line">        <span class="keyword">int</span> validationMode = getValidationModeForResource(resource);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 从资源对象中加载DocumentL对象，大致过程为：将resource资源文件的内容读入到document中</span></span><br><span class="line">        <span class="comment">// DocumentLoader在容器读取XML文件过程中有着举足轻重的作用！</span></span><br><span class="line">        <span class="comment">// XmlBeanDefinitionReader实例化时会创建一个DefaultDocumentLoader型的私有属性,继而调用loadDocument方法</span></span><br><span class="line">        <span class="comment">// inputSource--要加载的文档的输入源</span></span><br><span class="line">        Document doc = <span class="keyword">this</span>.documentLoader.loadDocument(</span><br><span class="line">                inputSource, <span class="keyword">this</span>.entityResolver, <span class="keyword">this</span>.errorHandler, validationMode, <span class="keyword">this</span>.namespaceAware);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 将document文件的bean封装成BeanDefinition，并注册到容器</span></span><br><span class="line">        <span class="keyword">return</span> registerBeanDefinitions(doc, resource);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> ...(略)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在registerBeanDefinitions(Document doc, Resource resource)方法中,   通过生成的BeanDefinitionDocumentReader对象调用registerBeanDefinitions方法进行执行;   </p>
+<blockquote>
+<p>BeanDefinitionDocumentReader为一个接口,   它的实现子类是DefaultBeanDefinitionDocumentReader;   createBeanDefinitionDocumentReader方法生成的就是该子类,   而且又是通过反射生成的;   </p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">registerBeanDefinitions</span><span class="params">(Document doc, Resource resource)</span> <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;</span><br><span class="line">	BeanDefinitionDocumentReader documentReader = createBeanDefinitionDocumentReader();</span><br><span class="line">	<span class="keyword">int</span> countBefore = getRegistry().getBeanDefinitionCount();</span><br><span class="line">	documentReader.registerBeanDefinitions(doc, createReaderContext(resource));</span><br><span class="line">	<span class="keyword">return</span> getRegistry().getBeanDefinitionCount() - countBefore;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而在DefaultBeanDefinitionDocumentReader类中的registerBeanDefinitions方法又调用了doRegisterBeanDefinitions方法,   在这个方法中,   则是通过BeanDefinitionParserDelegate代理类去实现的BeanDefinition的注入;   </p>
+<p>具体请参考图<a target="_blank" rel="noopener" href="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Spring#R7V1bc9s2Fv41nEkf7OH98khZUtvdpJONs1snLxlKgiW2lKil6NjOry8AAhIpHFK0RBEUo07HISFeQJzbh4NzDhTjbvnyaxKsFx%2FiGYoUXZ29KMZQ0XXdsHT8D2l5zVo0xzKylnkSzrI2dddwH%2F5A7ELe%2BhTO0Ia1ZU1pHEdpuC42TuPVCk3TQluQJPFz8bLHOJoVGtbBHAkN99MgElv%2FDGfpImt1LXXX%2FhsK5wv%2BZk1lvywDfjFr2CyCWfycazJGinGXxHGaHS1f7lBERq84LuOSX7cdS9AqrXPDTajG%2F%2Fv%2BrP618X58Vu9%2FvQtHH24s9pjvQfTEvpj1Nn3lQ4Afg0cbnwzwJ6xJ4zSKn%2FBTB8%2BLMEX362BKGp8xB%2BC2RbqM8JmGDx%2FDKLqLozihzzEevUcHkds2aRL%2FjXK%2FGLbhGeQX1hmUpOil9DO17eBhtkPxEqXJK76E3WBYdnYL47gb0%2FSyhucd%2FQyTf%2BciRzxd9dilAeOa%2Bfbxu4HFB2xs3zDOhi2M8wAFqyF6DFdhGsarj0GyQckQRWgepEigQRI%2FrWZk8OjAHhh3Mn4hZmE%2FCucr3JbG6%2B2ocyY2APo8Ins6BeljqPi%2FZuij206RQB4X9Rx9bNcByGOcizoicTBhgqcoLdJoGE%2BflvgzP6FghpIe00hzHbNAI1c3BRptNXmeRrZjnU6jz8lI%2Ffr%2B93vty7%2FS1afJahP9mN9ool6aYU3NTuMkXcTzeBVEo13rYEcRMjC7a97HZLQpHf5CafrKzE7wlMZFKqGXMH0gt99a7OwLexg5Hr7kT175yQp%2F7kP%2BhN5zq1v8fHcfPeM3Tp%2BS71v2KSEZHoD4KZmyEfg6eTCS1dD79sfX4ed48MWf%2FPWDD1QaJHOUVlzH7RIZxkqmSFAUpOH3okE8hb5V3c7JoD%2FBTB5M04dl5K%2FXEZYWIoR38QozdnoO6Xu7rInyWko3QSBLpc9x1YLwaR6gIHlbXvgMWz2T8AGg4Cp8oFBZlyl9vN%2BA%2BBVt4CXYvpOkT9PMovhZkPg5kPh5DYgfSB1DFagTxcGsSJnNu08o48%2Fb21vKONnZ5pfTqFWkiy7SZRYg97EFujhFujiqSBfdAuhino0sos2CyHKfJuFqnhElijMr1luiAMLSMlFMgSjKyFL8sTLwlJGtuJ6C7Ss%2B8O7I8chRPF9xTS47yshVBqriGvQXU%2FFdcrc7VDxLGZnKwFV8n7ZYysChLfgng77BxI%2Bhd%2BHbbfoGm71zYJDbdTvCHz%2BYYO1pz8lRlQznBFhkld2M%2FACbFHmqyAqzbIpDWAdDqnGwDCNCxN9Q9B0R9cx%2BYOZZ09k5cHuO83atIoc2wW%2BmXeQ32xX5zTABfnPPxm%2BWTGzEj78UcNLbsNEhaHQie7yBEQ7CK24ID8IrrgU6Aq9MtzsAWqvJJDu%2B%2BFJgi5aYpCFAzh1vBznGtDrFMYDDsI4Zy7CGbCPGerGDO42ZsNps1o75cRzp5se5mp%2F2zE9d3xqX3o4oE1Oc3R8ptr2YpEArDu1OUsyrdr8A7e4Ck9l2tbt51e7taXezru%2FWlKbdF38%2BjL%2Fp%2F%2F7P6%2B%2Bj4WPw6cPdt%2FEcWDlJts4MLPMjojsyLeAOKxS6elhaGxCyG83RC0KmAcpYg1Y3rAaEDI6BkLq6cZyQ3aq2VxQ0wzUOiBo9%2B4iSEA8bSlgjyMkH5QfkQ10Un4qYE1nSooOWd5AZRGxYLWoisUH0iZUkZtRXfJX%2BNCT%2FkxZif4tWsQNyZTsFuTKMFuUKHGmjfKT3Bi%2FDHwzHYPRztx1lpsEIRrEUz6PXZBCng6rMA2aD7Q455PumUJKYADyeY8V12AC6lJUJELwrOsGn6H1M1%2FiY8RiRn90RJ8aQioWjDDRlMBABI3kNudihJBwTgFn%2BPto5Cl3JA4fkdRkmZb0cKANIKE%2BalDQBFFW3aMLqrkQ1sT4PzzflmDA5mK%2FgGWwSAGpuTQDIVWtHpveGIRPAHOdd%2Ftk4RpPFMWA8j2SG0S8noIfHnF5aQA%2Fvdw4KPCyjny2WZz%2BOVfdswVKDsTym556JMNx%2FVDOWR6mKA7hIb6zrFWli2CJN2vXG8oyBS7Kf%2FVidNesuqPBY845oV1P0uW3ntnnnG57r4PkNnsH4Bp3D0pnQwB%2BtpjHmnZ2M98F9jiV7T7BNUbBbdp9foGevVWDcqPu8bmyOKQ0Lw6rlyiSStD8P0jrMMd3C1pbo2QQgnOgbeyfofRUVW3oK8Sy9RYgHrjl0KHvsPAgPFJDjxNKqK5a2JVUKIWc3dRq71I1MsJeTWwFlPucXTB7AyYx%2FHVD%2Fs0XDJazdMoOwBDTBcp6L1nCJK9zXYFd4MU5jFr%2BvpSd%2BX62f0nuuI8L8GR4rFZwbAsEcvUSVliobVVrXiO%2F2UCW3tYdniN2K%2BNaPhAgs8fx9uEmDSYTIDeNgmsa065PdWT%2BQwjZdqGLRul1fkAsYFboWjc0DsQ3YWvhljlTAJuBO2MGSDP5qslnTQduRPEc9%2B%2F9PMW2OE%2Fykm2k23D7tSfLu5ibf%2Fkv2GHbHztqIC70u6Y9vAR3LrvGojcKnZE1WjH3YrtIKS7oNmZYeJCRpepGDt5wpzTxp4gJ5f9eCmzQ1ek1L43bK0IjrPCLurGd6SteH8JeQgzNizB4qAsiUtawI5Ex6fx5F4HVKEWhvhpyN4o8a6qOPiNV0ZK9ealKmo01G5BzjJ2tS3uuGeHAJa07g2a0f4xD3OZeIwsuxcCbjC1n8GVlX2W17%2FLPtxwksBc%2BCDqUn1Q7nLCYvvakugljbRHS7WYqnkynNG7KZhOocV6hTH%2BqYlmyXnOZJgTo%2Fp0uOq8HD%2BrJbMyVdjLzqTDzcdIYm7gQEL8XaqKdJrsMLnPLiqLo4SbEMqPYmd682TxWoAm2muGfhd665M%2FtYP1BOTRe09q%2B%2Bl6dzn8YJGr1M0Zomnuz8cbjvudc1AVUvWsW7RlHFA0l6ptsmytXF2Q3AJrxpsw5W8PwmmP49p8TMz3EocwQROK85zHkiJDmG%2B7IuFz8jB2qubFqHTW3pbAokvUlmUyhdvykGvbJjtdaUrzaBIIlO8KNYDvGqNGVxqXStaTkil15XXdtZdc37R%2Bsz8Z7r1ULuzGzN3yB%2FjdWCHGQXvup2gYwgf43NgpZfr57SRthTcjWo7nk5bdGBdS1t3Ale6V5ZYhvOULtCqrNAqo6pKvkAyQbcdZcHkDpGVvlwxxYLiYI5DUdlMDQwL5ceHiKkPtma7NQnqdkKF5b6ZAPVwsFB1WEuaGch04aqx1Kd6o0pDsRGXuWb1R2XqZSgebhJUVIjYYG%2FR1dn8fRNCUqA7RYKwfVCk4tJTEAdkpY1%2BbWyrFLpkW0yYsKuW1nWllZZFiwTBWVY2gRCZ1AcQ2hfrCRFd%2BcrUD1gsRBTPHCk8KgQJLEMZ7OMwdAm%2FEHynhgN1yTCjX6VNVCsIXkW5qkNI55gzFfxCu1ZftbUhGm398o9WoDbXBdFmOc%2BN27YRYhdQ2s3G%2FNbW%2Fl3BNuduCvqHrZzeCSUvLR2ve%2FgrlbpvrdiP3iL5prQzztRI9Nb%2FSQJXnMXMEW3e%2FJeSLBuWHs78jLSj8tuUHlMJHwDPsj6cGzgcNUYVgLTyj2VJYDVh2WUvXy7syxzLLBz0L8AdupSsOxp%2B3fvY1nbE7Xg2bAsyHXmFcoeBWUFtXlQR%2Bo1daRRm6saB7LlOrsOVDpSQ%2FQS3niqJRveSJ2k9gve8FC0g7KrmTIlVYPWOMU6Op9KxHcUISa9SRzDpruXRth1RVlt1whLyjb%2BGa0wkK9YKUudMcOa6FCqL8q9tLGaqjuSjax%2B9SE0Z2QBRy98oStVDsVl3EPz9I9BskHJEEVoHqSIBan5Ri4oqHJLmKL9XpOHVct7hrwr%2B4AROjvspp3f0zDjMVYlxrk1jIAMNFUVNUzL0EBqffWfChpwC3tYAVldwwZiSHXzaqKfGEJrs2oejCGuE%2FXmMERdeJ%2FlGkqTVyjy3VNcje305o7Yjoqur7gUXuC%2F2T5%2B7pg0skhjO7ernHAxle7cokDuFoxRXH7gl2EMVk2T6Yyc7sAaoQcI4yx4AUpabBcv8LDHK144P14ANjCrFPfO4AUg07ppke8nWtBN41a2Yx9KS94F%2BYuBgtsA%2Fiwp5S6XwYIvpjcWTMJY8TTBeJgkHYDUhq%2FYjzQzMAaxZOT5I26cHGiBt%2BI5FZ9wOKuLP5mmQnhDxddzX2eTHVmznYlZfk5mdJ3CnrmlX8F2IMpq2NukiVW%2FL%2Bm30Ll1Ek%2FRZlMUokbFrCd2VNdMQM5MFaiu08Rmc7CcXUvVt2VJ9brxQ1z3dceSAjPvswv5hdrS4h7rmsH3l5RmSU2pWLmNvX%2Fbm3nrdWfeWYU0afIKzbwpmBhoVY75Om54EDZnk98hj%2FoupJAWb%2F8tjmgU3%2FaVOWAFZJSqtLt3dHMdill8a6tZKr%2BE3uX5Yncmhe7AKe%2B4FwTz7GeZQkmG%2F03DaFMxgnAU0bsz1NMBx5ko2P0mOnbCd%2B9%2FHOk2Y9nscFseYL%2BqDt%2FWsjIJNx%2FqaPFrRsxl43nsJ4ZX%2BcZKPcF9ewWhNUP3bh0A%2BPEZdN4saLrLMWLjasK4elFaw351vSh617wohtTYWfXW1IwjAMTbXPfkIR9REuIRI9lHbYOKuity%2BqkhAaWZA%2Fq%2BgtoDo9k3CNXEoZyCMvzbfGFyGO3qfddpDXIer%2BN7kPNMuSpILP5WF5gytGOqfzxFEU0b3J%2BR4oYpVv4BPl3NyU%2F9mInqjroXq%2B3KDiMz4JJopS7dLYQXixJl3k81V5TII%2F5N4mllW3BCjsps0lDjSrYC6UKvzpy8Xu7VJS8qzQDyeB%2BKDmIMlDMvsE%2Fd0OQanU5ucoWXmBM5OwB7nrmwu1O25jQm9ryiZfJMIFLJAmDz2VYejes%2BAm1h5trWiSuWzmBmvn99ZYpChQk7pgAvUCaL5JVjfi09gmbzgPXclocmrpM%2FguVxRhXWsjVcMwdq83YgarNBq%2B15xX19NJUrHGkazwSciYw0a5ATl1hew1XmsDLXL%2Fivuv1bwqeZpcwbSuI%2FMtnarTvK8cJk%2Fzbctt5vWxDPFysCsXuhVv5uymHAt%2FAR9vWSzpcWyHOob9JhVRex3eery%2F4Es1QwTeGSZecqmXfuB79BL1UOQPm4VY1XRaHv3g8j5kB%2FvY7CrNwqT0A9zH%2Bf0GOCNguiv%2FFNj%2BEceMpJtf3hjW6EUi8xvu4xip9xG9GsJUAD1NU57Q4p%2FwYUsmbyVdutQjaBwkyGLirkbdH0N2hkfEpjlnMuEfwpiw%2FxDJEr%2FgE%3D">springIoC初始化过程</a>;   (不要看网址,   太长了)</p>
+<blockquote>
+<p>总体来看,   BeanDefinition的生成,   首先把配置文件中的属性层层包装,   然后生成一个代理类,   对属性进行封装,   生成对应的BeanDefinition对象;   </p>
+</blockquote>
+<h2 id="BeanDefinition注入容器"><a href="#BeanDefinition注入容器" class="headerlink" title="BeanDefinition注入容器"></a>BeanDefinition注入容器</h2><p>bean配置最终会被解析为BeanDefinition,   并与beanName和alias一同封装到那个什么holder当中,   并传入BeanDefinitionReaderUtils的registerBeanDefinition方法中,   最后通过给定的bean工厂把给定的BeanDefinition注入到beanDefinitionMap中,   这个beanDefinitionMap是一个ConcurrentHashMap;   </p>
+<p>上述步骤完成之后,   实际上还没有进行具体的对象的实例化,   只是相当于把bean信息放入了容器当中,   而在实例化的时候,   会实例化用户指定的对象,   也会实例化容器自身的对象;   对于用户指定的对象,   其在实例化的时候,   会创建BeanPostProcessor对其jn’xy</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">S001_servlet</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/14/she-ji-mo-shi/24-bei-wang-lu-mo-shi/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">24_ 备忘录模式</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IoC%E5%90%AF%E5%8A%A8%E6%BA%90%E7%A0%81"><span class="toc-text">IoC启动源码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Resource%E5%AE%9A%E4%BD%8D"><span class="toc-text">Resource定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeanDefinition%E7%9A%84%E7%94%9F%E6%88%90"><span class="toc-text">BeanDefinition的生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BeanDefinition%E6%B3%A8%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="toc-text">BeanDefinition注入容器</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

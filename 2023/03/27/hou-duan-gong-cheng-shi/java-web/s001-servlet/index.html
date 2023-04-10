@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>S001_servlet | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="servlet介绍基本的架构就是客户端和服务器;   客户端通过网络向服务器发送请求,   服务器向客户端返回相应;   在服务器中,   服务器会启动一个服务,   来接收客户端的请求,   并且搭载对应的静态页面,   当收到客户端的url地址后,   会通过地址的参数得知客户端请求的是哪一个界面,   将该页面返回即可;    由于不同的浏览器所实现的请求包装方式可能会不同,   所以需要统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="S001_servlet">
+<meta property="og:url" content="http://example.com/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet/index.html">
+<meta property="og:site_name" content="Aegis">
+<meta property="og:description" content="servlet介绍基本的架构就是客户端和服务器;   客户端通过网络向服务器发送请求,   服务器向客户端返回相应;   在服务器中,   服务器会启动一个服务,   来接收客户端的请求,   并且搭载对应的静态页面,   当收到客户端的url地址后,   会通过地址的参数得知客户端请求的是哪一个界面,   将该页面返回即可;    由于不同的浏览器所实现的请求包装方式可能会不同,   所以需要统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-03-27T12:39:18.000Z">
+<meta property="article:modified_time" content="2023-04-02T02:59:26.089Z">
+<meta property="article:author" content="Deng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'S001_servlet',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-02 10:59:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">168</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">S001_servlet</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-03-27T12:39:18.000Z" title=" 2023-03-27 20:39:18">2023-03-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-04-02T02:59:26.089Z" title=" 2023-04-02 10:59:26">2023-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java-Web/">Java Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="S001_servlet"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="servlet介绍"><a href="#servlet介绍" class="headerlink" title="servlet介绍"></a>servlet介绍</h1><p>基本的架构就是客户端和服务器;   客户端通过网络向服务器发送请求,   服务器向客户端返回相应;   在服务器中,   服务器会启动一个服务,   来接收客户端的请求,   并且搭载对应的静态页面,   当收到客户端的url地址后,   会通过地址的参数得知客户端请求的是哪一个界面,   将该页面返回即可;   </p>
+<p>由于不同的浏览器所实现的请求包装方式可能会不同,   所以需要统一标准,   也就是http协议;   </p>
+<p>如果静态页面过多,   会过多的占用存储空间,   所以引入动态生成页面的方式,   只需要保存一套数据即可;   也可以说是按照不同的需求来生成不同的页面,   使得提供的服务能够更灵活,   而这个小程序就是applet;   </p>
+<p>而随着时间的发展,   衍生出了servlet    jsp(java server page)    SSM;   </p>
+<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>用于规范客户端与服务器之间的交互;   </p>
+<p>特点:   简单快速    灵活    无连接    无状态    支持B/S和C/S架构;   </p>
+<p>(1) 通过键值对的形式来表示数据”key”=”value”;   </p>
+<p>(2) 可以指定数据的多种形式,   比如json    纯文本等等;   </p>
+<p>(3) 相对于短链接而言的,   节省了创建链接等等步骤的时间;   </p>
+<p>(4) 不记录上一次的请求的保存;   </p>
+<p>(5) B/S架构相当于统一了各个应用,   使其应用基于浏览器…</p>
+<h2 id="http请求格式"><a href="#http请求格式" class="headerlink" title="http请求格式"></a>http请求格式</h2><p>包含三部分,   请求行    请求头和请求体,   </p>
+<img src="D:/Program%20Files/Typora/img/image-20230327212028008.png" alt="image-20230327212028008" style="zoom:80%;" />
+
+<p>请求行就是告知要从哪里干什么;   </p>
+<p>请求头放置的信息为头信息的补充信息,   比如各种格式和语言;   </p>
+<p>请求体放置的信息为请求的数据,   最终会以K-V键值对的形式返回;   </p>
+<h2 id="http请求方法"><a href="#http请求方法" class="headerlink" title="http请求方法"></a>http请求方法</h2><p>get    post    head    put</p>
+<p>get和post都是获取数据的方法;   </p>
+<blockquote>
+<p>get和post的区别:   </p>
+<p>post所请求的数据不会显示在地址栏中,   而get会;   所以post是安全的,   get不安全;   </p>
+<p>而由于这个原因,   get会限制请求长度限制,   但是post不会;   </p>
+</blockquote>
+<h2 id="http响应格式"><a href="#http响应格式" class="headerlink" title="http响应格式"></a>http响应格式</h2><img src="D:/Program%20Files/Typora/img/image-20230327214600622.png" alt="image-20230327214600622" style="zoom:80%;" />
+
+
+
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>在物理服务器的webserver中,   要准备一个长服务,   用于接收客户端的请求,   而在实际开发环境当中,   webserver有多个;   </p>
+<h2 id="自定义TomCat"><a href="#自定义TomCat" class="headerlink" title="自定义TomCat"></a>自定义TomCat</h2><ol>
+<li><p>MyRequest</p>
+<p>该类定义好请求的方法和地址,   在构造方法中通过输入流将请求读取进来,   进行字符分割之后,   填写好请求方法和请求地址;   </p>
+</li>
+<li><p>MyResponse</p>
+<p>该类负责发送请求,   填写好详细的请求信息之后,   在请求中加上简单的字符串,   使用输出流将请求送出;   </p>
+</li>
+<li><p>MyServlet</p>
+<p>通过响应类进行具体的消息的发出;   </p>
+</li>
+<li><p>MyServer</p>
+<p>无限循环接收请求,   通过请求获取该请求对应的servlet服务类,   通过反射创建该类,   让该类将对应的响应发出;   </p>
+</li>
+<li><p>其他</p>
+<p>为了维护扩展性,   需要创建一个Servlet的接口,   因为服务页面不止一个;   还需要创建一个url地址标识符映射Servlet类的类;   </p>
+</li>
+</ol>
+<p>全部写好过后,   就可以在浏览器中输入对应的地址 端口号以及资源定位符,   即可获取到对应的资源;   而如果使用Tomcat,   则只需要撰写servlet即可;   </p>
+<p>撰写servlet,   也只需要重写doGet    doPost和service方法即可;   对于service方法,   需要拿到参数中的响应的撰写体,   调用write方法即可;   而映射关系需要在web/WEB-INF/web/xml中填写;   </p>
+<blockquote>
+<p>使用Tomcat作为服务器的流程就是:   请求打过来,   Tomcat先找web.xml,   通过url找到对应的servlet名称,   通过名称找到对应的类,   该类一定实现了HttpServlet父类,   自动调用该类的service方法即可;   </p>
+</blockquote>
+<p>所以这个时候可以对servlet下定义:   servlet是web服务端的编程技术,   它实现了特定的Java类(比如在Tomcat中为HttpServlet),   并由支持Servlet的web服务器执行和调用,   一个Servlet对应一个或一组URL访问请求,   并返回对应的响应;   </p>
+<h2 id="servlet生命周期"><a href="#servlet生命周期" class="headerlink" title="servlet生命周期"></a>servlet生命周期</h2><p>当服务端接收到客户端发送的第一个请求后,   才开始生成对应的servlet类对应的对象;   而Tomcat服务器结束的时候,   servlet才被销毁;   </p>
+<p>所以他的生命周期:   接收到第一个对应的请求后—&gt;Tomcat服务器关闭;   </p>
+<blockquote>
+<p>当然也可以设置对应的属性&lt; load on startup &gt;,   让它在Tomcat启动的时候就创建</p>
+</blockquote>
+<h2 id="servlet的使用"><a href="#servlet的使用" class="headerlink" title="servlet的使用"></a>servlet的使用</h2><p>使用jsp实现BS交互:   撰写MethodServlet类,   这里可以直接选择创建servlet文件,   IDEA会自动在该类中写好doGet和doPost,   然后在web.xml中写好别名与类名的对应,   我们只需要写上别名与url的对应,   并在MethodServlet类中撰写service方法即可;   然后创建jsp文件,   在其中写上表单:   </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;method&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br><span class="line">    用户名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    密码:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意如果要将jsp连接到MethodServlet类的话,   action属性对应的值为web.xml文件中对应于MethodServlet类的url;   而通过调整method属性,   也可以看到get和post的区别;   </p>
+<p>service方法可以用来接收get和post请求,   而doX方法只能接受对应的X请求;   </p>
+<h2 id="servlet常见错误"><a href="#servlet常见错误" class="headerlink" title="servlet常见错误"></a>servlet常见错误</h2><p>404:   访问资源不存在;   表示地址栏中填写的路径与web.xml中的请求不一致,   或者项目虚拟名称填写错误;   </p>
+<p>405:   请求的方式与servlet中支持的方式不一致;   也就是说jsp中method属性与servlet中重写了的方法不匹配;   </p>
+<p>500:   服务器内部错误;   比如web.xml中的servlet类名或包名填写错误,   就是报这个错,   并在网页中直接打印java异常;   或者servlet重写的请求处理方法中存在逻辑错误;   </p>
+<h2 id="request对象"><a href="#request对象" class="headerlink" title="request对象"></a>request对象</h2><p>可以通过该对象获得请求的所有信息,   包括方法,   地址,   资源地址和协议;   </p>
+<p>上面说的是请求行中的数据,   由于请求头中的数据是键值对,   所以拿请求头中的数据的时候,   需要使用get方法获取;   还可以获取用户数据;   </p>
+<blockquote>
+<p>代码分层:   一开始所有的页面都是静态页面,   所以所有的东西都放在一起进行处理,   包括展示页面效果的标签,   以及代码的逻辑处理;   然后进行拆分,   把html或者jsp放在一块,   进行页面展示,   java代码放在另一块,   进行逻辑处理,   比如获取参数和与数据库进行进行交互;   这时如果想要修改页面效果,   只需要修改前端;   </p>
+<p>但是由于这样分层之后,   java代码需要拿到对应的参数以及进行逻辑处理,   所以需要分层,   分为控制层control,   服务层service,   数据库层dao</p>
+</blockquote>
+<h2 id="登录小项目"><a href="#登录小项目" class="headerlink" title="登录小项目"></a>登录小项目</h2><p>撰写method.jsp,   以及控制层 数据层和服务层,   在控制层中撰写对应的servlet,   在jsp文件中填写对应的映射名,   映射servlet处理类,   也就是说请求的就是method.jsp页面,   然后把收到的请求交给servlet处理类进行处理,   所以在servlet类中就需要进行对应的登录判断;   </p>
+<p>servlet调用服务层提供的服务, 对应的方法为checkUser(),   判断该用户是否已注册,   而服务层的具体实现子类会调用数据层的checkUser()方法进行判断,   在数据层,   就是通过jdbc去数据库中查询对应的用户是否存在,   如果存在则返回一个用户,   当然也可以直接在数据层对应的方法中就进行判断,   然后直接返回布尔值;   </p>
+<blockquote>
+<p>注意:   如果此处不使用jsp文件的话,    就需要撰写两个servlet类,   一个负责页面的显示,   并且把请求传递给另一个servlet类,   比较麻烦;   </p>
+</blockquote>
+<h2 id="乱码问题"><a href="#乱码问题" class="headerlink" title="乱码问题"></a>乱码问题</h2><p>在登录项目中,    如果数据库中的人名有中文,   则在登陆的时候会显示没有对应的信息,   这时需要进行格式的转化:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String name1 = <span class="keyword">new</span> String(name.getBytes(<span class="string">&quot;iso-8859-1&quot;</span>), <span class="string">&quot;utf-8&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>将浏览器的格式转化为utf-8格式,   然后传入对应的方法中;   即可得到正确的结果;   </p>
+<p>这是一种方式,   也可以设置request的编码格式为utf-8,   然后在Tomcat的conf文件夹中对server.xml中修改属性,   为</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/04/bi-ye-lun-wen/f015-fan-yi/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/03/18/hou-duan-gong-cheng-shi/spring/spring04-ioc-yuan-ma/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Spring_IoC源码</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#servlet%E4%BB%8B%E7%BB%8D"><span class="toc-text">servlet介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-text">HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F"><span class="toc-text">http请求格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="toc-text">http请求方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F"><span class="toc-text">http响应格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tomcat"><span class="toc-text">Tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89TomCat"><span class="toc-text">自定义TomCat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">servlet生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#servlet%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">servlet的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#servlet%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="toc-text">servlet常见错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#request%E5%AF%B9%E8%B1%A1"><span class="toc-text">request对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E5%B0%8F%E9%A1%B9%E7%9B%AE"><span class="toc-text">登录小项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-text">乱码问题</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
