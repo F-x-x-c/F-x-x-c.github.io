@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-04-10T14:59:50.306Z</updated>
+  <updated>2023-04-24T06:32:36.964Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,315 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>判断2</title>
+    <title>Q012_行测_数资1</title>
+    <link href="http://example.com/2023/04/24/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q012-xing-ce-shu-zi-1/"/>
+    <id>http://example.com/2023/04/24/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q012-xing-ce-shu-zi-1/</id>
+    <published>2023-04-24T00:47:18.000Z</published>
+    <updated>2023-04-24T06:32:36.964Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数资1"><a href="#数资1" class="headerlink" title="数资1"></a>数资1</h1><h3 id="混合增长率"><a href="#混合增长率" class="headerlink" title="混合增长率"></a>混合增长率</h3><p>识别:   部分与总体的增长率关系</p><p>固定搭配类:   进口+出口=进出口,   房产+地产=房地产,   邮政+电信=邮电<br>时间类:   上半年+下半年=全年,   第一季度+第二季度=上半年<br>逻辑类:   税收+非税收=总收入,   户籍+非户籍=总人口</p><p>判断口诀:   (1) 总体增速:   居中但不中(最小r&lt;总体&lt;最大r)     (2) 偏向基期量大的那个(哪部分基期量大,   总体增速就接近谁,   但是一般用现期量代替)</p><h3 id="两期比重升降判断"><a href="#两期比重升降判断" class="headerlink" title="两期比重升降判断"></a>两期比重升降判断</h3><p>识别:   两个时间+比重</p><p>判断方法:   $比重=\frac{部分(A)}{总体(B)}$,   </p><p>a&gt;b,   现期比&gt;基期比,   比重上升;   a&lt;b,   现期比&lt;基期比,   比重下降;   a=b,   现期比=基期比,   比重不变;   a和b指的分别是部分的增长率和总体的增长率;   </p><blockquote><p>这个应该带正负号进行计算;   </p></blockquote><h3 id="平均数增长率"><a href="#平均数增长率" class="headerlink" title="平均数增长率"></a>平均数增长率</h3><p>识别:   平均数+增长了…%</p><p>公式:   $r=\frac{a-b}{1+b}$,   a是分子的增长率,   b是分母的增长率;   </p><h3 id="比重求倍数"><a href="#比重求倍数" class="headerlink" title="比重求倍数"></a>比重求倍数</h3><p>要注意”是…的几倍”,   “比…多…几倍”;   </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数资1&quot;&gt;&lt;a href=&quot;#数资1&quot; class=&quot;headerlink&quot; title=&quot;数资1&quot;&gt;&lt;/a&gt;数资1&lt;/h1&gt;&lt;h3 id=&quot;混合增长率&quot;&gt;&lt;a href=&quot;#混合增长率&quot; class=&quot;headerlink&quot; title=&quot;混合增长率&quot;&gt;&lt;/a&gt;</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q998_申论_积累卡</title>
+    <link href="http://example.com/2023/04/22/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q998-shen-lun-ji-lei-qia/"/>
+    <id>http://example.com/2023/04/22/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q998-shen-lun-ji-lei-qia/</id>
+    <published>2023-04-22T06:11:59.000Z</published>
+    <updated>2023-04-24T09:04:41.318Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="申论积累"><a href="#申论积累" class="headerlink" title="申论积累"></a>申论积累</h1><p>“乡贤理事会”对这样的村民不厌其烦地摆事实、讲道理，说服教育取得了不错的效果—开展说服教育;   </p><p>哪些人负责干啥很清楚，我们有啥需要总有人管—有组织,   有秩序;   </p><p>更需要我们从宏观的制度设计层面做出努力…—进行宏观设计</p><p>高校人才并没有体现出专业优势—专业人才匮乏,   高校专业设置与岗位需求脱节—引导高校加强调研、结合市场需求优化课程设置，组织从业者参与知识技能培训，提高…能力；</p><p>…过程中，操作大都不太符合规范。—规范…设备使用，加强作业培训</p><p>只要没人投诉举报我们，就基本不会被发现—查处违规企业依赖投诉举报—畅通监督反馈渠道，提高处罚力度。</p><p>有司法、仲裁、调解等6大类70余家机构入驻前海—引进法律机构!</p><p>享受社保,   申请保障房和补贴等等—完善公共服务! </p><p>一味地向城市看齐，误以为乡村建设就是把乡村与城市建设的一模一样—乡村建设与城市趋同，失去乡村固有特色。</p><p>因此，关键是得把这个人放到他适合的那个位置上，他才能发挥作用，否则就失去意义了。目前为止，这方面还做的不够好。”—对乡贤的定位以及人岗匹配不尽合理。</p><p>部分干部、群众为了享受国家优惠政策，不愿脱贫，不愿摘帽—个别干部和群众存在“等，靠，要”等不良思想倾向，以来国家政策，不肯摘帽。</p><p>“换过好几次”、“人本来就不多”    “只能处理一些小打小闹”“大事儿根本解决不了”—    …队伍不稳定,   处理问题经验和能力不足;   </p><p>将本职工作外包给他人，则是在客观上为交管部门的懒惰提供了方便—将本职工作外包助长懒政行为;   </p><p>我们老百姓肯定会不服气的，长此以往，又怎么得到群众的认可—降低政府公信力;   </p><p>你看看，其他镇既引进了新品种，又大力推广机械化，生产、收割效率比我们高多少！—改良品种,   推广机械化生产,   增加收益;   </p><p>一些村干部并不理会我们的想法，也故意不采纳我们的意见—有抵触心理,   支持不足;   </p><p>现在不少学者似乎缺少一种使命感,   部分电视台和网站没有承担起行业责任。—<strong>部分学者、媒体缺乏使命感和责任感</strong>;   </p><p>最起码得把那些没真本事的人拦在门外，不然不就成了…—平台要加强管理,   设立准入门槛,   核实回答者资质;   </p><p>“用户可以起到监督的作用，在主讲人不遵守条款时有选择离开的权利”—<strong>建立服务约束条款，赋予用户监督、退出权利</strong>;   </p><p>这些车都是厂家生产出来租给别人，我觉得这些都不是真正的‘共享’，更应该叫做租赁经济。—共享概念被泛化;   </p><p>一旦取消这种物质利益刺激，公众很有可能对交通违法行为采取‘睁一只眼闭一只眼—<strong>暂时的物质利益刺激会适得其反，降低公众参与社会治理的积极性、主动性</strong>。</p><p>扑进眼帘的都是多角恋、戏谑历史之类的东西—选材低俗;   </p><p>媒体的价值观决定了观众的价值观,   把人不好的欲望刺激起来…—媒体价值取向不正确;   </p><p>当时看也觉得很有意思，回家合计合计好像又什么都没有留下—输出内容缺少内涵;   </p><p>“案件审核完全是人工操作”“我们需要花不少时间仔细核对图片和视频里的信息”“这些工作相应的开支可是不小的数字呐—审核工作导致行政执法成本增加;   </p><p>给予园长王某记过处分，对教师郭某和周某给予开除处理—依法追究责任;   </p><p>只考虑钱，不考虑风险，也不做战略规划—企业过分看重利益，缺乏风险意识和战略规划;   </p><p>不是因为自己真的需要，而是想要炫耀—存在从众,   炫耀性消费心理。部分消费者缺失理性判断能力…</p><p>“国内众多承载着70、80后甚至90后人群记忆的‘老字号’纷纷回归”，说明“老字号”品牌能够承载过去的记忆，可概括为：<strong>承载记忆。</strong></p><p>“整合……设立了‘说事厅’……”—整合场地资源;   </p><p>“安装了固定电话……设置意见箱……”—畅通说事渠道;   </p><p>“不是嫌劳动强度大，就是嫌工资低不肯来”，说明村民就业心态存在问题，缺少职业素养，不愿意从事累活，较为懒惰，并且眼高手低，高不成低不就，没有工作导致贫困—<strong>职业素养差，缺少吃苦耐劳精神，好高骛远，自主脱贫积极性差</strong>。</p><p>“牵头成立了吉隆田农产品产销专业合作社，先后搭建起17座大棚种植草莓”—建大棚发展现代绿色环保生态农业。</p><p>找了200个非常靠谱的人—聚集人才;   非常多的合作机会—加强合作;   </p><p>巡查就像‘找茬’游戏一样，路况有一点变化就得第一时间发现—及时排除道路交通隐患;   </p><p>谢阿姨调解室’应运而生，调解矛盾纠纷,   作为社区社会组织的‘V益联盟’，组织了‘V益案’PK—鼓励居民自我组织自我服务;   </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;申论积累&quot;&gt;&lt;a href=&quot;#申论积累&quot; class=&quot;headerlink&quot; title=&quot;申论积累&quot;&gt;&lt;/a&gt;申论积累&lt;/h1&gt;&lt;p&gt;“乡贤理事会”对这样的村民不厌其烦地摆事实、讲道理，说服教育取得了不错的效果—开展说服教育;   &lt;/p&gt;
+&lt;p&gt;哪些人负责</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q011_行测_言语4</title>
+    <link href="http://example.com/2023/04/22/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q011-xing-ce-yan-yu-4/"/>
+    <id>http://example.com/2023/04/22/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q011-xing-ce-yan-yu-4/</id>
+    <published>2023-04-22T02:05:07.000Z</published>
+    <updated>2023-04-23T02:51:23.294Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="言语4"><a href="#言语4" class="headerlink" title="言语4"></a>言语4</h1><blockquote><p>并行不悖:   两者看似不同/对立,   但是可以共存,   可以并驾齐驱;   </p><p>傍人门户:   依赖别人,   不能自立;   </p><p>邯郸学步:   一味模仿别人,   不仅没学到本事,   反而把自己的本事丢了;   </p><p>穿凿附会:   不相干的道理/事情硬扯到一起;   </p><p>亦步亦趋:   事事模仿或追随别人;   </p><blockquote><p>模仿别人的词语<br>人云亦云—说话没主见,   随声附和<br>亦步亦趋—行为没主见<br>邯郸学步—丢掉原来的本领<br>东施效颦—出丑</p></blockquote><p>如鱼得水:   遇到与自己十分契合的人或环境;   </p><p>屡见不鲜:   多次见到不觉奇怪;   </p><p>异军突起:   中性词,   不同的派别或力量一下子崛起;   </p><p>崭露头角:   初显才能,   一般指年轻人;   </p><p>雨后春笋:   新生事物大量涌现;   </p><p>一举多得:   一种举动兼收多利,   一般要三方面以上;   </p><p>两全其美:   兼顾两方的利益,   注意主题是两个主体的利益;   而不是在两个方面获利;   </p><p>公私兼顾:   既照顾到公家的利益,   又照顾到私人的利益;   </p><blockquote><p>寸步难行:   行走困难,   比喻处境艰难窘困<br>步履艰难:   指走路困难,   行动不便<br>艰难跋涉:   强调路程的艰苦<br>举步维艰:   形容处境或行动十分艰难</p></blockquote><blockquote><p>墨守成规:   固守旧规矩不肯改变,   侧重规矩制度<br>画地为牢:   只许在指定的范围内活动,   侧重于有一定的范围界限<br>抱残守缺:   思想守旧,   不知变革<br>固步自封:   安于现状,   不求改善</p></blockquote><blockquote><p>符合—符合事实/标准<br>契合—感情契合<br>贴合—贴合皮肤<br>切合—切合实际(但我感觉契合实际也可以)</p></blockquote><p>徒劳无功:   工作没有成效;   </p><p>劳民伤财:   滥用人力财力;   </p><p>覆水难收:   已成定局,   无法挽回;   </p><p>木已成舟:   同上(但是要注意形象化表达);   </p><p>尾大不掉:   比喻部下力量太强大,   不易指挥和调度;   </p><blockquote><p>蜻蜓点水:   做事肤浅不深入<br>走马观花:   侧重于观光游览观察不细致<br>浮光掠影:   侧重于影响不深刻<br>浅尝辄止:   多用于学问,   研究领域</p></blockquote><p>捉襟见肘:   顾此失彼,   应付不过来</p><blockquote><p>曲高和寡:   言论和艺术不同俗,   很少人能懂<br>阳春白雪:   高深不通俗的文艺作品</p></blockquote></blockquote><h2 id="并列对应"><a href="#并列对应" class="headerlink" title="并列对应"></a>并列对应</h2><p>三方并列可能从三个不同的角度进行说明(高,   富,   帅),   也可能是重要的事情说三遍,   也有可能是事情发展先后顺序(相识相知相爱)</p><h2 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h2><h3 id="解释类对应"><a href="#解释类对应" class="headerlink" title="解释类对应"></a>解释类对应</h3><p>是,   就是,   无异于,   比如,   无疑是…,   冒号”:   “,   破折号”—“;   </p><blockquote><p>两面词,   如果出现了所谓的”双方力量”之类的描述,   则要选择两面词:   </p><p>主次:   舍本逐末,   本末倒置,   反客为主,   喧宾夺主,   小题大做,   买椟还珠,   因小失大;   </p><p>新旧:   推陈出新,   革故鼎新,   弃旧图新,   破旧立新,   吐故纳新;   </p><p>好坏:   去芜存菁(jīng),   去粗取精,   激浊扬清,   惩恶扬善;   </p></blockquote><h3 id="重点词句对应"><a href="#重点词句对应" class="headerlink" title="重点词句对应"></a>重点词句对应</h3><p>重点词:   指代词,   主题词,   形象化表达<br>重点句:   完整语句,   前后呼应</p><blockquote><p>形象化表达!!</p><p>水—长河,   大潮,   洪流—不随波逐流急于进入市场大潮,   在研究热潮中国内外已呈现千帆竞发的局面,   在历史的长河中乘风破浪,   在历史的洪流中屹立不倒,   挺立潮头;   </p><p>路—道路,   赛道,   路口—就像到了岔路口不光是分道扬镳,   走捷径不等于另辟蹊径,   通过”直道冲刺” “弯道超车”走好复兴之路,   重庆甘肃也被视为弯道超车的新赛道;   </p><p>基因—与生俱来,   代代相传<br>因子—渗透<br>线—贯穿<br>火—付之一炬<br>稀释—减轻,   减弱</p></blockquote><blockquote><p>要注意”在一定背景之下出现一个新东西”,   选应运而生</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;言语4&quot;&gt;&lt;a href=&quot;#言语4&quot; class=&quot;headerlink&quot; title=&quot;言语4&quot;&gt;&lt;/a&gt;言语4&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;并行不悖:   两者看似不同/对立,   但是可以共存,   可以并驾齐驱;   &lt;/p&gt;
+&lt;p&gt;傍人门户</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q999_申论_答题卡</title>
+    <link href="http://example.com/2023/04/20/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q999-shen-lun-da-ti-qia/"/>
+    <id>http://example.com/2023/04/20/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q999-shen-lun-da-ti-qia/</id>
+    <published>2023-04-20T07:30:43.000Z</published>
+    <updated>2023-04-21T07:17:31.149Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="答题卡"><a href="#答题卡" class="headerlink" title="答题卡"></a>答题卡</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><ol><li>用户担心个人信息安全;   信息分计算方式(<font color='red'>算法不公开</font>)不透明,   难以保证数据安全<font color='red'>数据缺乏公信力</font>;   (<font color='red'>这应该算是两个点,   一是分数不透明,   二是信息不安全</font>)</li><li>难以保证公平性;   一些企业既有基础数据,   又有借贷业务,   在业务上不具有第三方独立性;   </li><li>法律界定不明晰;   试点机构采用线上收集,   现有法律未能明晰个人生活细节;   (<font color='red'>哪些该纳入哪些不该纳入指的是信息采集内容,   范围,   边界没有明确的法律约束</font>)</li><li><font color='red'>从芝麻信用和腾讯征信可以看出:   征信标准不统一;   各自平台各自为战,   根据自身要求收集信息,   缺乏统一标准;   </font></li></ol><h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><ol><li><p>政策限制条件严格;   政策不接地气,   达标率高,   未考虑基层实际情况;   政策限制条件,   附加条件多,   企业无法实际受惠;   </p></li><li><p>政策互相矛盾,   不协调;   忽视上级部门审批,   存在程序瑕疵;   </p></li><li><p>领导对中央精神和上级要求打折扣,   做选择,   搞变通(<font color='red'>对政策的执行打折扣,   做选择</font>);   选择性取舍和执行文件,   不报告重大事项,   文件撰写敷衍了事(<font color='red'>这些都可以省略,   变为—只注重部门利益,   损害群众利益,   同时文件撰写方面描述的重点不是敷衍了事,   而是</font>);   中央政策落实不到位,   导致企业和群众负担过重;   </p></li><li><p><font color='red'>执行僵化,   机械化;   教条式照搬上级政策;   未结合地方实际,   执行效率慢,   落实慢;   </font> 这一点完全没写到,   一定要抓住重点,   政策盼了好多年说明落实比例不高,   执行效率低下;   </p></li><li><p>政府盲目追求项目进度;   忽略手续批复,   未顾及规划要求,   不顾环境影响;   (<font color='red'>环境方面的描述居然被归纳为执行僵化,   机械化…可能是有一个综合考量…</font>)</p></li></ol><h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><ol><li>发展不平衡不充分;   </li><li>公办幼儿园名额太少,   家长哄抢;   家长自发前往排队报名,   全家坐镇网吧网上报名;   </li><li>高档幼儿园收费标准高,   中低收入家庭望而却步;   </li><li>民办幼儿园教育质量差;   教师号召学生孤立调皮孩子;   玩教具严重缺乏,   种类有限;   建筑面积小,   设施设备简陋,   办园条件差,   教师待遇低;   </li><li>师资问题严重;   幼师态度和情绪等冷暴力;   教师工作强度与薪资不对等;   家长要求高,   社会存在偏见,   学前教育专业遇冷,   教师男女比例失调,   留不住人才;   </li></ol><blockquote><p><strong><font color='red'>从整体结构来看,   整篇文章都在说发展不平衡不充分的问题,   所以这需要讲这些问题总结出来,   而不是用公办和民办来进行说明;</font></strong>   </p><p>本篇文章说明了C市幼儿园发展不平衡不充分的问题,   具体有以下几点:   </p><ol><li>幼儿园入学门槛高;   公办幼儿园名额太少,   遭到家长哄抢;   高档幼儿园收费标准高,   中低收入家庭难以承受;   </li><li>教育质量差;   玩教具严重缺乏,   种类有限;   建筑面积小,   设施设备简陋,   办园条件差,   教师待遇低;   </li><li>师资问题严重;   幼师态度和情绪等冷暴力;   教师工作强度与薪资不对等;   家长要求高,   社会存在偏见,   学前教育专业遇冷,   教师男女比例失调,   留不住人才;   </li></ol></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;答题卡&quot;&gt;&lt;a href=&quot;#答题卡&quot; class=&quot;headerlink&quot; title=&quot;答题卡&quot;&gt;&lt;/a&gt;答题卡&lt;/h1&gt;&lt;h2 id=&quot;第一题&quot;&gt;&lt;a href=&quot;#第一题&quot; class=&quot;headerlink&quot; title=&quot;第一题&quot;&gt;&lt;/a&gt;第一题&lt;/h</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q010_行测_言语3</title>
+    <link href="http://example.com/2023/04/19/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q010-xing-ce-yan-yu-3/"/>
+    <id>http://example.com/2023/04/19/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q010-xing-ce-yan-yu-3/</id>
+    <published>2023-04-19T01:37:55.000Z</published>
+    <updated>2023-04-21T03:12:41.268Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="言语3"><a href="#言语3" class="headerlink" title="言语3"></a>言语3</h1><h2 id="首尾句特征"><a href="#首尾句特征" class="headerlink" title="首尾句特征"></a>首尾句特征</h2><p>首句特征:   下定义(…指的是…),   背景引入(随着/近年来/在..大背景下),   提出观点(有人说/普遍认为)</p><p>非首句特征:   指代词指代不明确,   关联词的后半部分;   </p><p>尾句特征:   结论(因此,   所以,   看来,   这),   对策(应该,   必须,   需要),   结论+对策;   </p><p>非尾句特征:   表明原因;   </p><h2 id="逻辑填空"><a href="#逻辑填空" class="headerlink" title="逻辑填空"></a>逻辑填空</h2><p>形象化表达—使用比喻或者拟人等修辞手法的时候,   需要考虑形象化表达,   也就是空格处应填写适合于比喻对象的词语;   </p><p>对应—要观察该词语是否在并列结构之中,   如果在,   则需要依据感情色彩与并列结构相对应;   </p><p>文体风格—根据文段的风格进行判断,   如果文段较为书面,   则使用逼格比较高的词语,   如果较为口语化,   则使用逼格较低的词语;   </p><img src="D:/Program%20Files/Typora/img/image-20230421104317813.png" alt="image-20230421104317813" style="zoom:80%;" /><img src="D:/Program%20Files/Typora/img/image-20230421104344218.png" alt="image-20230421104344218" style="zoom:80%;" /><p>皓首苍颜(形容老年人的容貌)</p><p>孜孜以求(不知疲倦地探求)</p><p>皓首穷经(一直到年老头白之时还在深入钻研经书和古籍)</p><p>白首相知(老年知己)</p><blockquote><p>一定要注意问号!!!!特别是那种提一个问题,   然后后面说”看上去”,   “好像”,   “似乎”,   这后面一般都是转折,   如果这道题又问的是接下来最有可能讲的内容,   那么一定就是转折的内容;   </p></blockquote><blockquote><p>技巧—语义丰富的优选,   A推动 因素 产生    B驱使 要点 内化    C驱动 要素 内生,   驱动=驱使+推动,   要素=要点+因素,   內生=内化和产生;   ….</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;言语3&quot;&gt;&lt;a href=&quot;#言语3&quot; class=&quot;headerlink&quot; title=&quot;言语3&quot;&gt;&lt;/a&gt;言语3&lt;/h1&gt;&lt;h2 id=&quot;首尾句特征&quot;&gt;&lt;a href=&quot;#首尾句特征&quot; class=&quot;headerlink&quot; title=&quot;首尾句特征&quot;&gt;&lt;/a&gt;</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q009_申论3</title>
+    <link href="http://example.com/2023/04/17/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q009-shen-lun-3/"/>
+    <id>http://example.com/2023/04/17/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q009-shen-lun-3/</id>
+    <published>2023-04-17T06:50:34.000Z</published>
+    <updated>2023-04-17T10:42:17.874Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="申论3"><a href="#申论3" class="headerlink" title="申论3"></a>申论3</h1><p>如果要写编者按,   则需要在答案前面空两个格,   然后写上编者按加冒号;   然后对内容进行概括,   最后适当补充(开头结尾);   </p><p>示例概括:   主体+行为+结果;   </p><p>公文题:   格式:   标题+称谓+落款;   内容:   就是下面这个;   语言</p><p>宣传类公文:   1. 开头—背景    2. 主体—劝服(意义,   问题/危害),   倡议对策    3. 结尾—呼吁号召生活</p><p>面对舆论的宣传类公文:   1. 开头—承认事实(描述事件)+表明态度    2. 主体—问题的处理情况/解释回应(存在误解/处理不当)+长效机制    3. 总结—(道歉致谢展望)</p><blockquote><p>编者按与评论类公文不标信号,   其他的情况灵活去看;   </p></blockquote><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><p>在干部和群众间架起桥梁—拉近干群关系;   </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;申论3&quot;&gt;&lt;a href=&quot;#申论3&quot; class=&quot;headerlink&quot; title=&quot;申论3&quot;&gt;&lt;/a&gt;申论3&lt;/h1&gt;&lt;p&gt;如果要写编者按,   则需要在答案前面空两个格,   然后写上编者按加冒号;   然后对内容进行概括,   最后适当补充(开头结尾)</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>论游戏</title>
+    <link href="http://example.com/2023/04/16/sui-bi/sui-bi/you-xi-yu-sheng-chan/"/>
+    <id>http://example.com/2023/04/16/sui-bi/sui-bi/you-xi-yu-sheng-chan/</id>
+    <published>2023-04-16T12:14:14.000Z</published>
+    <updated>2023-04-16T14:13:58.230Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="游戏与生产"><a href="#游戏与生产" class="headerlink" title="游戏与生产"></a>游戏与生产</h1><p>如何阻止自己玩游戏? 这需要了解何谓游戏,   然后才能判断以哪种方式能够其实生活中绝大多数的事情都可以看成是游戏,   打篮球,   唱歌,   赛跑,   电动游戏,   扳手腕都可以看成是游戏,   而要彻底了解游戏的本质,   需要将其概念与生产的概念相结合来看;   </p><p>生产资料的获取或者提升生产力的过程总是漫长,   艰辛而痛苦的;   比如当今世界翘首以盼的可控核聚变技术,   这样一个可能推动第四次工业革命的关键性技术,   所有的国家都在倾其所有进行研究,   都想当上领头羊;   而如果此时三体人到来,   并对某个国家说,   三体人愿意无偿分享可控核聚变技术,   包括技术原理,   技术文档以及维修服务,   这个时候如果抛开一切阴谋论,   每一个国家恐怕都抵挡不住这样的诱惑,   不会有哪个国家说,   不行,   我们要享受研究可控核聚变的过程,   我们现在还不想要这项技术;   又或者,   一个刚刚入社会的大学生,   工作都没有找到,   三体人又到来了,   它说,   我现在无偿给你一亿元人民币,   不收税,   没有任何代价,   你要不要? 没人会拒绝,   没人会说,   不行,   我要享受赚钱的过程,   尽管我现在身无分文,   尽管我要去睡桥洞,   尽管以后我要背负巨额的房贷车贷,   要交礼金,   要为小孩的出生和成长工作一生,   但我不能要这笔钱!</p><p>上面所说的是获取生存资源,   而在游戏当中呢? 我一把游戏下载下来,   刚刚安装好,   然后游戏就提示说,   您已经成功通关了,   您已经是这款游戏的高手了! 您已经不用再玩了这款游戏了! 当下载第二个游戏的时候,   这款游戏又提示相同的信息—您也不用再玩这款游戏啦! 我没玩就通关了,   那我玩个毛线!! 又或者,   在一局英雄联盟刚开始的时候,   一名玩家就开挂获得了六神装和满级等级,   然后出去一个普通攻击就将敌方英雄击杀,   游戏很快就会结束,   而这种靠开挂来获取的满足感,   也会在几场游戏之后荡然无存(当然,   游戏不可能出现这种逆天漏洞,   像开脚本等作弊行为屡禁不止,   主要是因为其对于游戏平衡的破坏没有达到一个刚刚那种程度,   所以一些人会选择去开脚本,   并能够从中体会到快感);   </p><p>所以,   其实可以这么说—正是这些困难重重的关卡使得游戏的目的具有意义,   这些关卡是反效率的,   而生产过程实际上是恰恰是追求效率的;   </p><p>至此,   我们似乎能够得出游戏与生产二者的概念,   并窥探它们两者的不同;   其实核心就一个—你现在做的这件事的目的有没有实际意义,   如果说现在做的这件事情的价值(意义)完全局限于这件事情,   那么它就是游戏,   如果这件事情的价值能够提升做这件事情的人的生活水平,   或者起码到一定的实质性的收获,   那么它就是生产;   </p><p>而在实际的生活中,   将两者完全区分开是很不容易的,   人们做一件事情的动机往往混合了两者,   比如电子竞技选手不仅在为游戏的胜利而拼命奋斗,   也在为通过游戏胜利所获得的报酬而努力;   </p><p>所以说,   就像棱镜talk阐述的那样,   人们痴迷于游戏的主要原因是游戏给予了玩家玩下去的意义,   正是这些反效率的层层阻碍,   使得游戏变得有一股魔法般的引力,   吸引住玩家;   </p><p>而棱镜talk的视频到此为止了,   他只阐述了游戏吸引人的其中一个原因,   并只给出了一个宽泛的解决方法;   当然,   这算不算主要原因另说,   游戏的魅力来源还有很多,   五颜六色的画面,   真实的模拟感,   飞天遁地的超能力,   刺激大脑皮层的游戏音效,   分级奖励制度等等都可以提升玩家的黏稠度;   </p><h1 id="戒游戏"><a href="#戒游戏" class="headerlink" title="戒游戏"></a>戒游戏</h1><p>而如果有人想要从中苏醒,   单靠自己的意志力是很难解决的,   因为一群学者组成的团队能够把人类诱惑因素分析个底朝天;   所以,   本文认为,   要想戒掉游戏,   需要依靠外力,   也就是说,   需要使用一些强制性的手段,   而本文作者实际上并不对需要特殊游戏设备才能进行的电子游戏感兴趣,   而且思来想去作者的解决方案也不适用于手柄或者switch等设备(作者对此甚至一窍不通);   作者的解决方案是针对于电脑和手机游戏的;   需要的软件,   电脑—火绒安全软件,   手机—不做手机控;   具体做法:   </p><p>电脑(不联网版)—在自己大脑清醒的时候,   从网络上的哈希码生成网站中随机生成一串数字和字母的组合字符串,   将其作为火绒的访问控制的密码,   并设置上网时段控制,   同时为了完全杜绝修改,   设置密码修改时需要勾选”访问控制”,   “关闭程序”,   “控制程序”,   并将三个密保问题的答案也设置为那串字符串,   那么此时就有一个问题:   如果因为工作等原因需要修改上网时段怎么办;   解决方案:   将密码保存在一个只能联网之后才能获取的地方,   比如本人就将密码保存在了英雄联盟的客户端中(具体是在客户端的装备方案的名称当中),   这样就形成了一个闭环:   我头脑不清醒了,   我想要玩游戏了,   我就会去尝试获取密码,   而为了获取密码,   我就必须联网找到那个存放密码的地方,   而为了联网,   我又必须获取密码;   同时也解决了不能修改上网时段的问题,   即在允许上网的时段联网获取密码,   就可以进行密码的修改;   </p><p>电脑(联网版)—如果在访问控制时段需要联网,   并且只想控制某款游戏或者某款应用,   可以使用火绒的程序执行控制,   单独限制某一应用或游戏,   但是需要注意的是,   这项功能不具备特定时段的控制,   也就意味着,   上述”将密码保存于游戏客户端中”的思路行不通了,   因为想要获取密码,   必须打开客户端,   而想要打开客户端必须知道密码,   不存在某个时段能够不通过密码打开客户端了;   所以这个时候就需要用到另外一个东西—微信小程序,   蜗牛传书;   这个小程序能把一段信息进行保留,   并在设定的时间之后才能打开,   完全契合这套方法;   只不过需要保证设置传书的时候脑袋要清醒,   不像上面那套方法那样简单粗暴;   </p><p>手机(必须联网)—其实上述方法那么复杂,   只不过是因为作者没有找到对应的电脑限制软件,   所以只能在火绒上做文章,   而手机其实有对应的软件—不做手机控;   它拥有独立APP监督功能,   一下子就把上面那套方法秒了,   并完美满足手机随时都可能需要联网的特性…并对卸载软件以及关闭软件进行了相当多的应对措施,   以消除用户发作的时候尝试突破限制的可能ヾ(≧ ▽ ≦)ゝ;   </p><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;游戏与生产&quot;&gt;&lt;a href=&quot;#游戏与生产&quot; class=&quot;headerlink&quot; title=&quot;游戏与生产&quot;&gt;&lt;/a&gt;游戏与生产&lt;/h1&gt;&lt;p&gt;如何阻止自己玩游戏? 这需要了解何谓游戏,   然后才能判断以哪种方式能够其实生活中绝大多数的事情都可以看成是游戏,</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q008_行测_言语2</title>
+    <link href="http://example.com/2023/04/16/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q008-xing-ce-yan-yu-2/"/>
+    <id>http://example.com/2023/04/16/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q008-xing-ce-yan-yu-2/</id>
+    <published>2023-04-16T02:29:59.000Z</published>
+    <updated>2023-04-17T02:19:45.518Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="言语2"><a href="#言语2" class="headerlink" title="言语2"></a>言语2</h1><h2 id="行文脉络"><a href="#行文脉络" class="headerlink" title="行文脉络"></a>行文脉络</h2><p>中心句特征:   表达作者观点,   一般为对策/结论/评价;   </p><p>分述句特征:   </p><ol><li><p>举例子:   “比如”,   “例如”,   “…就是例证”等;   </p></li><li><p>数据资料</p></li><li><p><strong>正反论证</strong></p><p>如果提出了观点,   给出对策,   然后加上反面论证,   则这个反面论证为分述句;   而如果提出了问题,   然后进行反面论证,   则这个反面论证非常重要;   </p></li><li><p>原因解释</p></li><li><p>并列分述</p></li><li><p>上述几点的排列组合</p></li></ol><blockquote><p>提对策:   是…的研究课题,   …成为一个时代命题;   </p></blockquote><blockquote><p> 对策和对策产生的结果同时出现,   则结论不重要,   而如果这种关系是因果,   而前面的所谓”对策产生的结果”是因果结构的结果,   则这个”结果”是很重要的;   </p></blockquote><blockquote><p>总结</p><ol><li><p>总分</p><p>中心句+举例说明<br>中心句+数据资料<br>中心句+正反论证<br>中心句+原因解释<br>中心句+并列分述</p></li><li><p>分总</p><p><strong><font color='red'>“这”</font></strong>,   “由此观之”,   “基于此,   …”</p><p>“也可以这么理解”,   “简而言之”;   </p></li><li><p>分总分</p><p>话题引入+中心句+解释说明;   </p></li></ol><p>注意一定要观察特征词汇,   就像图形推理题观察特征图一样;   </p></blockquote><blockquote><p>不明确选项特征</p><ol><li><p>多为否定的描述</p><p>不能,   不应,   不可,   不适合;   优选直接说”行”的选项;   </p><p>例:   早上叫醒我的不是闹钟,   而是梦想;   </p><p>A. 叫醒我的不是闹钟;   </p><p>B. 叫醒我的是梦想;   </p><p>选B!</p></li><li><p>A能回答B,   则B更明确</p><p>例1:   付出真心才能打动心仪的女孩;   </p><p>A. 追求女孩要付出真心</p><p>B. 追求女孩的方法</p><p>A能够回答B,   所以应该选A;   </p><p>例2:   只有刷题才能上岸;   </p><p>A. 必须刷题才能上岸</p><p>B. 刷题有利于上岸</p><p>选A,   因为那是对策,   而B是意义,   但是如果没有A就只能选B了;   </p><p>而如果出现原因+结论的话,   最好的选项应该是结论的原因,   其次是结论;   </p></li></ol></blockquote><p>如何判断一个例子是不是例子呢? 这需要结合文段找找例子中是不是有关键词,   如果有什么”甚至”,   或者有什么非常好的词汇去评价这个例子,   那么它可能就不是一个例子,   而是文章想要强调的重点;   或者可以这么说,   如果例子只有一个,   并且有大量的篇幅描述这个例子,   那么应该看看这个例子是不是文章的重点;   </p><h2 id="细节判断"><a href="#细节判断" class="headerlink" title="细节判断"></a>细节判断</h2><p>标志:   题干出现正确/不正确/符合/不符合/可以得知/推出;   </p><p>常见错误选项:   </p><ol><li>无中生有</li><li>偷换概念(替换,   混搭)</li><li>偷换逻辑(强加因果,   因果倒置)</li><li>偷换时态(完成时,   进行时,   将来时)</li></ol><blockquote><p>细节主旨化:   出题人更加倾向于选项和题干主旨一致,   而不是去扣某个字眼;   我强项呀ヾ(≧ ▽ ≦)ゝ</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;言语2&quot;&gt;&lt;a href=&quot;#言语2&quot; class=&quot;headerlink&quot; title=&quot;言语2&quot;&gt;&lt;/a&gt;言语2&lt;/h1&gt;&lt;h2 id=&quot;行文脉络&quot;&gt;&lt;a href=&quot;#行文脉络&quot; class=&quot;headerlink&quot; title=&quot;行文脉络&quot;&gt;&lt;/a&gt;行文脉</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q007_申论2</title>
+    <link href="http://example.com/2023/04/15/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q007-shen-lun-2/"/>
+    <id>http://example.com/2023/04/15/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q007-shen-lun-2/</id>
+    <published>2023-04-15T07:30:54.000Z</published>
+    <updated>2023-04-16T08:51:53.661Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="词句解释"><a href="#词句解释" class="headerlink" title="词句解释"></a>词句解释</h1><p>词句解释题,   首先要解释一下这个词句的意思,   要么从文中找就近的总结句,   要么找就近的观点句,   要么结合词句自己编;   </p><p>然后对这个词句相关的要素进行分析,   预判感情色彩,   结合材料倾向,   就是单一题的步骤;   最后以对策的形式进行总结;   其实就是是什么为什么怎么办三个步骤;   </p><blockquote><p>不光是在村儿里销售,   还要销售到各个地方—拓宽销售渠道;   </p><p> 吸引企业帮扶—…</p><p>全家都在得病—因病致贫</p></blockquote><h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>消费者喜新厌旧—消费者忠诚度不足</p><p>做国产化替代—加强本土化创新</p><p>做市场调研,   原材料比较匮乏—了解市场需求,   市场情况</p><p>拿下国际大单—开拓国际市场</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;词句解释&quot;&gt;&lt;a href=&quot;#词句解释&quot; class=&quot;headerlink&quot; title=&quot;词句解释&quot;&gt;&lt;/a&gt;词句解释&lt;/h1&gt;&lt;p&gt;词句解释题,   首先要解释一下这个词句的意思,   要么从文中找就近的总结句,   要么找就近的观点句,   要么结合词句</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q006_申论1</title>
+    <link href="http://example.com/2023/04/13/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q006-shen-lun-1/"/>
+    <id>http://example.com/2023/04/13/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q006-shen-lun-1/</id>
+    <published>2023-04-13T06:50:21.000Z</published>
+    <updated>2023-04-15T07:24:00.156Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="申论1"><a href="#申论1" class="headerlink" title="申论1"></a>申论1</h1><h2 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h2><p>对于经验启示类,   需要考虑普适性,   也就是说,   需要屏蔽掉一些细节,   并使用某些范围更大的此进行替代;   </p><p>对于提出 对策题,   要关注题干中是否有”问题对策一一对应”的要求,   如果有,   则需要写一组问题,   然后写对应的对策,   再写一组问题,   然后写上这组问题的对策;   </p><p>对于概述材料发生变化的题目,   如果描述过去使用了大量的篇幅,   比如描述过去和现在的篇幅一半一半,   则答案也需要写上过去的内容;   如果描述过去的内容非常少,   则不需要描述过去;   </p><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><ol><li>清楚地说明了每一笔钱的去向—公开透明;   </li><li>政府的事情—政务,   村子的事情—村务;   与上面联合,   政府将事情全部说出来—保证政务公开透明,   村务也一样;   </li><li>村民都参与到了解决问题当中—自治共治;   一般说”加强(村民/基层)自治”;   </li><li>完善村里的中心广场,   儿童活动室,   文化礼堂,   养老院…等项目—加强乡村基础建设,   完善设施;   </li><li>村子”颜值”提高–改善村容村貌;   </li></ol><blockquote><p>答案的总起词:   段首段尾的词,   提取的比较大比较广比较虚的词,   反复出现的词;  </p><p>乡村振兴20字方针:   产业兴旺,   生态宜居,   乡风文明,   治理有效,   生活富裕;   </p></blockquote><ol start="6"><li>开展旅游项目—发展乡村旅游产业;   </li><li>获得利润,   进行利润分配—实现成果共享;   </li><li>不大操大办,   不吃名贵菜…—转变风气,   实行勤俭节约,   不铺张浪费;   </li><li>诚信指数制度—加强诚信体系建设;   </li><li>以前得不到解决的问题现在解决了—治理问题的能力得到提升;   </li></ol><h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><ol><li>把个人资料联系方式啥的全部公开—实现警务(村务/政务)公开;   </li><li>过去的方式很慢—现在的方法方便便捷效率高;   </li><li>更好地为群众服务—提高服务效率;   </li></ol><h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><ol><li>靠群众反应问题—畅通反馈渠道;   </li></ol><h2 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h2><p>创造了财富—收入水平提高/富裕/物质生活改善;</p><p>改变生活状况—生活水平提高;   </p><p>网络汽车洗衣机冰箱—加用设备升级;   </p><p>种植小麦到种植苹果—转变产业模式/粮食作物-&gt;经济作物;   </p><p>将土地流转坐收流转金—收入多元化/收入渠道增多;   </p><p>解决住的问题—居住环境的改善;   </p><p>硬化地, 自来水,   玻璃—家庭硬件设施改善;   </p><p>果库,   大棚,   照明设施—生产设施;   </p><p>打电话,   看新鲜事—通讯便捷,   信息丰富/获取信息渠道多;   </p><p>图书室,   村民广场—文化设施,   休闲娱乐设施;   (上面这两项指的是休闲生活丰富/精神文化生活)</p><img src="D:/Program%20Files/Typora/img/image-20230415152339446.png" alt="image-20230415152339446" style="zoom:80%;" /><img src="D:/Program%20Files/Typora/img/image-20230415152357319.png" alt="image-20230415152357319" style="zoom:80%;" /><blockquote><ol><li>为村民解决问题,   使村务公开透明,   完善乡村基础建设与设施,   改善村貌;   </li><li>达成共识,   提高资源综合利用效益,  创办公司,   扩大养殖规模,   提高增产,   调动村民创业热情;   </li><li>开办农家乐旅游项目,   提高村民收入,   实现成果共享;   </li><li>改变村风,   勤俭节约,   不铺张浪费,   推行诚信基础建设,   加强家风建设,   道德评议进度,   广泛传播乡村文明正能量;   </li></ol></blockquote><blockquote><ol><li>明确工作内容和联系方式;   在头像上放置联系方式和具体的工作内容,   便于民众咨询办理;   </li><li>…</li></ol></blockquote><blockquote><ol><li><p>问题<br>(1) 部分乡道村道道路硬化通车后相关部门的无作为,   部分村委会未建立起村组道路管养制度,   村民不了解村路相关信息;   没有公路养护站,   专业人才匮乏,   村组道路路产路权缺乏保护;   </p><p>(2) 保护措施老旧缺乏;   防护栏老化,   标识牌模糊,   塌方路段也无警戒线;   缺乏道路监管机制;   </p><p>(3) 缺乏有效沟通配合机制;   各部门只做自己分内的事情,   不管分外的事情;   </p></li><li><p>对策</p><p>(1) 提高政府办事积极性与效率,   督促村委会建立村组道路管养制度,   向村民宣传村路管养制度,   设置公路养护站,   招揽专业人才进行公路养护,   开展培训班进行公路养护人才的培训;   </p><p>(2) 建立健全道路管理机制;   定期检测道路保护措施,   对缺乏和陈旧的保护措施及时进行更换;   </p><p>(3) 健全各部门沟通配合机制;   发现问题后及时通知责任部门,   加强协作,   共同解决道路问题;   </p></li></ol></blockquote><blockquote><ol><li>实施包产到户，解决温饱问题；农民积极性被调动。粮食衣物充足。</li><li></li></ol></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;申论1&quot;&gt;&lt;a href=&quot;#申论1&quot; class=&quot;headerlink&quot; title=&quot;申论1&quot;&gt;&lt;/a&gt;申论1&lt;/h1&gt;&lt;h2 id=&quot;对策&quot;&gt;&lt;a href=&quot;#对策&quot; class=&quot;headerlink&quot; title=&quot;对策&quot;&gt;&lt;/a&gt;对策&lt;/h2&gt;&lt;p</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q005_行测_言语1</title>
+    <link href="http://example.com/2023/04/13/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q005-xing-ce-yan-yu-1/"/>
+    <id>http://example.com/2023/04/13/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q005-xing-ce-yan-yu-1/</id>
+    <published>2023-04-13T00:58:57.000Z</published>
+    <updated>2023-04-16T14:53:50.096Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="言语1"><a href="#言语1" class="headerlink" title="言语1"></a>言语1</h1><h2 id="转折"><a href="#转折" class="headerlink" title="转折"></a>转折</h2><p>转折之后是重点!</p><p>典型词:   但是/可是/然而/不过/却/其实/事实上/实际上</p><p>非典型:   截然相反,   截然不同,   相对而言,   一种误读,   全新的研究,   殊不知;   </p><blockquote><p>如果出现了多处转折,   则需要结合来看,   整体感知;   </p><p>如果观点部分不明确,   则要借助分述句(进行观点的补充);   </p><p>要选择更明确的选项,   而且要注意—做法比想法更重要!</p></blockquote><blockquote><p>转折之逆向思维</p><p>当文段有”大多数人认为”,   “传统观点认为”等描述的时候,   往往需要把这个观点反过来进行论述;   </p></blockquote><h2 id="因果"><a href="#因果" class="headerlink" title="因果"></a>因果</h2><p>出现因果,   结论是重点;   </p><p>标志词:   所以,   因此,   可见,   看来,   导致,   造成(消极影响)…</p><blockquote><p>表达倾向法:   有中立色彩,   消极色彩和积极色彩,   选项的感情色彩也需要和文段一致;   </p></blockquote><blockquote><p>当文段出现大篇幅进行原因解释的时候,   正确答案多为 为何+原因,   何以是+原因 的形式;   也就是不要去选单原因或者单结论的选项;   </p></blockquote><h2 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h2><blockquote><p>对策,   也就是怎么做!</p></blockquote><p>只有…才;   中间的省略号最重要,   因为那是在提对策,   这是一个方式+目的的结构;   </p><p>对策标志词:   </p><ol><li>应当,   必须,   需要,   应;   </li><li>通过…手段/措施/方法/途径,   才能…;   </li><li>…是…的前提,   保障,   基础;   </li><li>…是…的必由之路/法门之一,   …的要领在于….,   …势在必行;   </li></ol><blockquote><p><strong>反面论证</strong>提对策:   </p><p>典型格式—如果/一旦….+不好的结果;   </p><p>选项答案—**<font color='red'>把前面的做法</font>**倒过来;   </p><p>干扰选项—假设变现实,   或者强调假设而不强调结果;   </p></blockquote><blockquote><p>文段为”提出问题+分析问题”,   而没有解决问题,   这个时候,   “解决问题”的选项很可能成为答案;   </p><p>但是这个”解决问题”的选项**<font color='red'>需要与题干的问题相关</font>**,   如果不相关,   则不能选,   反而应该选问题的描述;   </p></blockquote><h2 id="并列关系"><a href="#并列关系" class="headerlink" title="并列关系"></a>并列关系</h2><p>解题要点:   全面概括,   提取共性,   排除片面;   </p><blockquote><p>文段特征:   </p><ol><li>包含并列关联词—此外,   另外,   同时,   以及,   “ ;  “</li><li>句式相同或相近;   </li><li>按照时间顺序展开;   </li><li>无明显关联词衔接;   </li></ol><p>干扰选项:   片面描述;   </p></blockquote><blockquote><p>时间顺序:   </p><blockquote><p>错误描述:   春…夏…秋…冬…,   所以瑞雪兆丰年<br>正确描述:   春…夏…秋…冬…,   中国一年四季令人神往;   </p><p><strong>也就是说如果出现这种描述,   <font color='red'>需要进行全面概括</font>;</strong>   </p></blockquote><blockquote><p>古今对比与按时间展开的比较</p><p>按时间展开至少三个方面—夏商周,   早中晚,   一二三<br>古今对比为两个方面,   而且有转折词,   有较强的对比意味</p></blockquote></blockquote><h2 id="主题词"><a href="#主题词" class="headerlink" title="主题词"></a>主题词</h2><ol><li><p>特征</p><p>(1) 中心句围绕的核心话题,   一般前有引入或后有解释说明—主题词出现频率较低</p><p>(2) 每句话都围绕相同的话题—主题词出现频率较高</p><p>(3) 话题递推的落脚点—主题词出现频率相对较低</p><blockquote><p><strong><font color='red'>一个主题词要找准,   多个主题词要找全!</font></strong></p></blockquote></li></ol><blockquote><p>设问有引导话题的功能,   一般设问的对象就是主题词;   </p></blockquote><p>这个技巧其实适合于秒杀,   但是我不太建议考场上秒杀,   加快做题速度,   提高做题量才是王道;   </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;言语1&quot;&gt;&lt;a href=&quot;#言语1&quot; class=&quot;headerlink&quot; title=&quot;言语1&quot;&gt;&lt;/a&gt;言语1&lt;/h1&gt;&lt;h2 id=&quot;转折&quot;&gt;&lt;a href=&quot;#转折&quot; class=&quot;headerlink&quot; title=&quot;转折&quot;&gt;&lt;/a&gt;转折&lt;/h2&gt;&lt;p</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>S002_servlet2</title>
+    <link href="http://example.com/2023/04/12/hou-duan-gong-cheng-shi/java-web/s002-servlet2/"/>
+    <id>http://example.com/2023/04/12/hou-duan-gong-cheng-shi/java-web/s002-servlet2/</id>
+    <published>2023-04-12T13:18:36.000Z</published>
+    <updated>2023-04-12T14:34:27.646Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><p>cookie用于处理客户端发送不同请求时,   所使用的相同信息;  </p><h2 id="cookie使用"><a href="#cookie使用" class="headerlink" title="cookie使用"></a>cookie使用</h2><p>创建cookie对象,   设置好它的键值对,   放入response中;   </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">&quot;Msi_champ&quot;</span>, <span class="string">&quot;SKT_T1&quot;</span>);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure><ol><li><p>cookie是在浏览器端保存HTTP状态的一种技术,   cookie信息为浏览器端在访问服务端的某个资源时,   服务端在响应头中传送给服务器端的一种数据;   比如7天免密登录,   当输入一次密码并将用户名和密码发送给服务端,   服务端在响应中告诉浏览器端:   保存一下这个密码,   下次就不用输了;   </p></li><li><p>cookie分为临时cookie和持久化cookie;   如果为临时的,   则关闭浏览器后就没有了,   要想设置持久化cookie,   需要在服务端设置对应的属性—setMaxAge(x)方法;   x的单位为秒;   </p></li><li><p>注意cookie的键和值都不能有空格!</p></li><li><p>cookie路径限制;   设置cookie对象的访问路径,   当访问某一个网站的时候只能在请求中设置对应网站的cookie;   也就是说,   访问哪个网站,   就传过去哪个网站的cookie,   而这个网站(路径)就是通过setPath方法来限定的;   </p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Cookie&quot;&gt;&lt;a href=&quot;#Cookie&quot; class=&quot;headerlink&quot; title=&quot;Cookie&quot;&gt;&lt;/a&gt;Cookie&lt;/h1&gt;&lt;p&gt;cookie用于处理客户端发送不同请求时,   所使用的相同信息;  &lt;/p&gt;
+&lt;h2 id=&quot;cookie</summary>
+      
+    
+    
+    
+    <category term="Java Web" scheme="http://example.com/categories/Java-Web/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q0004_行测_判断4</title>
+    <link href="http://example.com/2023/04/11/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q004-xing-ce-pan-duan-4/"/>
+    <id>http://example.com/2023/04/11/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q004-xing-ce-pan-duan-4/</id>
+    <published>2023-04-11T11:15:08.000Z</published>
+    <updated>2023-04-13T00:26:50.650Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="判断4"><a href="#判断4" class="headerlink" title="判断4"></a>判断4</h1><h2 id="话题一致"><a href="#话题一致" class="headerlink" title="话题一致"></a>话题一致</h2><blockquote><p>快速定位论点和论据</p><p>找论点:   </p><ol><li>典型提示词;   因此,   所以,   这表明/意味着;   </li><li>首尾句原则;   </li><li>问啥找啥;   </li></ol><p>找论据:   </p><ol><li>典型提示词;   由于,   因为,   鉴于,   根据…</li><li>就近原则:   与论点接近;   </li><li>论据的常见形式:   原因,   实例,   实验,   数据,   调查内容;   </li></ol></blockquote><blockquote><p>判别论点论据话题是否一致</p><ol><li>概括;   对于论点进行概括,   也就是谁干了什么;   </li><li>找不同点;   如果论点中出现的词语,   在论据中找不到,   则为话题不一致了;   </li></ol></blockquote><p>如果论点论据话题不一致,   优先考虑对桥做文章;   对于加强类题型,   考虑搭桥,   也就是对于论点和论据,   去同存异,   然后建立异话题之间的联系;   对于削弱类题型,   则在去同存异之后,   切断异话题之间的联系;   </p><p>概括完成之后,   可以大致得到两句话,   即论据—谁干了啥,   论点—谁干了啥;   那么如果论点论据话题不一致,   <strong>则这个桥可以对两句话的主体进行搭建,   也可以对两句话干了啥进行搭建;</strong>   </p><h2 id="话题不一致"><a href="#话题不一致" class="headerlink" title="话题不一致"></a>话题不一致</h2><p>当论点论据话题不一致,   或者只有论点的时候,   就不能考虑搭桥;   </p><ol><li><p>加强</p><p>问”前提,   假设,   加强论证”—必要条件;   </p><p>问”加强,   支持”—解释原因,   举例子;   解释原因的力度大于举例子;   </p></li><li><p>削弱</p><p>优先否论点;   (否论据的力度弱于否论点)</p></li></ol><p>必要条件,   一个重要的方式就是说明这个方式+目的的论点很靠谱,   也就是说,   论点说为了达到这个目的,   可以通过这个方式,   那么为了加强这个论点,   我只需要说,   通过这个方式达到这个目的,   确实很靠谱(或者说,   你的这个方式,   确实能够达到这个目的);   </p><blockquote><p>小心论点中的限定范围:   当论点中提到了范围,   则要看选项有谁也提到了类似的范围,   也就是看谁与论点所指代的东西更接近;   </p></blockquote><blockquote><p>注意:   判断论点论据是否一致时,   要进行一种整体感知,   也就是说,   如果它明显不一致,   那么就不一致,   但是如果它说的较为复杂,   论点论据之间具有一些隐晦的联系,   那么它就是一致的;   另外,   对于削弱之否论点,   要傻傻的去否,   论点说了这件事是为了去干什么,   我就说这件事不是为了去干什么;   </p></blockquote><h2 id="高频论证考点"><a href="#高频论证考点" class="headerlink" title="高频论证考点"></a>高频论证考点</h2><ol><li><p>可翻译类论点</p><p>论点可以翻译为A-&gt;B,   如果想要否论点,   则为A且-B(上岸了就有对象,  我上岸了,  对象呢?)</p><p>也就类似于某个人给你画大饼,   说只要你达到了某某地步或者买了什么什么产品,   你就可以怎么怎么样,   然后我买了,   我发现屁用没有,   就是上述理论的生动解释;   在实际做题的时候,   也需要注意只有…才…</p><blockquote><p>要注意论点能翻,   才能往这方面去想,   如果论点不能翻那就不要随便翻;   </p></blockquote></li><li><p>双因论点</p><p>不是1,   而是2导致的结果;   要削弱,   就去找1导致2;   比如不是减肥,   而是节食导致的脱发,   要对其进行削弱,   只需要找到减肥导致节食的选项即可;   也就是说论点不仅在说明2导致结果,   而且在说明1不能导致结果,   那么这个时候,   我只需要说1能够导致2,   就可以建立1-&gt;2-&gt;结果的串儿,   也就是说1能够导致结果,   也就削弱了论点中的”1不能够导致结果”的话语;   </p><p>这种题目一般又正向论点和反向论点,   而问题大多是最能削弱反对者观点的是? 但是在实际的做题过程中,   其实反对者观点有可能不会拿出来,   会被省略,   所以要学会主动把逆正向观点给加上,   或者形成共识;   </p></li><li><p>因果关系(考的很少!)</p><p>论点包含因果关系时才考虑,   比如包含关键词(导致/使得/有助于/能/加强/降低等);   </p><blockquote><p>这里如果论点不能翻,   那么就不要往可翻译类论点上去想;   </p><p>而且需要区分方式目的和因果关系;   </p></blockquote><p>(1) 因果倒置<br>要考虑因果关系,   首先要看论点中是否有因果关系的关键词,   然后才能考虑因果倒置;   而因果倒置的判别其实不难,   搞清楚哪个是原因哪个是结果就行了;   </p><p>(2) 他因削弱<br>他因削弱一定要表明是这个(事情)原因也会导致结果,   并且<strong>同主体</strong>也在<strong>同时</strong>干这件事情,   也就是说<strong>同主体,   同时,   新原因,   同一结果</strong>,   缺一不可,   而且一般要结合一点常识;   举例:   </p><blockquote><p>论点:   这两年喝奶茶使露露日渐肥胖;   </p><p>A:  露露喝奶茶的时候还会打电话;   </p><p>B:  露露喝奶茶的时候还会吃面食;   </p><p>C:  面食也会使人变胖;   </p></blockquote><p>可以看到只有B项合适,   因为A项打电话不会导致变胖,   而C项不知道露露是否会吃面食;   </p></li><li><p>削弱论据</p><p>当论据是调查的时候,   可以说这个调查所选取的对象不合理,   要注意,   <strong>只能说”对象选取不合理”,   不能说对象不是其他群体;</strong>   </p></li><li><p>实验</p><p>寻找实验对比对象情况不同;   所找的不同指的是实验对象的不同点,   要注意主体只能针对实验主体,   而不能说这个主体的亲人或者与他们相关的人的不同;   </p><blockquote><p> 对于单一实验,   也就是没有对照组,   可以考虑为其增加对照组;   如果实验表明做了某件事,   达到了某个效果,   那么对照组可以是没做某件事,   达不到这个效果,   对结论进行增强;   对照组也可以是没做某件事,   但是也有对应的效果,   对结论进行削弱;   </p></blockquote></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;判断4&quot;&gt;&lt;a href=&quot;#判断4&quot; class=&quot;headerlink&quot; title=&quot;判断4&quot;&gt;&lt;/a&gt;判断4&lt;/h1&gt;&lt;h2 id=&quot;话题一致&quot;&gt;&lt;a href=&quot;#话题一致&quot; class=&quot;headerlink&quot; title=&quot;话题一致&quot;&gt;&lt;/a&gt;话题一</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q003_行测_判断3</title>
+    <link href="http://example.com/2023/04/11/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q003-xing-ce-pan-duan-3/"/>
+    <id>http://example.com/2023/04/11/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q003-xing-ce-pan-duan-3/</id>
+    <published>2023-04-11T01:12:19.000Z</published>
+    <updated>2023-04-19T02:12:58.730Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="判断3"><a href="#判断3" class="headerlink" title="判断3"></a>判断3</h1><h2 id="翻译推理"><a href="#翻译推理" class="headerlink" title="翻译推理"></a>翻译推理</h2><p>翻译规则1—前-&gt;后:   如果;   就;   都;   一定;   </p><p>翻译规则2—后-&gt;前:   只有…才;   不…不;   除非A否则不B(就是B-&gt;A);   除非A,   否则B(就是-B -&gt; A);   谁必不可少(是基础/是前提/很重要),   谁在箭头后;   </p><p> 翻译规则3—且,   或:   且关系同时成立,   或关系至少一个成立;   如果看到虽然但是,   则可以看成是且关系;   </p><p>推理规则1—逆否等价:   A-&gt;B —&gt; -B -&gt; -A;   肯前必肯后,   否后必否前;   否前肯后无必然规律;   </p><p>推理规则2—或关系中,   否1—&gt;肯1:   A || B —&gt; 若-A,   则B;   若-B,   则A;   </p><p>推理规则3—德摩根定律:   -(A与B) —&gt; -A或-B;   -(A或B) —&gt; -A 与 -B;   </p><blockquote><p> 当题干中出现嵌套的逻辑关联词的时候,   拆分来看,   比如”不从政治上认识问题、解决问题，就会陷入头痛医头、脚痛医脚的被动局面，就无法从根本上解决问题”;   可以被拆分为任解—&gt;头脚,   任解—&gt;根解;   </p><p> 另外,   或关系只能否1推1,   不能肯1推1!!!</p><p> “要么…要么”只能二选一;   </p></blockquote><blockquote><p>特殊翻译:   如果-A-&gt;B,   A-&gt;B;   则B一定为真;   </p></blockquote><h2 id="类比推理"><a href="#类比推理" class="headerlink" title="类比推理"></a>类比推理</h2><h3 id="语义关系"><a href="#语义关系" class="headerlink" title="语义关系"></a>语义关系</h3><p>近义,   反义;   先确定他们之间的关系,   如果不能出答案则考虑二级辨析:   </p><p>(1) 感情色彩:   褒义贬义中性<br>(2) 程度:   近义关系</p><h3 id="词语拆分"><a href="#词语拆分" class="headerlink" title="词语拆分"></a>词语拆分</h3><blockquote><p>什么时候考虑拆分?</p><p>成语原本被拆分,   比如”南征:   北战”<br>无明显逻辑关系,   比如”成败:   呼吸”<br>相同子重复出现,   比如”寒冷:   寒舍”</p><p>方式目的的二级辨析:   这个方式靠不靠谱,   也就是说这个成语对于以这个方式去达到这个目的情感色彩是什么;   </p></blockquote><h3 id="并列"><a href="#并列" class="headerlink" title="并列"></a>并列</h3><p><strong>同一层级</strong>或<strong>功能相似</strong>可以看成并列关系;   </p><p>区分:   矛盾关系和反对关系;   矛盾就是非此即彼,   反对即存在第三种情况;   </p><blockquote><p>矛盾积累</p><p>A:   -A<br>男:   女<br>阴:   阳<br>开:   关<br>白天:   黑夜<br>静态博弈:   动态博弈<br>主要矛盾:   次要矛盾<br>本能行为:   学习行为<br>物理变化:   化学变化<br>精神文明:   物质文明</p></blockquote><blockquote><p>并列关系的二级辨析</p><p>(1) 人工自然<br>(2) 命名规则(以功能/特点命名,   以外形命名)</p></blockquote><img src="D:/Program%20Files/Typora/img/image-20230411154851528.png" alt="image-20230411154851528" style="zoom:80%;" /><p>律诗:   首联,   颔联,   颈联,   尾联;   </p><img src="D:/Program%20Files/Typora/img/image-20230411155552270.png" alt="image-20230411155552270" style="zoom:80%;" /><h3 id="包容"><a href="#包容" class="headerlink" title="包容"></a>包容</h3><p>两个词的范围一大一小就可以看成是包容关系;   </p><p>要区分<strong>组成关系</strong>和<strong>种属关系</strong>;   用”是”造句,   如果通顺,   则为种属关系(即A是B的一种),   如果不通顺,   则为组成关系;   </p><blockquote><p>包容的二级辨析</p><p>组成:   外部的组成还是内部的组成;   </p><p>反向包容:   即对于题干的”A:   B”,   造句:   A<strong>不是</strong>B的一种,   表示反向种属;   A中没有B,   表示反向组成;   </p></blockquote><h3 id="交叉"><a href="#交叉" class="headerlink" title="交叉"></a>交叉</h3><p>两个词从不同的角度进行划分,   产生交集;   </p><p>判定方法:   用四个”有的”去造句,   即”有的A是B,   有的A不是B,   有的B是A,   有的B不是A”;   必须四个都成立;   </p><p><img src="D:/Program%20Files/Typora/img/image-20230411162143211.png" alt="image-20230411162143211" style="zoom:80%;" /><img src="D:/Program%20Files/Typora/img/image-20230411162207074.png" alt="image-20230411162207074" style="zoom: 80%;" />         </p><h3 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h3><blockquote><p>高频考点</p><p>原料/成品:   二级辨析—必然/或然,   自然/人工<br>功能对应:     二级辨析—主要/次要<br>时间先后:     二级辨析–主体是否一致<br>因果关系:     二级辨析—自然原因/人为原因</p></blockquote><img src="D:/Program%20Files/Typora/img/image-20230411164143350.png" alt="image-20230411164143350" style="zoom:80%;" /><blockquote><p>词语积累</p><p>打草惊蛇:   比喻采取机密行动时,   不小心惊动了对方;   而不是说”打草为了惊蛇”</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;判断3&quot;&gt;&lt;a href=&quot;#判断3&quot; class=&quot;headerlink&quot; title=&quot;判断3&quot;&gt;&lt;/a&gt;判断3&lt;/h1&gt;&lt;h2 id=&quot;翻译推理&quot;&gt;&lt;a href=&quot;#翻译推理&quot; class=&quot;headerlink&quot; title=&quot;翻译推理&quot;&gt;&lt;/a&gt;翻译推</summary>
+      
+    
+    
+    
+    <category term="公考_强化提升" scheme="http://example.com/categories/%E5%85%AC%E8%80%83-%E5%BC%BA%E5%8C%96%E6%8F%90%E5%8D%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Q002_行测_判断2</title>
     <link href="http://example.com/2023/04/10/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q002-xing-ce-pan-duan-2/"/>
     <id>http://example.com/2023/04/10/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q002-xing-ce-pan-duan-2/</id>
     <published>2023-04-10T12:24:18.000Z</published>
-    <updated>2023-04-10T14:59:50.306Z</updated>
+    <updated>2023-04-11T01:08:46.896Z</updated>
     
     <content type="html"><![CDATA[<h1 id="判断2"><a href="#判断2" class="headerlink" title="判断2"></a>判断2</h1><h2 id="空间类"><a href="#空间类" class="headerlink" title="空间类"></a>空间类</h2><p>常见立体截面图:   </p><p>能切:   </p><ol><li><p>正方体,   长方体</p><p>(1) 矩形:   拦腰切(横着切),   上下切(从上往下垂直切),   斜切(平行于某一条棱往内切)</p><p>(2) 梯形:   斜切(从上往下斜着切)</p><p>(3) 三角形:   从棱上的某一点开始斜着往内切</p><p>(4) 六面体只能切出锐角三角形</p></li><li><p>圆柱</p><p>(1) 圆(横切)    (2) 椭圆(斜切)    (3) 矩形(竖切)    [圆柱切不出梯形!]</p></li><li><p>圆锥</p><p>(1) 圆(横切)    (2) 椭圆(斜切)    (3) 三角形(竖切)</p></li><li><p>圆台</p><p>(1) 圆(横切)    (2) 椭圆(斜切)    (3) 梯形(竖切)</p></li></ol><p>不能切:   </p><p>(1) 正方体长方体不能切出直角三角形和钝角三角形;   </p><p>(2) 刀不能拐弯;   不同方向的截面不能出现在同一个选项中;   </p><p>(3) 空心图形:   切的时候如果没有碰到果肉,   则不能划线;   </p><h2 id="立体拼合"><a href="#立体拼合" class="headerlink" title="立体拼合"></a>立体拼合</h2><p>先确定是几乘几的立体图;   如果贴合完成之后是一个3*3的立体图,   那么可以数每一层的小方块数量,   如果是不规则立体,   则不要去数,   而是尝试去拼凑,   优先不考虑旋转;   </p><h2 id="定义判断"><a href="#定义判断" class="headerlink" title="定义判断"></a>定义判断</h2><p>要小心隐藏主体,   如果出现”帮助…”    “让…”,   则估计会从隐藏主体上挖坑,   在选择的时候一定要明确被隐藏的主体;   </p><p>如果题干中反复出现某一个奇奇怪怪的词,   那么它大概率是一个重要词语;   </p><p>限定词:   </p><ol><li>数量与种类的限定(互益素是<strong>一种</strong>生物释放的,   能引起<strong>它种接受生物</strong>…的…)</li><li>主动被动的限定(众人自发形成…法律规定)</li><li>直接间接(能够确保遭遇<strong>直接气候风险损失</strong>)</li><li>条件/大前提(在<strong>对每一个人都不信任</strong>的基础之上)</li><li>时间的限定(网络考古指对<strong>多年前</strong>网络上发表的各种文字图片…)</li></ol><blockquote><p>定义较长或难以读懂的题:   </p><p>单定义:   哪里读懂读哪里,   重复出现(的词语)很重要<br>多定义:   问谁就优先看谁</p><p>在做定义判断的时候,   如果出现了明确的项和不明确的项,   则优先选择明确的项;   </p><p>如果定义读不懂,   定义词又可以拆的话,   则考虑使用拆词去做题;   </p></blockquote><h2 id="组合排列"><a href="#组合排列" class="headerlink" title="组合排列"></a>组合排列</h2><p>注意:   如果说A和B在某些程度上相同,   则说明他们不是同一个人!</p><blockquote><p>列表技巧:   人作为列,   职位作为行;   如果确定了某个人的职位,   那么以这个人和这个职位相交的位置为中心,   十字画叉;   </p></blockquote><blockquote><p>4321秒杀技巧:   如果有4个人,   有一个条件是3个人满足,   有一个条件是2个人满足,   有一个条件是1个人满足或者4个人都满足;   则需要先找到满足3个人的那个条件,   找到不同的这个人(菜鸟);   然后找到满足2个人的那个条件,   找到不满足条件的两个人(菜鸟和他的队友),   这个队友就是答案;   </p></blockquote>]]></content>
     
@@ -43,9 +347,9 @@
     <link href="http://example.com/2023/04/10/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q001-xing-ce-pan-duan-1/"/>
     <id>http://example.com/2023/04/10/gong-wu-yuan-kao-shi/qiang-hua-ti-sheng/q001-xing-ce-pan-duan-1/</id>
     <published>2023-04-10T06:31:12.000Z</published>
-    <updated>2023-04-10T15:07:09.490Z</updated>
+    <updated>2023-04-16T14:59:38.883Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h1><h2 id="面"><a href="#面" class="headerlink" title="面"></a>面</h2><p>图形被分割,   窟窿比较多,   生活化粗线条的留白图形;   </p><p>考法1:   整体去数面;   </p><p>考法2:   细化考点,   面与点线不同的是,   面时需要考虑形状的,   而点只有数量(当然可以跟)</p><p>(1) 所有面的形状;   在三角形和四边形居多的时候;   </p><p>(2) 相同形状的面;   有长得一样的奇怪图形;   </p><p>(3) 最面的形状或属性;   与外框的关系;  如果最面的形状比较常见,   则只看最面就行,   如果不常见,   则要看最面的关系或者是与外框的关系;   </p><blockquote><p>一定要注意特征图,   即有一两幅图片会明显提示这题要考啥,   一定要学会抓住;   比如出现那种大圆套小圆的,   还有明显最面的;   </p></blockquote><h2 id="线"><a href="#线" class="headerlink" title="线"></a>线</h2><p>特征图:   单一直线,   多边形出现,   优先数直线;   单一曲线,   圆,   弧出现,   优先数曲线;   </p><p>曲线和直线可以分开数,   曲线和直线也可以做运算;   </p><blockquote><p>曲直小总结:   曲直性,   曲直线(出现单一直线单一曲线),   曲直交点(每一幅图曲线与直线都有交点)</p></blockquote><p>平行线:   一般数组数,   也就是说,   同一方向的平行线为一组;   图形特征为同方向的线条成对出现;   如果有出头的线条,   先考虑笔画数,   如果总有与出头的线条方向平行的线要考虑平行线组数;   </p><p>笔画数:   </p><p>其特征图:   </p><p>(1) 外面一个框,   里面一条线,   为日字变形图;   </p><p>(2) 外面一个框,   里面两条线,   为田字变形图;   </p><p>(3) 多边形的相交,   相接;   </p><p>(4) 出头端点图;   </p><p>(5) 五角星,   因为能够一笔画出;   </p><p>(6) 多部分图形,   回字图形;   </p><img src="D:/Program%20Files/Typora/img/image-20230410144939824.png" alt="image-20230410144939824" style="zoom:80%;" /><p>线条交叉地非常凌乱,   交地非常硬(就是大树叉子),   而且交点过多的时候(数不了交点),   就考虑数笔画数;   </p><h2 id="点"><a href="#点" class="headerlink" title="点"></a>点</h2><p>特征图:   </p><p>(1) 线条交叉明显,   大树叉子(其实在我看来就是,   线条交叉非常地硬)</p><p>(2) 相切较多,   也就是圆和线的相切点;   </p><p>(3) 有笔画数特征但是笔画数无规律;   </p><blockquote><p>要注意:   笔画数和点数量是锁死的,   出现其中一个的特征图,   如果没有规律,   则考虑另外一个;   </p></blockquote><p>细化考法:   </p><p>(1) 切点;   大部分图都有切点;   </p><p>(2) 曲直交点;   <strong>每一幅图</strong>都有曲有直,   并且曲直相交;   </p><p>(3) 框上/框内有交点;   <strong>每一幅图</strong>都有外框;   </p><blockquote><p>当每一幅图都有曲线的时候:   </p><p>(1) 先想曲直性;   </p><p>(2) 对于单一曲线;   先考虑曲线数量,   如果无规律,   则考虑曲直线运算;   </p><p>(3) 每幅图都有曲直相交;   考虑曲直交点;   </p><p>(4) 特殊曲线—圆;   可以当曲线,   可以当外框,   可以构造切点;   </p></blockquote><h2 id="对称性"><a href="#对称性" class="headerlink" title="对称性"></a>对称性</h2><p>轴对称;   类等腰元素;   </p><p>中心对称;   S    N    Z    平行四边形,   及其变形图;   </p><p>轴对称+中心对称;   图形存在互相垂直的对称轴;   </p><p>细化考法:   对称轴的方向和数量,   对称轴与图形中的点线面角的关系;   </p><p>如果每一幅图行都是两到三幅对称图组成的时候,   考虑对称轴之间的关系;   </p><blockquote><p>对称轴总结:   </p><p>(1) 对称轴的简单判别,   判别图形是哪种对称;   </p><p>(2) 单一对称轴;   考虑与图形中的点线面相交的关系;   考虑对称轴的方向;   </p><p>(3) 多条对称轴;   考虑对称轴的数量;   考虑对称轴之间的位置关系,   要考虑图形拆分和内外拆分来看;   </p></blockquote><blockquote><p>区分图形间关系和对称轴关系:   都是轴对称图形就考虑对称轴,   有不是轴对称的就考虑图形间关系;   </p></blockquote><h2 id="样式规律"><a href="#样式规律" class="headerlink" title="样式规律"></a>样式规律</h2><p>即加减同异;   这种题型非常好辨识;   </p><h2 id="位置规律"><a href="#位置规律" class="headerlink" title="位置规律"></a>位置规律</h2><p>对于16宫格;   先看中间四个格子,   如果黑块数量相同,   则内外分开看;   如果黑块数量不同,   则横竖看;   </p><blockquote><p>注意平移可能隐藏了主体,   可能是顶点和端点在平移,   也可能是顶点和端点所指代的东西在平移;   </p></blockquote><h2 id="空间重构"><a href="#空间重构" class="headerlink" title="空间重构"></a>空间重构</h2><p>相对面不能出现于一个三视图:   (1) 同行或同列隔一个;       (2) 紧邻中线的”Z”两端;   </p><p>相邻面折叠前后相邻位置不变:   </p><p>(1) 公共边;   两个面挨着所形成的边;   两个构成直角的面所形成的两条边;   一列/一竖四个面,   另外两个面相对的边;   </p><p>(2) 公共点;   相邻的三个面有唯一的一个公共点;   </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h1><h2 id="面"><a href="#面" class="headerlink" title="面"></a>面</h2><p>图形被分割,   窟窿比较多,   生活化粗线条的留白图形;   </p><p>考法1:   整体去数面;   </p><p>考法2:   细化考点,   面与点线不同的是,   面时需要考虑形状,   而点只有数量(当然可以跟线结合)</p><p>(1) 所有面的形状;   在三角形和四边形居多的时候;   </p><p>(2) 相同形状的面;   有长得一样的奇怪图形;   </p><p>(3) 最面的形状或属性;   与外框的关系;  如果最面的形状比较常见,   则只看最面就行,   如果不常见,   则要看最面的关系或者是与外框的关系;   </p><blockquote><p>一定要注意特征图,   即有一两幅图片会明显提示这题要考啥,   一定要学会抓住;   比如出现那种大圆套小圆的,   还有明显最面的;   </p></blockquote><h2 id="线"><a href="#线" class="headerlink" title="线"></a>线</h2><p>特征图:   单一直线,   多边形出现,   优先数直线;   单一曲线,   圆,   弧出现,   优先数曲线;   </p><p>曲线和直线可以分开数,   曲线和直线也可以做运算;   </p><blockquote><p>曲直小总结:   曲直性(出现曲线,   不过一般不会这么考),   曲直线(出现单一直线单一曲线),   曲直交点(每一幅图曲线与直线都有交点)</p></blockquote><p>平行线:   一般数组数,   也就是说,   同一方向的平行线为一组;   图形特征为同方向的线条成对出现;   如果有出头的线条,   先考虑笔画数,   如果总有与出头的线条方向平行的线要考虑平行线组数;   </p><p>笔画数:   </p><p>其特征图:   </p><p>(1) 外面一个框,   里面一条线,   为日字变形图;   </p><p>(2) 外面一个框,   里面两条线,   为田字变形图;   </p><p>(3) 多边形的相交,   相接;   </p><p>(4) 出头端点图;   </p><p>(5) 五角星,   因为能够一笔画出;   </p><p>(6) 多部分图形,   回字图形;   </p><img src="D:/Program%20Files/Typora/img/image-20230410144939824.png" alt="image-20230410144939824" style="zoom:80%;" /><p>线条交叉地非常凌乱,   交地非常硬(就是大树叉子),   而且交点过多的时候(数不了交点),   就考虑数笔画数;   </p><h2 id="点"><a href="#点" class="headerlink" title="点"></a>点</h2><p>特征图:   </p><p>(1) 线条交叉明显,   大树叉子(其实在我看来就是,   线条交叉非常地硬)</p><p>(2) 相切较多,   也就是圆和线的相切点;   </p><p>(3) 有笔画数特征但是笔画数无规律;   </p><blockquote><p>要注意:   笔画数和点数量是锁死的,   出现其中一个的特征图,   如果没有规律,   则考虑另外一个;   </p></blockquote><p>细化考法:   </p><p>(1) 切点;   大部分图都有切点;   </p><p>(2) 曲直交点;   <strong>每一幅图</strong>都有曲有直,   并且曲直相交;   </p><p>(3) 框上/框内有交点;   <strong>每一幅图</strong>都有外框;   </p><blockquote><p>当每一幅图都有曲线的时候:   </p><p>(1) 先想曲直性;   </p><p>(2) 对于单一曲线;   先考虑曲线数量,   如果无规律,   则考虑曲直线运算;   </p><p>(3) 每幅图都有曲直相交;   考虑曲直交点;   </p><p>(4) 特殊曲线—圆;   可以当曲线,   可以当外框,   可以构造切点;   </p></blockquote><h2 id="对称性"><a href="#对称性" class="headerlink" title="对称性"></a>对称性</h2><p>轴对称;   类等腰元素;   </p><p>中心对称;   S    N    Z    平行四边形,   及其变形图;   </p><p>轴对称+中心对称;   图形存在互相垂直的对称轴;   </p><p>细化考法:   对称轴的方向和数量,   对称轴与图形中的点线面角的关系;   </p><p>如果每一幅图行都是两到三幅对称图组成的时候,   考虑对称轴之间的关系;   </p><blockquote><p>对称轴总结:   </p><p>(1) 对称轴的简单判别,   判别图形是哪种对称;   </p><p>(2) 单一对称轴;   考虑与图形中的点线面相交的关系;   考虑对称轴的方向;   </p><p>(3) 多条对称轴;   考虑对称轴的数量;   考虑对称轴之间的位置关系,   要考虑图形拆分和内外拆分来看;   </p></blockquote><blockquote><p>区分图形间关系和对称轴关系:   都是轴对称图形就考虑对称轴,   有不是轴对称的就考虑图形间关系;   </p></blockquote><h2 id="样式规律"><a href="#样式规律" class="headerlink" title="样式规律"></a>样式规律</h2><p>即加减同异;   这种题型非常好辨识;   </p><h2 id="位置规律"><a href="#位置规律" class="headerlink" title="位置规律"></a>位置规律</h2><p>对于16宫格;   先看中间四个格子,   如果黑块数量相同,   则内外分开看;   如果黑块数量不同,   则横竖看;   </p><blockquote><p>注意平移可能隐藏了主体,   可能是顶点和端点在平移,   也可能是顶点和端点所指代的东西在平移;   比如那种一个三角形在框框内移动并且要看它的定点变化的变态题;   </p></blockquote><h2 id="空间重构"><a href="#空间重构" class="headerlink" title="空间重构"></a>空间重构</h2><p>相对面不能出现于一个三视图:   (1) 同行或同列隔一个;       (2) 紧邻中线的”Z”两端;   </p><p>相邻面折叠前后相邻位置不变:   </p><p>(1) 公共边;   两个面挨着所形成的边;   两个构成直角的面所形成的两条边;   一列/一竖四个面,   另外两个面相对的边;   </p><p>(2) 公共点;   相邻的三个面有唯一的一个公共点;   </p><blockquote><p>而描边法一般不用,   因为通过上面的各种技巧一般能够排除几个,   然后再凭借空间想象能力进行排除,   选择正确的选项;   </p></blockquote>]]></content>
     
     
       
@@ -101,13 +405,13 @@
   </entry>
   
   <entry>
-    <title>S001_servlet</title>
-    <link href="http://example.com/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet/"/>
-    <id>http://example.com/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet/</id>
+    <title>S001_servlet1</title>
+    <link href="http://example.com/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet1/"/>
+    <id>http://example.com/2023/03/27/hou-duan-gong-cheng-shi/java-web/s001-servlet1/</id>
     <published>2023-03-27T12:39:18.000Z</published>
-    <updated>2023-04-02T02:59:26.089Z</updated>
+    <updated>2023-04-12T14:06:11.160Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="servlet介绍"><a href="#servlet介绍" class="headerlink" title="servlet介绍"></a>servlet介绍</h1><p>基本的架构就是客户端和服务器;   客户端通过网络向服务器发送请求,   服务器向客户端返回相应;   在服务器中,   服务器会启动一个服务,   来接收客户端的请求,   并且搭载对应的静态页面,   当收到客户端的url地址后,   会通过地址的参数得知客户端请求的是哪一个界面,   将该页面返回即可;   </p><p>由于不同的浏览器所实现的请求包装方式可能会不同,   所以需要统一标准,   也就是http协议;   </p><p>如果静态页面过多,   会过多的占用存储空间,   所以引入动态生成页面的方式,   只需要保存一套数据即可;   也可以说是按照不同的需求来生成不同的页面,   使得提供的服务能够更灵活,   而这个小程序就是applet;   </p><p>而随着时间的发展,   衍生出了servlet    jsp(java server page)    SSM;   </p><h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>用于规范客户端与服务器之间的交互;   </p><p>特点:   简单快速    灵活    无连接    无状态    支持B/S和C/S架构;   </p><p>(1) 通过键值对的形式来表示数据”key”=”value”;   </p><p>(2) 可以指定数据的多种形式,   比如json    纯文本等等;   </p><p>(3) 相对于短链接而言的,   节省了创建链接等等步骤的时间;   </p><p>(4) 不记录上一次的请求的保存;   </p><p>(5) B/S架构相当于统一了各个应用,   使其应用基于浏览器…</p><h2 id="http请求格式"><a href="#http请求格式" class="headerlink" title="http请求格式"></a>http请求格式</h2><p>包含三部分,   请求行    请求头和请求体,   </p><img src="D:/Program%20Files/Typora/img/image-20230327212028008.png" alt="image-20230327212028008" style="zoom:80%;" /><p>请求行就是告知要从哪里干什么;   </p><p>请求头放置的信息为头信息的补充信息,   比如各种格式和语言;   </p><p>请求体放置的信息为请求的数据,   最终会以K-V键值对的形式返回;   </p><h2 id="http请求方法"><a href="#http请求方法" class="headerlink" title="http请求方法"></a>http请求方法</h2><p>get    post    head    put</p><p>get和post都是获取数据的方法;   </p><blockquote><p>get和post的区别:   </p><p>post所请求的数据不会显示在地址栏中,   而get会;   所以post是安全的,   get不安全;   </p><p>而由于这个原因,   get会限制请求长度限制,   但是post不会;   </p></blockquote><h2 id="http响应格式"><a href="#http响应格式" class="headerlink" title="http响应格式"></a>http响应格式</h2><img src="D:/Program%20Files/Typora/img/image-20230327214600622.png" alt="image-20230327214600622" style="zoom:80%;" /><h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>在物理服务器的webserver中,   要准备一个长服务,   用于接收客户端的请求,   而在实际开发环境当中,   webserver有多个;   </p><h2 id="自定义TomCat"><a href="#自定义TomCat" class="headerlink" title="自定义TomCat"></a>自定义TomCat</h2><ol><li><p>MyRequest</p><p>该类定义好请求的方法和地址,   在构造方法中通过输入流将请求读取进来,   进行字符分割之后,   填写好请求方法和请求地址;   </p></li><li><p>MyResponse</p><p>该类负责发送请求,   填写好详细的请求信息之后,   在请求中加上简单的字符串,   使用输出流将请求送出;   </p></li><li><p>MyServlet</p><p>通过响应类进行具体的消息的发出;   </p></li><li><p>MyServer</p><p>无限循环接收请求,   通过请求获取该请求对应的servlet服务类,   通过反射创建该类,   让该类将对应的响应发出;   </p></li><li><p>其他</p><p>为了维护扩展性,   需要创建一个Servlet的接口,   因为服务页面不止一个;   还需要创建一个url地址标识符映射Servlet类的类;   </p></li></ol><p>全部写好过后,   就可以在浏览器中输入对应的地址 端口号以及资源定位符,   即可获取到对应的资源;   而如果使用Tomcat,   则只需要撰写servlet即可;   </p><p>撰写servlet,   也只需要重写doGet    doPost和service方法即可;   对于service方法,   需要拿到参数中的响应的撰写体,   调用write方法即可;   而映射关系需要在web/WEB-INF/web/xml中填写;   </p><blockquote><p>使用Tomcat作为服务器的流程就是:   请求打过来,   Tomcat先找web.xml,   通过url找到对应的servlet名称,   通过名称找到对应的类,   该类一定实现了HttpServlet父类,   自动调用该类的service方法即可;   </p></blockquote><p>所以这个时候可以对servlet下定义:   servlet是web服务端的编程技术,   它实现了特定的Java类(比如在Tomcat中为HttpServlet),   并由支持Servlet的web服务器执行和调用,   一个Servlet对应一个或一组URL访问请求,   并返回对应的响应;   </p><h2 id="servlet生命周期"><a href="#servlet生命周期" class="headerlink" title="servlet生命周期"></a>servlet生命周期</h2><p>当服务端接收到客户端发送的第一个请求后,   才开始生成对应的servlet类对应的对象;   而Tomcat服务器结束的时候,   servlet才被销毁;   </p><p>所以他的生命周期:   接收到第一个对应的请求后—&gt;Tomcat服务器关闭;   </p><blockquote><p>当然也可以设置对应的属性&lt; load on startup &gt;,   让它在Tomcat启动的时候就创建</p></blockquote><h2 id="servlet的使用"><a href="#servlet的使用" class="headerlink" title="servlet的使用"></a>servlet的使用</h2><p>使用jsp实现BS交互:   撰写MethodServlet类,   这里可以直接选择创建servlet文件,   IDEA会自动在该类中写好doGet和doPost,   然后在web.xml中写好别名与类名的对应,   我们只需要写上别名与url的对应,   并在MethodServlet类中撰写service方法即可;   然后创建jsp文件,   在其中写上表单:   </p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;method&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br><span class="line">    用户名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    密码:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><p>注意如果要将jsp连接到MethodServlet类的话,   action属性对应的值为web.xml文件中对应于MethodServlet类的url;   而通过调整method属性,   也可以看到get和post的区别;   </p><p>service方法可以用来接收get和post请求,   而doX方法只能接受对应的X请求;   </p><h2 id="servlet常见错误"><a href="#servlet常见错误" class="headerlink" title="servlet常见错误"></a>servlet常见错误</h2><p>404:   访问资源不存在;   表示地址栏中填写的路径与web.xml中的请求不一致,   或者项目虚拟名称填写错误;   </p><p>405:   请求的方式与servlet中支持的方式不一致;   也就是说jsp中method属性与servlet中重写了的方法不匹配;   </p><p>500:   服务器内部错误;   比如web.xml中的servlet类名或包名填写错误,   就是报这个错,   并在网页中直接打印java异常;   或者servlet重写的请求处理方法中存在逻辑错误;   </p><h2 id="request对象"><a href="#request对象" class="headerlink" title="request对象"></a>request对象</h2><p>可以通过该对象获得请求的所有信息,   包括方法,   地址,   资源地址和协议;   </p><p>上面说的是请求行中的数据,   由于请求头中的数据是键值对,   所以拿请求头中的数据的时候,   需要使用get方法获取;   还可以获取用户数据;   </p><blockquote><p>代码分层:   一开始所有的页面都是静态页面,   所以所有的东西都放在一起进行处理,   包括展示页面效果的标签,   以及代码的逻辑处理;   然后进行拆分,   把html或者jsp放在一块,   进行页面展示,   java代码放在另一块,   进行逻辑处理,   比如获取参数和与数据库进行进行交互;   这时如果想要修改页面效果,   只需要修改前端;   </p><p>但是由于这样分层之后,   java代码需要拿到对应的参数以及进行逻辑处理,   所以需要分层,   分为控制层control,   服务层service,   数据库层dao</p></blockquote><h2 id="登录小项目"><a href="#登录小项目" class="headerlink" title="登录小项目"></a>登录小项目</h2><p>撰写method.jsp,   以及控制层 数据层和服务层,   在控制层中撰写对应的servlet,   在jsp文件中填写对应的映射名,   映射servlet处理类,   也就是说请求的就是method.jsp页面,   然后把收到的请求交给servlet处理类进行处理,   所以在servlet类中就需要进行对应的登录判断;   </p><p>servlet调用服务层提供的服务, 对应的方法为checkUser(),   判断该用户是否已注册,   而服务层的具体实现子类会调用数据层的checkUser()方法进行判断,   在数据层,   就是通过jdbc去数据库中查询对应的用户是否存在,   如果存在则返回一个用户,   当然也可以直接在数据层对应的方法中就进行判断,   然后直接返回布尔值;   </p><blockquote><p>注意:   如果此处不使用jsp文件的话,    就需要撰写两个servlet类,   一个负责页面的显示,   并且把请求传递给另一个servlet类,   比较麻烦;   </p></blockquote><h2 id="乱码问题"><a href="#乱码问题" class="headerlink" title="乱码问题"></a>乱码问题</h2><p>在登录项目中,    如果数据库中的人名有中文,   则在登陆的时候会显示没有对应的信息,   这时需要进行格式的转化:   </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String name1 = <span class="keyword">new</span> String(name.getBytes(<span class="string">&quot;iso-8859-1&quot;</span>), <span class="string">&quot;utf-8&quot;</span>);</span><br></pre></td></tr></table></figure><p>将浏览器的格式转化为utf-8格式,   然后传入对应的方法中;   即可得到正确的结果;   </p><p>这是一种方式,   也可以设置request的编码格式为utf-8,   然后在Tomcat的conf文件夹中对server.xml中修改属性,   为</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="servlet介绍"><a href="#servlet介绍" class="headerlink" title="servlet介绍"></a>servlet介绍</h1><p>基本的架构就是客户端和服务器;   客户端通过网络向服务器发送请求,   服务器向客户端返回相应;   在服务器中,   服务器会启动一个服务,   来接收客户端的请求,   并且搭载对应的静态页面,   当收到客户端的url地址后,   会通过地址的参数得知客户端请求的是哪一个界面,   将该页面返回即可;   </p><p>由于不同的浏览器所实现的请求包装方式可能会不同,   所以需要统一标准,   也就是http协议;   </p><p>如果静态页面过多,   会过多的占用存储空间,   所以引入动态生成页面的方式,   只需要保存一套数据即可;   也可以说是按照不同的需求来生成不同的页面,   使得提供的服务能够更灵活,   而这个小程序就是applet;   </p><p>而随着时间的发展,   衍生出了servlet    jsp(java server page)    SSM;   </p><h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>用于规范客户端与服务器之间的交互;   </p><p>特点:   简单快速    灵活    无连接    无状态    支持B/S和C/S架构;   </p><p>(1) 通过键值对的形式来表示数据”key”=”value”;   </p><p>(2) 可以指定数据的多种形式,   比如json    纯文本等等;   </p><p>(3) 相对于短链接而言的,   节省了创建链接等等步骤的时间;   </p><p>(4) 不记录上一次的请求的保存;   </p><p>(5) B/S架构相当于统一了各个应用,   使其应用基于浏览器…</p><h2 id="http请求格式"><a href="#http请求格式" class="headerlink" title="http请求格式"></a>http请求格式</h2><p>包含三部分,   请求行    请求头和请求体,   </p><img src="D:/Program%20Files/Typora/img/image-20230327212028008.png" alt="image-20230327212028008" style="zoom:80%;" /><p>请求行就是告知要从哪里干什么;   </p><p>请求头放置的信息为头信息的补充信息,   比如各种格式和语言;   </p><p>请求体放置的信息为请求的数据,   最终会以K-V键值对的形式返回;   </p><h2 id="http请求方法"><a href="#http请求方法" class="headerlink" title="http请求方法"></a>http请求方法</h2><p>get    post    head    put</p><p>get和post都是获取数据的方法;   </p><blockquote><p>get和post的区别:   </p><p>post所请求的数据不会显示在地址栏中,   而get会;   所以post是安全的,   get不安全;   </p><p>而由于这个原因,   get会限制请求长度限制,   但是post不会;   </p></blockquote><h2 id="http响应格式"><a href="#http响应格式" class="headerlink" title="http响应格式"></a>http响应格式</h2><img src="D:/Program%20Files/Typora/img/image-20230327214600622.png" alt="image-20230327214600622" style="zoom:80%;" /><h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p>在物理服务器的webserver中,   要准备一个长服务,   用于接收客户端的请求,   而在实际开发环境当中,   webserver有多个;   </p><h2 id="自定义TomCat"><a href="#自定义TomCat" class="headerlink" title="自定义TomCat"></a>自定义TomCat</h2><ol><li><p>MyRequest</p><p>该类定义好请求的方法和地址,   在构造方法中通过输入流将请求读取进来,   进行字符分割之后,   填写好请求方法和请求地址;   </p></li><li><p>MyResponse</p><p>该类负责发送请求,   填写好详细的请求信息之后,   在请求中加上简单的字符串,   使用输出流将请求送出;   </p></li><li><p>MyServlet</p><p>通过响应类进行具体的消息的发出;   </p></li><li><p>MyServer</p><p>无限循环接收请求,   通过请求获取该请求对应的servlet服务类,   通过反射创建该类,   让该类将对应的响应发出;   </p></li><li><p>其他</p><p>为了维护扩展性,   需要创建一个Servlet的接口,   因为服务页面不止一个;   还需要创建一个url地址标识符映射Servlet类的类;   </p></li></ol><p>全部写好过后,   就可以在浏览器中输入对应的地址 端口号以及资源定位符,   即可获取到对应的资源;   而如果使用Tomcat,   则只需要撰写servlet即可;   </p><p>撰写servlet,   也只需要重写doGet,   doPost和service方法即可;   对于service方法,   需要拿到参数中的响应的撰写体,   调用write方法即可;   而映射关系需要在web/WEB-INF/web/xml中填写;   </p><blockquote><p>使用Tomcat作为服务器的流程就是:   请求打过来,   Tomcat先找web.xml,   通过url找到对应的servlet名称,   通过名称找到对应的类,   该类一定实现了HttpServlet父类,   自动调用该类的service方法即可;   </p></blockquote><p>所以这个时候可以对servlet下定义:   servlet是web服务端的编程技术,   它实现了特定的Java类(比如在Tomcat中为HttpServlet),   并由支持Servlet的web服务器执行和调用,   一个Servlet对应一个或一组URL访问请求,   并返回对应的响应;   </p><h2 id="servlet生命周期"><a href="#servlet生命周期" class="headerlink" title="servlet生命周期"></a>servlet生命周期</h2><p>当服务端接收到客户端发送的第一个请求后,   才开始生成对应的servlet类对应的对象;   而Tomcat服务器结束的时候,   servlet才被销毁;   </p><p>所以他的生命周期:   接收到第一个对应的请求后—&gt;Tomcat服务器关闭;   </p><blockquote><p>当然也可以设置对应的属性&lt; load on startup &gt;,   让它在Tomcat启动的时候就创建</p></blockquote><h2 id="servlet的使用"><a href="#servlet的使用" class="headerlink" title="servlet的使用"></a>servlet的使用</h2><p>使用jsp实现BS交互:   撰写MethodServlet类,   这里可以直接选择创建servlet文件,   IDEA会自动在该类中写好doGet和doPost,   然后在web.xml中写好别名与类名的对应,   我们只需要写上别名与url的对应,   并在MethodServlet类中撰写service方法即可;   然后创建jsp文件,   在其中写上表单:   </p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;method&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br><span class="line">    用户名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    密码:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><p>注意如果要将jsp连接到MethodServlet类的话,   action属性对应的值为web.xml文件中对应于MethodServlet类的url;   而通过调整method属性,   也可以看到get和post的区别;   </p><p>service方法可以用来接收get和post请求,   而doX方法只能接受对应的X请求;   </p><h2 id="servlet常见错误"><a href="#servlet常见错误" class="headerlink" title="servlet常见错误"></a>servlet常见错误</h2><p>404:   访问资源不存在;   表示地址栏中填写的路径与web.xml中的请求不一致,   或者项目虚拟名称填写错误;   </p><p>405:   请求的方式与servlet中支持的方式不一致;   也就是说jsp中method属性与servlet中重写了的方法不匹配;   </p><p>500:   服务器内部错误;   比如web.xml中的servlet类名或包名填写错误,   就是报这个错,   并在网页中直接打印java异常;   或者servlet重写的请求处理方法中存在逻辑错误;   </p><h2 id="request对象"><a href="#request对象" class="headerlink" title="request对象"></a>request对象</h2><p>可以通过该对象获得请求的所有信息,   包括方法,   地址,   资源地址和协议;   </p><p>上面说的是请求行中的数据,   由于请求头中的数据是键值对,   所以拿请求头中的数据的时候,   需要使用get方法获取;   还可以获取用户数据;   </p><blockquote><p>代码分层:   一开始所有的页面都是静态页面,   所以所有的东西都放在一起进行处理,   包括展示页面效果的标签,   以及代码的逻辑处理;   然后进行拆分,   把html或者jsp放在一块,   进行页面展示,   java代码放在另一块,   进行逻辑处理,   比如获取参数和与数据库进行进行交互;   这时如果想要修改页面效果,   只需要修改前端;   </p><p>但是由于这样分层之后,   java代码需要拿到对应的参数以及进行逻辑处理,   所以需要分层,   分为控制层control,   服务层service,   数据库层dao</p></blockquote><h2 id="登录小项目"><a href="#登录小项目" class="headerlink" title="登录小项目"></a>登录小项目</h2><p>撰写method.jsp,   以及控制层 数据层和服务层,   在控制层中撰写对应的servlet,   在jsp文件中填写对应的映射名,   映射servlet处理类,   也就是说请求的就是method.jsp页面,   然后把收到的请求交给servlet处理类进行处理,   所以在servlet类中就需要进行对应的登录判断;   </p><p>servlet调用服务层提供的服务, 对应的方法为checkUser(),   判断该用户是否已注册,   而服务层的具体实现子类会调用数据层的checkUser()方法进行判断,   在数据层,   就是通过jdbc去数据库中查询对应的用户是否存在,   如果存在则返回一个用户,   当然也可以直接在数据层对应的方法中就进行判断,   然后直接返回布尔值;   </p><blockquote><p>注意:   如果此处不使用jsp文件的话,    就需要撰写两个servlet类,   一个负责页面的显示,   并且把请求传递给另一个servlet类,   比较麻烦;   </p></blockquote><h2 id="乱码问题"><a href="#乱码问题" class="headerlink" title="乱码问题"></a>乱码问题</h2><p>浏览器中所使用的默认编码为gbk,   而idea中的默认编码为utf-8,   在使用idea创建web项目的时候,   响应应该为gbk格式,   而请求应该为utf-8格式;   </p><p>在登录项目中,    如果数据库中的人名有中文,   则在登陆的时候会显示没有对应的信息,   这时需要进行格式的转化:   </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String name1 = <span class="keyword">new</span> String(name.getBytes(<span class="string">&quot;iso-8859-1&quot;</span>), <span class="string">&quot;utf-8&quot;</span>);</span><br></pre></td></tr></table></figure><p>将浏览器的格式转化为utf-8格式,   然后传入对应的方法中;   即可得到正确的结果;   </p><p>这是一种方式,   当然也可以通过request的setCharacterEncoding方法设置request的编码格式为utf-8,   然后在Tomcat的conf文件夹中对server.xml中修改属性,   在Connector属性中,   添加useBodyEncodingForURI=”true”,   就可以正常显示了;   或者直接设置它的属性为URIEncoding=”utf-8”;   </p><p>以上是get请求,   如果是post请求,   则只能使用第二种方式,   也就是设置setCharacterEncoding方法;   </p><p>而如果想要发送中文字符,   则只能对response的setCharacterEncoding设置对应的格式为gbk;   </p><h2 id="servlet流程处理"><a href="#servlet流程处理" class="headerlink" title="servlet流程处理"></a>servlet流程处理</h2><ol><li>客户端发送请求</li><li>服务端设置请求/响应编码格式;   </li><li>服务端接收请求端参数;   </li><li>服务端进行逻辑代码处理;   </li><li>服务端返回响应的结果;   </li><li>客户端收到请求;   </li></ol><h2 id="servlet请求转发"><a href="#servlet请求转发" class="headerlink" title="servlet请求转发"></a>servlet请求转发</h2><p>客户端发送请求给服务端,   服务端将请求发送给servlet1,   如果servlet1可能会调用其他的servlet或者jsp文件,   这个时候就需要请求转发;   </p><h2 id="servlet作用域"><a href="#servlet作用域" class="headerlink" title="servlet作用域"></a>servlet作用域</h2><p>不同的servlet间如何进行数据共享?</p><p>通过req的setAttribute(Key,   Value)和getAttribute(Key)方法;   往请求里写好要传递的数据,   然后通过getRequestDispatcher将请求和响应传给下一个servlet;    </p><h2 id="servlet重定向"><a href="#servlet重定向" class="headerlink" title="servlet重定向"></a>servlet重定向</h2><p>通过response的sendRedirect方法进行重定向;   </p><ol><li>浏览器发送两次请求;   对于登录小项目,   输入用户名与密码过后,    点击登录后发送了一次请求,   在LoginServlet中,   登录成功后,   LoginServlet会重定向另一个servlet(比如XServlet),   这时会将响应发送给浏览器,   然后由浏览器发送请求给服务端,   向服务端请求XServlet页面;   </li><li>浏览器地址发生变化;   这是肯定的,   因为第二次发送请求所请求的页面地址不同;   </li><li>请求过程中产生两个request对象和两个response对象;   </li><li>两个servlet不能共享同一个request对象和同一个response对象;   </li></ol><p>这和servlet的请求转发是不同的;   </p><img src="D:/Program%20Files/Typora/img/image-20230412211535814.png" alt="image-20230412211535814" style="zoom:80%;" />]]></content>
     
     
       
@@ -140,216 +444,6 @@
     
     
     <category term="SSM" scheme="http://example.com/categories/SSM/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>24_ 备忘录模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/24-bei-wang-lu-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/24-bei-wang-lu-mo-shi/</id>
-    <published>2023-03-14T07:33:39.000Z</published>
-    <updated>2023-03-14T07:34:54.558Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>23_ 亨元模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/23-heng-yuan-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/23-heng-yuan-mo-shi/</id>
-    <published>2023-03-14T07:33:18.000Z</published>
-    <updated>2023-03-14T07:34:52.411Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>22_ 解释器模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/22-jie-shi-qi-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/22-jie-shi-qi-mo-shi/</id>
-    <published>2023-03-14T07:33:14.000Z</published>
-    <updated>2023-03-14T07:34:50.263Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>21_ 中介者模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/21-zhong-jie-zhe-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/21-zhong-jie-zhe-mo-shi/</id>
-    <published>2023-03-14T07:33:10.000Z</published>
-    <updated>2023-03-14T07:34:48.401Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>20_ 原型模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/20-yuan-xing-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/20-yuan-xing-mo-shi/</id>
-    <published>2023-03-14T07:33:05.000Z</published>
-    <updated>2023-03-14T07:34:46.665Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>19_ 状态模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/19-zhuang-tai-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/19-zhuang-tai-mo-shi/</id>
-    <published>2023-03-14T07:33:01.000Z</published>
-    <updated>2023-03-14T07:34:44.889Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>18_ 访问者模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/18-fang-wen-zhe-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/18-fang-wen-zhe-mo-shi/</id>
-    <published>2023-03-14T07:32:18.000Z</published>
-    <updated>2023-03-14T07:34:42.963Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>17_ 责任链模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/17-ze-ren-lian-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/17-ze-ren-lian-mo-shi/</id>
-    <published>2023-03-14T07:32:14.000Z</published>
-    <updated>2023-03-14T07:34:41.130Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>16_ 观察者模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/16-guan-cha-zhe-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/16-guan-cha-zhe-mo-shi/</id>
-    <published>2023-03-14T07:32:10.000Z</published>
-    <updated>2023-03-14T07:34:39.507Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>13_ 装饰模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/13-zhuang-shi-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/13-zhuang-shi-mo-shi/</id>
-    <published>2023-03-14T07:32:00.000Z</published>
-    <updated>2023-03-14T07:34:37.613Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>12_ 命令模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/12-ming-ling-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/12-ming-ling-mo-shi/</id>
-    <published>2023-03-14T07:31:56.000Z</published>
-    <updated>2023-03-14T07:34:35.519Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>11_ 桥梁模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/11-qiao-liang-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/11-qiao-liang-mo-shi/</id>
-    <published>2023-03-14T07:31:51.000Z</published>
-    <updated>2023-03-14T07:34:33.802Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>10_建造者模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/10-jian-zao-zhe-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/10-jian-zao-zhe-mo-shi/</id>
-    <published>2023-03-14T07:31:47.000Z</published>
-    <updated>2023-03-14T07:34:31.138Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>09_ 模板方法模式</title>
-    <link href="http://example.com/2023/03/14/she-ji-mo-shi/09-mo-ban-fang-fa-mo-shi/"/>
-    <id>http://example.com/2023/03/14/she-ji-mo-shi/09-mo-ban-fang-fa-mo-shi/</id>
-    <published>2023-03-14T07:31:43.000Z</published>
-    <updated>2023-03-14T07:34:29.313Z</updated>
-    
-    
-    
-    
-    <category term="设计模式" scheme="http://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
