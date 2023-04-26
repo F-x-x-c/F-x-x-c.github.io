@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="系统设计功能分析人脸识别考勤系统的功能其实并不复杂，只需要能够对摄像头面前的人脸进行捕获并判断该人脸是否为某一员工的人脸。而为了达到这一目的，首先需要将员工的人脸录入系统，并对图片及其对应的信息进行保存。 另外，在系统设计时应充分考虑系统的可移植性与可扩展性。保障系统在各种现实、硬件环境中都能够正常运行，并为数据存储、代码优化提供良好的扩展性支持。 功能设计录入新员工功能包括:   获取新员工信息">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Aegis | Aegis</title><meta name="author" content="Deng"><meta name="copyright" content="Deng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="系统设计功能分析人脸识别考勤系统的功能其实并不复杂，只需要能够对摄像头面前的人脸进行捕获并判断该人脸是否为某一员工的人脸。而为了达到这一目的，首先需要将员工的人脸录入系统，并对图片及其对应的信息进行保存。 另外，在系统设计时应充分考虑系统的可移植性与可扩展性。保障系统在各种现实、硬件环境中都能够正常运行，并为数据存储、代码优化提供良好的扩展性支持。 功能设计录入新员工功能包括：获取新员工信息，训练">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Aegis">
 <meta property="og:url" content="http://example.com/2023/03/04/bi-ye-lun-wen/f014-bi-ye-lun-wen-chu-gao-01/index.html">
 <meta property="og:site_name" content="Aegis">
-<meta property="og:description" content="系统设计功能分析人脸识别考勤系统的功能其实并不复杂，只需要能够对摄像头面前的人脸进行捕获并判断该人脸是否为某一员工的人脸。而为了达到这一目的，首先需要将员工的人脸录入系统，并对图片及其对应的信息进行保存。 另外，在系统设计时应充分考虑系统的可移植性与可扩展性。保障系统在各种现实、硬件环境中都能够正常运行，并为数据存储、代码优化提供良好的扩展性支持。 功能设计录入新员工功能包括:   获取新员工信息">
+<meta property="og:description" content="系统设计功能分析人脸识别考勤系统的功能其实并不复杂，只需要能够对摄像头面前的人脸进行捕获并判断该人脸是否为某一员工的人脸。而为了达到这一目的，首先需要将员工的人脸录入系统，并对图片及其对应的信息进行保存。 另外，在系统设计时应充分考虑系统的可移植性与可扩展性。保障系统在各种现实、硬件环境中都能够正常运行，并为数据存储、代码优化提供良好的扩展性支持。 功能设计录入新员工功能包括：获取新员工信息，训练">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
 <meta property="article:published_time" content="2023-03-04T12:37:32.084Z">
-<meta property="article:modified_time" content="2023-04-19T15:25:22.143Z">
+<meta property="article:modified_time" content="2023-04-24T13:09:07.043Z">
 <meta property="article:author" content="Deng">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/04/bi-ye-lun-wen/f014-bi-ye-lun-wen-chu-gao-01/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
@@ -52,7 +52,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-04-19 23:25:22'
+  postUpdate: '2023-04-24 21:09:07'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,15 +142,15 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Aegis" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">181</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-03-04T12:37:32.084Z" title=" 2023-03-04 20:37:32">2023-03-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-04-19T15:25:22.143Z" title=" 2023-04-19 23:25:22">2023-04-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><h2 id="功能分析"><a href="#功能分析" class="headerlink" title="功能分析"></a>功能分析</h2><p>人脸识别考勤系统的功能其实并不复杂，只需要能够对摄像头面前的人脸进行捕获并判断该人脸是否为某一员工的人脸。而为了达到这一目的，首先需要将员工的人脸录入系统，并对图片及其对应的信息进行保存。</p>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">183</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aegis</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-created" datetime="2023-03-04T12:37:32.084Z" title=" 2023-03-04 20:37:32">2023-03-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label"></span><time class="post-meta-date-updated" datetime="2023-04-24T13:09:07.043Z" title=" 2023-04-24 21:09:07">2023-04-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><h2 id="功能分析"><a href="#功能分析" class="headerlink" title="功能分析"></a>功能分析</h2><p>人脸识别考勤系统的功能其实并不复杂，只需要能够对摄像头面前的人脸进行捕获并判断该人脸是否为某一员工的人脸。而为了达到这一目的，首先需要将员工的人脸录入系统，并对图片及其对应的信息进行保存。</p>
 <p>另外，在系统设计时应充分考虑系统的可移植性与可扩展性。保障系统在各种现实、硬件环境中都能够正常运行，并为数据存储、代码优化提供良好的扩展性支持。</p>
-<h2 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h2><p>录入新员工功能包括:   获取新员工信息,   训练模型;   </p>
-<p>打卡功能包括:   加载训练模型,   获取人脸图片,   识别人脸;   </p>
+<h2 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h2><p>录入新员工功能包括：获取新员工信息，训练模型，</p>
+<p>打卡功能包括：加载训练模型，获取人脸图片，识别人脸，</p>
 <img src="D:/Program%20Files/Typora/img/image-20230305221759217.png" alt="image-20230305221759217" style="zoom:80%;" />
 
 <ol>
 <li><p>录入新员工功能</p>
-<p>录取新员工首先要获取新员工的信息,   包括姓名与人脸图片，首先需要打开摄像头，从摄像头中不断捕捉图像帧，检测到捕捉的图像帧有人脸信息之后，才将图片存入人脸；将图片存入本地之后，需要对存入的图片进行训练，将得到训练模型存入本地，方便下此调用。</p>
+<p>录取新员工首先要获取新员工的信息，包括姓名与人脸图片，首先需要打开摄像头，从摄像头中不断捕捉图像帧，检测到捕捉的图像帧有人脸信息之后，才将图片存入人脸；将图片存入本地之后，需要对存入的图片进行训练，将得到训练模型存入本地，方便下此调用。</p>
 </li>
 <li><p>打卡功能</p>
 <p>加载训练好的模型文件，打开摄像头，从摄像头中不断捕获图像帧，识别到捕捉的图像帧有人脸信息后，对该图像帧进行人脸识别，并返回识别结果。</p>
@@ -228,7 +228,7 @@
 <p>​        流程图如下：</p>
 <img src="D:/Program%20Files/Typora/img/image-20230310183711893.png" alt="image-20230310183711893" style="zoom:80%;" />
 
-<p>其中faceMap类型为Java提供的集合HashMap,   键值对类型为&lt;FaceFeature,   String&gt;，FaceFeature对应人脸特征类，String对应保存人名的拼音字符串。</p>
+<p>其中faceMap类型为Java提供的集合HashMap，键值对类型为&lt;FaceFeature，String&gt;，FaceFeature对应人脸特征类，String对应保存人名的拼音字符串。</p>
 <p>虹软引擎不会生成对应的模型文件，每一次使用虹软引擎，都需要调用虹软引擎对应的函数生成人脸特征，然后进行比对。</p>
 <p>（2）虹软人脸引擎的人脸识别</p>
 <p>​        在拿到员工人脸特征集合faceMap后，只需要对当前的图片进行人脸特征的提取，然后挨个与faceMap中的人脸特征进行比较，取得最高匹配分数的FaceFeature对象对应的人名拼音，将其返回即可。由于虹软人脸识别引擎为一个商用引擎，所以它的API不会设置的太复杂。</p>
@@ -271,15 +271,15 @@
 <ol>
 <li><p>协方差矩阵的计算</p>
 <p>上述属于使用原始PCA算法所实现的特征脸算法，而实际上由于图片的维度过大，在对协方差矩阵求特征向量时耗时巨大，所以特征脸算法在实现的时候，是对维度为图片数量的协方差矩阵求特征向量，也就是原矩阵的转置乘原矩阵，在OpenCV的源码中，PCA算法也提供了对应的标志位让调用函数选择使用哪种方式进行协方差矩阵的求法。下面对scrambled式求法进行具体讲解。</p>
-<p>对输入的图像集进行零值化处理后，所形成的n个列向量组合为一个矩阵，设该矩阵为<strong>X</strong>，矩阵为<strong>X</strong>的维度为m * n，其中n为输入的图像张数，m为图像像素点的数量。而如果按照原始PCA算法来设计，其协方差矩阵为<br>$$<br>C=XX^T<br>$$<br>这样求出来的协方差矩阵规模为m * m，由于m为像素点的数量，所以该协方差矩阵的规模是极大的，并不利于通过协方差矩阵求得特征值和特征向量，所以特征脸算法改用如下的方式去求协方差矩阵<br>$$<br>C’=X^TX<br>$$<br>通过这样的方式，协方差矩阵的规模变为n * n，由于在实际应用中，图片数量远远小于像素点数量，所以此举大大减小了协方差矩阵规模，降低了协方差矩阵所占的内存空间,   并极大地减小了后面通过特征值分解法或奇异值分解法计算特征值和特征向量所耗费的的时间资源。</p>
-<p>如果采用原始的PCA算法进行协方差矩阵的计算，其时间复杂度为O(nm<sup>2</sup>)，其中m为图像像素点的数量，因为这是一个m * n矩阵和一个n * m矩阵的矩阵相乘，为了得到协方差矩阵的一个元素，需要进行n次乘法，而协方差矩阵有m<sup>2</sup>个元素，所以总共需要nm<sup>2</sup>次乘法，所以其时间复杂度为O(nm<sup>2</sup>)。而如果使用特征脸法改变协方差矩阵的规模为n * n，则其时间复杂度为O(mn<sup>2</sup>)，由于n&lt;&lt;m,   算法的时间成本大幅降低。</p>
+<p>对输入的图像集进行零值化处理后，所形成的n个列向量组合为一个矩阵，设该矩阵为<strong>X</strong>，矩阵为<strong>X</strong>的维度为m * n，其中n为输入的图像张数，m为图像像素点的数量。而如果按照原始PCA算法来设计，其协方差矩阵为<br>$$<br>C=XX^T<br>$$<br>这样求出来的协方差矩阵规模为m * m，由于m为像素点的数量，所以该协方差矩阵的规模是极大的，并不利于通过协方差矩阵求得特征值和特征向量，所以特征脸算法改用如下的方式去求协方差矩阵<br>$$<br>C’=X^TX<br>$$<br>通过这样的方式，协方差矩阵的规模变为n * n，由于在实际应用中，图片数量远远小于像素点数量，所以此举大大减小了协方差矩阵规模，降低了协方差矩阵所占的内存空间，并极大地减小了后面通过特征值分解法或奇异值分解法计算特征值和特征向量所耗费的的时间资源。</p>
+<p>如果采用原始的PCA算法进行协方差矩阵的计算，其时间复杂度为O(nm<sup>2</sup>)，其中m为图像像素点的数量，因为这是一个m * n矩阵和一个n * m矩阵的矩阵相乘，为了得到协方差矩阵的一个元素，需要进行n次乘法，而协方差矩阵有m<sup>2</sup>个元素，所以总共需要nm<sup>2</sup>次乘法，所以其时间复杂度为O(nm<sup>2</sup>)。而如果使用特征脸法改变协方差矩阵的规模为n * n，则其时间复杂度为O(mn<sup>2</sup>)，由于n&lt;&lt;m，算法的时间成本大幅降低。</p>
 <p>原始的PCA算法计算出的协方差矩阵的规模为m * m，所以其主要的空间消耗为O(m<sup>2</sup>)，而改良之后的协方差矩阵的规模为n * n，其主要的空间消耗为O(n<sup>2</sup>)，由于所用的图片集数量实际上远远小于图片维度，所以此举的改变是非常巨大的。</p>
 <p>当然OpenCV对于协方差矩阵的乘法也是有着各种各样的优化的，比如通过SIMD指令集结合CPU的扩展寄存器的特性，在代码指令层面加速该过程，这一优化在之后会被提及。</p>
 </li>
 <li><p>计算特征值和特征向量</p>
 <p>使用对协方差矩阵进行计算，其步骤为：</p>
-<p>(1)  初始化规模为n * n的单位矩阵;   </p>
-<p>(2) 选择一个非对角元素 $c_{i,j}$（例如 $c_{1,2}=c_{2,1}=3.50$）,   并计算旋转角度 $\theta$ 和旋转矩阵 $R$。</p>
+<p>(1)  初始化规模为n * n的单位矩阵，</p>
+<p>(2) 选择一个非对角元素 $c_{i,j}$（例如 $c_{1,2}=c_{2,1}=3.50$），并计算旋转角度 $\theta$ 和旋转矩阵 $R$。</p>
 <p>(3) 计算旋转角度 $\theta$： $$ \theta = \frac{1}{2}\arctan\frac{2c_{i,j}}{c_{i,i}-c_{j,j}} $$，</p>
 <p>(4) 计算旋转矩阵 $R$，其中 $R_{i,i}=R_{j,j}=\cos\theta$，$R_{i,j}=-R_{j,i}=\sin\theta$，其他元素保持不变： </p>
 <p>$$ R =  \begin{bmatrix} 1 &amp; &amp; &amp; &amp; &amp; &amp; \ &amp; \ddots &amp; &amp; &amp; &amp; &amp; \ &amp; &amp; 1 &amp; &amp; &amp; &amp; \ &amp; &amp; &amp; \cos\theta &amp; &amp; \sin\theta &amp; \ &amp; &amp; &amp; &amp; \ddots &amp; &amp; \ &amp; &amp; &amp; -\sin\theta &amp; &amp; \cos\theta &amp; \ &amp; &amp; &amp; &amp; &amp; &amp; 1 \end{bmatrix} $$</p>
@@ -311,7 +311,7 @@
 <p>以上就是OpenCV对于EigenFace算法的c++实现，eigen_face.cpp整体来看是业务代码居多，而且其算法的核心—PCA相关的实现代码并没有展现，要深入研究EigenFace算法，还需要深入OpenCV对于PCA算法的c++实现中去。</p>
 </li>
 <li><p>PCA算法</p>
-<p>PCA算法的核心就是计算输入矩阵的协方差矩阵,   通过协方差矩阵获得特征值和特征向量,   进而构成PCA子空间的基坐标。存在两种主要的协方差矩阵计算方法，一种是正常的原矩阵乘矩阵的转置，一种是应用于特殊数据规模的矩阵转置乘矩阵。由于PCA算法可以应用于人工智能的许多领域，设计者必须考虑PCA算法的可使用性。所以在具体的代码实现过程中，使用标志位作为参数，将所需要的协方差矩阵运算策略传入PCA类内部。但是在源码中可以看到，所谓的标志位covar并没有使用布尔类型，而是一个整型变量，这主要是为了保证程序的健壮性，必须对传入的参数进行多方面的考量，再决定协方差矩阵的运算策略。此过程传入的参数不仅仅是用户的选择，所以使用整型变量，由于整型变量有32位，可以将其视为一个位图，每一位都可以通过事先约定进行含义的赋予，方面各种参数的传递。</p>
+<p>PCA算法的核心就是计算输入矩阵的协方差矩阵，通过协方差矩阵获得特征值和特征向量，进而构成PCA子空间的基坐标。存在两种主要的协方差矩阵计算方法，一种是正常的原矩阵乘矩阵的转置，一种是应用于特殊数据规模的矩阵转置乘矩阵。由于PCA算法可以应用于人工智能的许多领域，设计者必须考虑PCA算法的可使用性。所以在具体的代码实现过程中，使用标志位作为参数，将所需要的协方差矩阵运算策略传入PCA类内部。但是在源码中可以看到，所谓的标志位covar并没有使用布尔类型，而是一个整型变量，这主要是为了保证程序的健壮性，必须对传入的参数进行多方面的考量，再决定协方差矩阵的运算策略。此过程传入的参数不仅仅是用户的选择，所以使用整型变量，由于整型变量有32位，可以将其视为一个位图，每一位都可以通过事先约定进行含义的赋予，方面各种参数的传递。</p>
 <p>pca.cpp的路径为opencv\sources\modules\core\src\pca.cpp，该源文件中实现了多个方法，而其对于PCA算法的核心方法，是该文件的PCA类的构造方法所调用的operator方法。</p>
 <p>通过重载的方式，operator方法可以选择保留的主成分是通过最大主成分数maxComponents或者差异百分比retainedVariance来确定，这里对使用前者的重载方法进行分析。</p>
 <p>operator方法的主要工作包括：生成协方差运算标志位covar_flags、生成均值向量、设置协方差矩阵运算方式（normal或者scramble）等等。具体而言，</p>
@@ -334,7 +334,7 @@
 
 <p>col_buf为缓冲区的头指针，del_buf为缓冲区上均值矩阵的指针。</p>
 <p>（2）运算过程</p>
-<p>MulTransposedR方法对于协方差矩阵的运算从代码层面来看为矩阵列乘矩阵列，所以运算过程首先将矩阵的一列对应减去均值向量，然后放于缓冲区的[col_buf,   del_buf]处，再通过SIMD指令集对乘法过程进行优化，也就是一次将两个值取出并保存于扩展寄存器中，让一条指令执行两项运算，优化运算常数时间。通过两个扩展寄存器与另一个扩展寄存器相乘的操作，可以使得在一次迭代中用两条指令进行4次乘法。而如果没有SIMD优化，则直接创建四个变量进行乘法。为保证跳跃的4次乘法的操作不发生数组下标越界，则只能循环执行的长度为矩阵列数-4。</p>
+<p>MulTransposedR方法对于协方差矩阵的运算从代码层面来看为矩阵列乘矩阵列，所以运算过程首先将矩阵的一列对应减去均值向量，然后放于缓冲区的[col_buf，del_buf]处，再通过SIMD指令集对乘法过程进行优化，也就是一次将两个值取出并保存于扩展寄存器中，让一条指令执行两项运算，优化运算常数时间。通过两个扩展寄存器与另一个扩展寄存器相乘的操作，可以使得在一次迭代中用两条指令进行4次乘法。而如果没有SIMD优化，则直接创建四个变量进行乘法。为保证跳跃的4次乘法的操作不发生数组下标越界，则只能循环执行的长度为矩阵列数-4。</p>
 <p>最后，运算结果乘以对应的缩放尺度，双双存入输出矩阵对应的位置即可。</p>
 <img src="D:/Program%20Files/Typora/img/image-20230312222627362.png" alt="image-20230312222627362" style="zoom:80%;" />
 
@@ -445,7 +445,7 @@
 <td>2~3帧</td>
 </tr>
 </tbody></table>
-<p>从上述测试来看，FisherFace和LBPH对于光照强度变化并不敏感,   当然这也可能是在代码中进行光照归一化处理的结果。</p>
+<p>从上述测试来看，FisherFace和LBPH对于光照强度变化并不敏感，当然这也可能是在代码中进行光照归一化处理的结果。</p>
 <h2 id="测试4"><a href="#测试4" class="headerlink" title="测试4"></a>测试4</h2><p>测试非正脸时，平均未识别出的帧数。垂直倾斜的含义是使用人们常说的侧脸去面对摄像头，水平倾斜即面对摄像头歪头。</p>
 <table>
 <thead>
